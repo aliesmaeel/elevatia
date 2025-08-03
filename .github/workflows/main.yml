@@ -25,10 +25,7 @@ jobs:
             cd /var/www/elevatia
             git fetch origin
             git reset --hard origin/main
-            chmod -R 777 storage
-            chmod -R 777 bootstrap/cache
-            chmod -R 777 storage
-            chmod -R 777 storage/framework/cache
+            sudo chmod -R 775 storage bootstrap/cache storage/framework/cache
             composer install --no-interaction --prefer-dist --optimize-autoloader
             php artisan config:clear
             php artisan route:clear
@@ -41,5 +38,3 @@ jobs:
             php artisan route:cache
             php artisan view:cache
             php artisan optimize:clear
-
-
