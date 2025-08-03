@@ -23,9 +23,8 @@ jobs:
           script: |
             git config --global --add safe.directory /var/www/elevatia
             cd /var/www/elevatia
-            git fetch origin
-            git reset --hard origin/main
-            sudo chmod -R 775 storage bootstrap/cache storage/framework/cache
+            git pull origin main
+            sudo chmod -R 775 storage bootstrap/cache storage/framework/cache storage/logs
             composer install --no-interaction --prefer-dist --optimize-autoloader
             php artisan config:clear
             php artisan route:clear
