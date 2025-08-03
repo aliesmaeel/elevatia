@@ -24,7 +24,7 @@ jobs:
             git config --global --add safe.directory /var/www/elevatia
             cd /var/www/elevatia
             git pull origin main
-            sudo chmod -R 775 storage bootstrap/cache storage/framework/cache storage/logs
+            sudo chmod -R 775 storage bootstrap/cache storage/framework/cache storage/logs storage/framework/views
             composer install --no-interaction --prefer-dist --optimize-autoloader
             php artisan config:clear
             php artisan route:clear
