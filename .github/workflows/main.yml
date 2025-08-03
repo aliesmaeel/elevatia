@@ -23,7 +23,8 @@ jobs:
           script: |
             git config --global --add safe.directory /var/www/elevatia
             cd /var/www/elevatia
-            git pull origin main
+            git fetch origin
+            sudo git reset --hard origin/main
 
             # Ensure correct permissions
             sudo chown -R www-data:www-data storage bootstrap/cache
