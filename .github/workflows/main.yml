@@ -15,38 +15,26 @@ jobs:
       - name: Deploy to server
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          port: ${{ secrets.SSH_PORT }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd /var/www/elevatia
-
-            # Allow Git to access this repo
-            git config --global --add safe.directory /var/www/elevatia
-
-            # Pull latest changes
-            git reset --hard
-            git pull origin main
-
-            # Laravel-specific setup
-            composer install --no-interaction --prefer-dist --optimize-autoloader
-
-            cp .env.production .env
-            php artisan key:generate
-
-            php artisan config:clear
-            php artisan route:clear
-            php artisan view:clear
-            php artisan cache:clear
-
-            php artisan migrate --force || true
-            php artisan permissions:sync || true
-            php artisan db:seed || true
-
-            php artisan config:cache
-            php artisan route:cache
-            php artisan view:cache
-
-            chmod -R 775 storage
-            chmod -R 775 bootstrap/cache
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        port: ${{ secrets.PORT }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          git config --global --add safe.directory /var/www/elevatia
+          cd /var/www/elevatia
+          git fetch origin
+          git reset --hard origin/main
+          composer install --no-interaction --prefer-dist --optimize-autoloader
+          php artisan config:clear
+          php artisan route:clear
+          php artisan view:clear
+          php artisan cache:clear
+          php artisan migrate --force
+          php artisan permissions:sync
+          php artisan db:seed
+          php artisan config:cache
+          php artisan route:cache
+          php artisan view:cache
+          php artisan optimize:clear
+          chmod -R 777 storage
+          chmod -R 777 bootstrap/cache
