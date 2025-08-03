@@ -30,14 +30,14 @@ jobs:
             sudo chown -R www-data:www-data storage bootstrap/cache
             sudo chmod -R 775 storage bootstrap/cache
 
-            composer install --no-interaction --prefer-dist --optimize-autoloader
+            sudo composer install --no-interaction --prefer-dist --optimize-autoloader
 
             php artisan config:clear
             php artisan route:clear
             php artisan view:clear
             php artisan cache:clear
 
-            php artisan migrate --force
+            sudo php artisan migrate --force
             php artisan permissions:sync
             php artisan db:seed
 
