@@ -32,10 +32,10 @@ jobs:
 
             sudo composer install --no-interaction --prefer-dist --optimize-autoloader
 
-            php artisan config:clear
-            php artisan route:clear
-            php artisan view:clear
-            php artisan cache:clear
+            sudo php artisan config:clear
+            sudo php artisan route:clear
+            sudo php artisan view:clear
+            sudo php artisan cache:clear
 
             sudo php artisan migrate --force
             php artisan db:seed
