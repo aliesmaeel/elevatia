@@ -17,8 +17,9 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          port: ${{ secrets.PORT }}
+          port: 22
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          password: ${{ secrets.PASSWORD }}
           script: |
             git config --global --add safe.directory /var/www/elevatia
             cd /var/www/elevatia
