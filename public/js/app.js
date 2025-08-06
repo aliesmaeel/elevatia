@@ -42,9 +42,26 @@ $('img.icon').on('click', function(event) {
         $sidebar.css('right', '0');
     }
 });
+
 $('.submit_btn').on('click', function () {
     $('.form_search').submit();
 });
+
+$('.contact_email button').on('click', function (e) {
+    e.preventDefault(); 
+    var emailInput = $('.contact_email_form input[name="email"]');
+    var email = emailInput.val().trim();
+    var errorMessage = $('.email_error');
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === '' || !emailRegex.test(email)) {
+        errorMessage.show();
+    } else {
+        errorMessage.hide();
+        $('.contact_email_form').submit(); 
+    }
+});
+
 
 // Setup handlers for each group
 function updateHiddenInputAndActiveClass(groupName, hiddenInputId) {
@@ -104,3 +121,52 @@ $('.reset').click(function () {
     $container.find('.group-options .option').removeClass('active');
     $container.find('input[type="radio"]').prop('checked', false);
 });
+
+$(document).ready(function () {
+    var $buttons = $(".services .container_buttons .buttons div");
+    var $propertyCards = $(".services .grid-container .col");
+
+    $buttons.on("click", function () {
+        $buttons.removeClass("active");
+        $(this).addClass("active");
+        var category = $(this).text().trim();
+        $propertyCards.each(function () {
+            var $card = $(this);
+            var type = $card.data("type");
+            if (category === "All" || type === category) {
+                $card.stop(true, true).css("display", "block");
+                $card.removeClass("animated-out");
+            } else {
+                $card.addClass("animated-out");
+                setTimeout(() => {
+                    $card.css("display", "none");
+                }, 400); 
+            }
+        });
+    });
+  
+    $('.services .content .grid-container .desc').each(function() {
+        var fullText = $(this).text().trim();
+        if (fullText.length > 100) {
+          var truncatedText = fullText.substring(0, 100) + '...';
+          $(this).text(truncatedText);
+          var readMore = $('<span class="read-more">Read more</span>');
+          $(this).append(readMore);
+          readMore.on('click', function() {
+            var desc = $(this).parent();
+            if (desc.hasClass('expanded')) {
+              desc.text(truncatedText);
+              desc.append(readMore);
+              $(this).text('Read more');
+            } else {
+              desc.text(fullText);
+              desc.append(readMore);
+              desc.addClass('expanded');
+              readMore.text('');
+            }
+          });
+        }
+      });
+    
+});
+
