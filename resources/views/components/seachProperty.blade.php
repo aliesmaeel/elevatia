@@ -167,7 +167,7 @@
             <div class="bedroom-option options-selected">
                 <div class="flex">
                     <img src="/images/price.svg">
-                    <div class="text_before"> Bedrooms</div>  
+                    <div class="text_before"> Pricing Range</div>  
                 </div>
                 <img src="/images/arrow.svg">
             </div>

@@ -1,5 +1,12 @@
 @media(max-width:1199px) and (min-width:992px){
-
+    .vision .grid_container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .services .content .grid-container{
+       
+        grid-template-columns: repeat(2, 1fr);
+       
+    }
 .dropdown  {
     width: 280px;
 }
@@ -8,6 +15,14 @@
 }
 }
 @media(max-width:991px) and (min-width:768px){
+    .vision .grid_container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .services .content .grid-container{
+       
+        grid-template-columns: repeat(2, 1fr);
+       
+    }
     .dropdown  {
         width: 280px;
     }
@@ -20,12 +35,29 @@
    
 }
 @media(max-width:991px){
-   
+    .footer .content .grid-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .footer .content .grid-container .col{
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .footer .content .grid-container div{
+        width: 100%;
+    }
 }
 @media(max-width:599px){
 
 }
 @media(max-width:767px){
+    .services .content .grid-container{
+       
+        grid-template-columns: repeat(1, 1fr);
+       
+    }
+    .vision .grid_container{
+        grid-template-columns: repeat(1, 1fr);
+    }
     .main_title{
         font-size: 28px;
     }
