@@ -2,6 +2,9 @@
     .vision .grid_container{
         grid-template-columns: repeat(2, 1fr);
     }
+    .blog .grid-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
     .services .content .grid-container{
        
         grid-template-columns: repeat(2, 1fr);
@@ -15,6 +18,9 @@
 }
 }
 @media(max-width:991px) and (min-width:768px){
+    .blog .grid-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
     .vision .grid_container{
         grid-template-columns: repeat(2, 1fr);
     }
@@ -35,6 +41,21 @@
    
 }
 @media(max-width:991px){
+    .offplan_projects .main_content .flex_container .col{
+        width:100%
+    }
+    .offplan_projects .main_content .flex_container img{
+        object-fit: cover;
+    }
+    .offplan_projects .main_content .flex_container{
+        display: flex
+        ;
+            gap: 2rem;
+            flex-direction: column;
+    }
+    .offplan_projects .main_content .flex_container img{
+        height: max-content;
+    }
     .footer .content .grid-container{
         grid-template-columns: repeat(1, 1fr);
     }
@@ -50,6 +71,24 @@
 
 }
 @media(max-width:767px){
+    .blog .grid-container .blog_2_box.col{
+        min-height: 420px;
+    }
+    .blog .grid-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .blog .grid-container .blog_2_box.col{
+        grid-column: span 1;
+    }
+    .team .swiper-slide{
+        width:300px
+    }
+    .team .icons img{
+        width:44px
+    }
+    .team .img_container{
+        width:150px
+    }
     .services .content .grid-container{
        
         grid-template-columns: repeat(1, 1fr);

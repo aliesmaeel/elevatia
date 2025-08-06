@@ -9,6 +9,7 @@
 {{-- main page --}}
 @section('content')
     <div class="home_page container">
+        {{-- banner --}}
             <div style="position:relative;height: 110vh;" >
                 <img src="/images/banner.png" class="banner">
                 <div class="search-realestate">
@@ -19,6 +20,8 @@
                     @include('components.seachProperty')
                 </div>
             </div>
+
+            {{-- about --}}
             <div class="about-section">
                     <div class="content"  >
                         <div class="text-content col-flex" >
@@ -36,6 +39,8 @@
                         </div>
                     </div>
             </div>
+
+            {{-- vision --}}
             <div class="vision">
                 <div class="content" >
                     <div class="text-content col-flex" >
@@ -70,6 +75,8 @@
                     </div>
                 </div>
             </div>
+
+            {{-- Mission --}}
             <div class="vision">
                 <div class="content" >
                     <div class="text-content col-flex" >
@@ -104,6 +111,7 @@
                     </div>
                 </div>
             </div>
+
             {{-- premium_properties --}}
             <div class="services">
                 <div class="content" data-aos="fade-up" >
@@ -122,6 +130,85 @@
                     </div>
                 </div>
             </div>
+
+            {{-- EXPLORE RECENT OFF PLAN PROJECTS --}}
+            <div class="offplan_projects">
+                <div class="content">
+                    <div class="text-content">
+                        <div class="title">
+                            EXPLORE RECENT OFF PLAN PROJECTS
+                        </div>
+                        <div class="desc">
+                            Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes 
+                            and investments available through Estatein. Click "View Details" for more information.
+                        </div>
+                    </div>
+                    <div class="main_content">
+                        <div class="flex_container first_grid">
+                            <div class="col">
+                                <img src="/images/off_plan_1.png">
+                            </div>
+                            <div class="col">
+                                <img src="/images/off_plan_2.png"> 
+                            </div>
+                        </div>
+                        <div class="flex_container second_grid">
+                            <div class="col">
+                                <img src="/images/offplan_3.png">
+                                
+                            </div>
+                            <div class="col">
+                                <img src="/images/off_plan_4.png">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+             {{-- Our Team --}}
+             <div class="team">
+                <div class="content">
+                    <div class="text-content">
+                        <div class="title">
+                            Our Team
+                        </div>
+                        <div class="desc">
+                            Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and
+                             investments available through Estatein. Click "View Details" for more information.
+                        </div>
+                    </div>
+                    <div class="team_swiper">  
+                        <div class="swiper-wrapper">    
+                            @include('components.team_box')   
+                        </div> 
+                        <div class="swiper-pagination"></div>
+                    </div> 
+
+                </div>
+             </div>
+
+             {{-- Our Blogs --}}
+             <div class="blog">
+                <div class="content">
+                    <div class="title">Our Blogs</div>
+                    <div class="grid-container">
+                        @include('components.blog_item')
+                        <div class="blog_2_box col">
+                            <div class="title_box">Experience Effortless Property Management</div>
+                            <div class="desc_box">
+                                Ready to experience hassle-free property management? Explore our Property Management Service categories and let us 
+                                handle the complexities while you enjoy the benefits of property ownership.
+                            </div>
+                            <a href="#">
+                               <div> See All</div>
+                            </a>
+                            <img src="/images/bt.png" class="abs_img">
+                        </div>
+                    </div>
+                </div>
+             </div>
             
     </div>
 @endsection
