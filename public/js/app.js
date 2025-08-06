@@ -170,3 +170,25 @@ $(document).ready(function () {
     
 });
 
+function initializeSwipers(selector) {
+    document.querySelectorAll(selector).forEach((swiperContainer) => {
+      new Swiper(swiperContainer, {
+        slidesPerView: 'auto',
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        centeredSlides: true,
+        effect: 'slide',
+        speed: 500,
+        pagination: {
+            el: swiperContainer.querySelector('.swiper-pagination'),
+            clickable: true,
+          },
+        
+      });
+    });
+  }
+ 
+
+initializeSwipers('.team_swiper');

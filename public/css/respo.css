@@ -35,6 +35,21 @@
    
 }
 @media(max-width:991px){
+    .offplan_projects .main_content .flex_container .col{
+        width:100%
+    }
+    .offplan_projects .main_content .flex_container img{
+        object-fit: cover;
+    }
+    .offplan_projects .main_content .flex_container{
+        display: flex
+        ;
+            gap: 2rem;
+            flex-direction: column;
+    }
+    .offplan_projects .main_content .flex_container img{
+        height: max-content;
+    }
     .footer .content .grid-container{
         grid-template-columns: repeat(1, 1fr);
     }
@@ -50,6 +65,15 @@
 
 }
 @media(max-width:767px){
+    .team .swiper-slide{
+        width:300px
+    }
+    .team .icons img{
+        width:44px
+    }
+    .team .img_container{
+        width:150px
+    }
     .services .content .grid-container{
        
         grid-template-columns: repeat(1, 1fr);
