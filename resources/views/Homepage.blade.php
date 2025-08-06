@@ -181,159 +181,32 @@
                     </div>
                     <div class="team_swiper">  
                         <div class="swiper-wrapper">    
-                                <div class="swiper-slide" >  
-                                    <div class="box">
-                                        <div class="img_container">
-                                            <img src="/images/team1.png">
-                                        </div>
-                                        <div class="info_desc">
-                                            <div class="name">Wade Warren</div>
-                                            <div class="desc_info">
-                                                Property Consultant<br> Experience: 15 years
-                                            </div>
-                                            <div class="icons">
-                                                <a href="#"> 
-                                                    <img src="/images/phone.svg">
-                                                </a>
-                                                <a href="#">
-                                                    <img src="/images/phone.svg">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>  
-                                </div>  
-                                <div class="swiper-slide" >  
-                                    <div class="box">
-                                        <div class="img_container">
-                                            <img src="/images/team1.png">
-                                        </div>
-                                        <div class="info_desc">
-                                            <div class="name">Wade Warren</div>
-                                            <div class="desc_info">
-                                                Property Consultant<br> Experience: 15 years
-                                            </div>
-                                            <div class="icons">
-                                                <a href="#"> 
-                                                    <img src="/images/phone.svg">
-                                                </a>
-                                                <a href="#">
-                                                    <img src="/images/phone.svg">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>  
-                                </div> 
-                                <div class="swiper-slide" >  
-                                    <div class="box">
-                                        <div class="img_container">
-                                            <img src="/images/team1.png">
-                                        </div>
-                                        <div class="info_desc">
-                                            <div class="name">Wade Warren</div>
-                                            <div class="desc_info">
-                                                Property Consultant<br> Experience: 15 years
-                                            </div>
-                                            <div class="icons">
-                                                <a href="#"> 
-                                                    <img src="/images/phone.svg">
-                                                </a>
-                                                <a href="#">
-                                                    <img src="/images/phone.svg">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>  
-                                </div> 
-                                <div class="swiper-slide" >  
-                                    <div class="box">
-                                        <div class="img_container">
-                                            <img src="/images/team1.png">
-                                        </div>
-                                        <div class="info_desc">
-                                            <div class="name">Wade Warren</div>
-                                            <div class="desc_info">
-                                                Property Consultant<br> Experience: 15 years
-                                            </div>
-                                            <div class="icons">
-                                                <a href="#"> 
-                                                    <img src="/images/phone.svg">
-                                                </a>
-                                                <a href="#">
-                                                    <img src="/images/phone.svg">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>  
-                                </div> 
-                                <div class="swiper-slide" >  
-                                    <div class="box">
-                                        <div class="img_container">
-                                            <img src="/images/team1.png">
-                                        </div>
-                                        <div class="info_desc">
-                                            <div class="name">Wade Warren</div>
-                                            <div class="desc_info">
-                                                Property Consultant<br> Experience: 15 years
-                                            </div>
-                                            <div class="icons">
-                                                <a href="#"> 
-                                                    <img src="/images/phone.svg">
-                                                </a>
-                                                <a href="#">
-                                                    <img src="/images/phone.svg">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>  
-                                </div> 
-                                <div class="swiper-slide" >  
-                                    <div class="box">
-                                        <div class="img_container">
-                                            <img src="/images/team1.png">
-                                        </div>
-                                        <div class="info_desc">
-                                            <div class="name">Wade Warren</div>
-                                            <div class="desc_info">
-                                                Property Consultant<br> Experience: 15 years
-                                            </div>
-                                            <div class="icons">
-                                                <a href="#"> 
-                                                    <img src="/images/phone.svg">
-                                                </a>
-                                                <a href="#">
-                                                    <img src="/images/phone.svg">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>  
-                                </div> 
-                                <div class="swiper-slide" >  
-                                    <div class="box">
-                                        <div class="img_container">
-                                            <img src="/images/team1.png">
-                                        </div>
-                                        <div class="info_desc">
-                                            <div class="name">Wade Warren</div>
-                                            <div class="desc_info">
-                                                Property Consultant<br> Experience: 15 years
-                                            </div>
-                                            <div class="icons">
-                                                <a href="#"> 
-                                                    <img src="/images/phone.svg">
-                                                </a>
-                                                <a href="#">
-                                                    <img src="/images/phone.svg">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>  
-                                </div> 
+                            @include('components.team_box')   
                         </div> 
                         <div class="swiper-pagination"></div>
                     </div> 
 
+                </div>
+             </div>
+
+             {{-- Our Blogs --}}
+             <div class="blog">
+                <div class="content">
+                    <div class="title">Our Blogs</div>
+                    <div class="grid-container">
+                        @include('components.blog_item')
+                        <div class="blog_2_box col">
+                            <div class="title_box">Experience Effortless Property Management</div>
+                            <div class="desc_box">
+                                Ready to experience hassle-free property management? Explore our Property Management Service categories and let us 
+                                handle the complexities while you enjoy the benefits of property ownership.
+                            </div>
+                            <a href="#">
+                               <div> See All</div>
+                            </a>
+                            <img src="/images/bt.png" class="abs_img">
+                        </div>
+                    </div>
                 </div>
              </div>
             
