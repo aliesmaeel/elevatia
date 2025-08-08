@@ -205,8 +205,10 @@
                                <div> See All</div>
                             </a>
                             <img src="/images/bt.png" class="abs_img">
+                            
                         </div>
                     </div>
+                   
                 </div>
              </div>
             
