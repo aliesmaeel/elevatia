@@ -204,3 +204,46 @@ function initializeSwipers(selector) {
  
 
 initializeSwipers('.team_swiper');
+// reset all inputs in form
+$(document).on('click', '.reset_filter', function(e) {
+    e.preventDefault();
+    let form = $('.form_search');
+    form.find('input[type="text"]').val('');
+    form.find('input[type="hidden"]').val('');
+    form.find('input[type="radio"]').prop('checked', false);
+    form.find('.option').removeClass('active');
+    form.find('.group-options').each(function(){
+        $(this).find('.option').first().addClass('active');
+        $(this).find('input[type="radio"]').first().prop('checked', true);
+    });
+    console.log('--- Filter Values After Reset ---');
+    form.find('input').each(function(){
+        console.log($(this).attr('name') + ': ' + $(this).val());
+    });
+});
+function addDotsEvery3DigitsRightToLeft(numStr) {
+    return numStr.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
+
+function formatWithDotsAndEllipsis(numStr, maxLength) {
+    let withDots = addDotsEvery3DigitsRightToLeft(numStr);
+    return withDots.length > maxLength ? withDots.slice(0, maxLength) + '...' : withDots;
+}
+
+function getRawNumber(str) {
+    return str.replace(/\D/g, '');
+}
+
+$('input[name="min_price"], input[name="max_price"]').on('input', function() {
+    let rawValue = this.value.replace(/[^0-9]/g, '');
+    let formatted = formatWithDotsAndEllipsis(rawValue, 9);
+    this.value = formatted;
+    let minRaw = getRawNumber($('input[name="min_price"]').val());
+    let maxRaw = getRawNumber($('input[name="max_price"]').val());
+
+    if (minRaw && maxRaw && Number(maxRaw) < Number(minRaw)) {
+        $('#price-error').text('Max price must be greater than or equal to Min price').show();
+    } else {
+        $('#price-error').hide();
+    }
+});
