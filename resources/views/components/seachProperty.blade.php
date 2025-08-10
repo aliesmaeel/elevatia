@@ -2,7 +2,7 @@
     {{-- search --}}
     <div class="input-search">
         <div class="content">
-            <input type="text" placeholder="Search For A Property" class="search_input"/>
+            <input type="text" placeholder="Search For A Property" name="search" class="search_input"/>
             <div class="submit_btn">
                 <img src="/images/Icon.svg">
                 <input type="submit" value="Find Property" class="submit">
@@ -177,14 +177,17 @@
                     <div class="group-options">
                         <div class="option">
                             <div>Min</div>
-                            <input type="text" placeholder="min-price">
+                            
+                            <input type="text" name="min_price" placeholder="min-price">
                         </div>
                         <div class="option">
                             <div>Max</div>
-                            <input type="text" placeholder="min-price">
+                            <input type="text"name="max_price" placeholder="min-price">
                         </div>
 
                     </div>
+                    <div id="price-error" style="color: red; margin-top: 5px; display: none;"></div>
+
 
                     <div class="reset_done">
                         <div class="reset">Reset</div>
