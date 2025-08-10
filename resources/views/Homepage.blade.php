@@ -41,16 +41,23 @@
             </div>
 
             {{-- vision --}}
-            <div class="vision">
+            <div class="about-section after_about">
                 <div class="content" >
                     <div class="text-content col-flex" >
                         <div class="title">Our Vision</div>
                         <div class="desc">
-                            Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget 
-                            tincidunt facilisis justo eget elit. Augue montes in eu mollis dictum ri
+                            Lorem ipsum dolor sit amet
+                            consectetur. A fringilla turpis duis eget tincidunt facilisis justo 
+                            eget elit. Augue montes in eu mollis dictum risus blan eget commodo amet 
+                            Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt 
+                            facilisis justo eget elit. Augue montes in eu mollis dictum risus blan eget commodo 
+                            amet Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt 
+                            facilisis justo eget elit. Augue montes in eu mollis dictum risus blan eget commodo 
+                            amet Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt
+                             facilisis justo eget elit. Augue montes in eu mollis dictum risus blan eget commodo amet
                         </div>
                     </div>
-                    <div class="grid_container">
+                    {{-- <div class="grid_container">
                         <div class="col flex_col">
                             <img src="/images/vision1.svg">
                             <div class="text">
@@ -72,21 +79,28 @@
                                 <div class="desc">Lorem ipsum dolor sit amet consectetur fringilla turpis duis eget tincidunt facilisis just</div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 
             {{-- Mission --}}
-            <div class="vision">
+            <div class="about-section">
                 <div class="content" >
                     <div class="text-content col-flex" >
                         <div class="title">Our Mission</div>
                         <div class="desc">
-                            Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget 
-                            tincidunt facilisis justo eget elit. Augue montes in eu mollis dictum ri
+                            Lorem ipsum dolor sit amet
+                             consectetur. A fringilla turpis duis eget tincidunt facilisis justo 
+                             eget elit. Augue montes in eu mollis dictum risus blan eget commodo amet 
+                             Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt 
+                             facilisis justo eget elit. Augue montes in eu mollis dictum risus blan eget commodo 
+                             amet Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt 
+                             facilisis justo eget elit. Augue montes in eu mollis dictum risus blan eget commodo 
+                             amet Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt
+                              facilisis justo eget elit. Augue montes in eu mollis dictum risus blan eget commodo amet
                         </div>
                     </div>
-                    <div class="grid_container">
+                    {{-- <div class="grid_container">
                         <div class="col flex_col">
                             <img src="/images/vision1.svg">
                             <div class="text">
@@ -108,7 +122,7 @@
                                 <div class="desc">Lorem ipsum dolor sit amet consectetur fringilla turpis duis eget tincidunt facilisis just</div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 

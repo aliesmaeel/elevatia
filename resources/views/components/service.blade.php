@@ -143,6 +143,39 @@
         </div>
     </div>
 </div>
+<div class="col only_search_result new_villa" data-type="For Rent">
+    <div class="overlay"></div>
+    <img src="/images/banner.png" class="bg">
+   
+    <div class="title_col">
+            <div class="title">New Villa</div>
+            <div class="numb_price">500$</div>
+        
+    </div>
+    <div class="desc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores labore velit inventore nemo voluptas molestias illum deserunt cum obcaecati debitis fuga similique, deleniti, aliquam aperiam maiores maxime quam blanditiis nobis.
+    </div>
+    <div class="flex_desc">
+        <div class="single">
+            <img src="/images/icon_bed.svg">
+            <div>4-Bedroom</div>
+        </div>
+        <div class="single">
+            <img src="/images/icon_bath.svg">
+            <div>3-Bathroom</div>
+        </div>
+        <div class="single">
+            <img src="/images/villa.svg">
+            <div>Villa</div>
+        </div>
+    </div>
+    <div class="images_explain">
+        <img src="/images/explain_1.png">
+        <img src="/images/explain_1.png">
+        <img src="/images/explain_1.png">
+    </div>
+   
+</div>
 
 {{-- For Sale --}}
 <div class="col" data-type="For Sale">

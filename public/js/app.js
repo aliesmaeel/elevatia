@@ -145,7 +145,7 @@ $(document).ready(function () {
         });
     });
   
-    $('.services .content .grid-container .desc').each(function() {
+    $('.services .content .grid-container .desc, .content_result .grid-container .desc').each(function() {
         var fullText = $(this).text().trim();
         if (fullText.length > 100) {
           var truncatedText = fullText.substring(0, 100) + '...';
@@ -167,6 +167,18 @@ $(document).ready(function () {
           });
         }
       });
+      $(".faq-question").click(function () {
+        var $item = $(this).closest(".faq-item");
+        var isActive = $item.hasClass("active");
+        if (isActive) {
+            $item.removeClass("active");
+        } 
+
+        else {
+          $item.addClass("active");
+        }
+      });
+   
     
 });
 
