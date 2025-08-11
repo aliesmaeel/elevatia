@@ -1,4 +1,7 @@
 @media(max-width:1199px) and (min-width:992px){
+    .property_details .content .grid_container.grid_desc .details{
+        flex-wrap: wrap;
+    }
     .vision .grid_container{
         grid-template-columns: repeat(2, 1fr);
     }
@@ -19,6 +22,14 @@
 }
 }
 @media(max-width:991px) and (min-width:768px){
+   
+    .features .grid_features{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .property_details .content .grid_container.grid_desc .details{
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
     .blog .grid-container{
         grid-template-columns: repeat(2, 1fr);
     }
@@ -43,6 +54,21 @@
    
 }
 @media(max-width:991px){
+    #contactForm_view .grid_container{
+        display: block;
+     }
+     #contactForm_view .flex_container{
+         flex-direction: column;
+         justify-content: flex-start;
+         align-items: flex-start;
+         
+     }
+    .property_details .content .flex_container.grid_desc{
+        flex-direction: column;
+    }
+    .property_details .content .flex_container.grid_desc .col.big {
+        width: 100%;
+    }    
     .content_result {
         background: linear-gradient(to bottom, #1e1e1e00, #272727 1%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
     }
@@ -73,9 +99,104 @@
     }
 }
 @media(max-width:599px){
-
+    .property_details .content .flex_container.grid_desc .details{
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+    .features .grid_features{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .features .grid_features .col{
+        align-items: flex-start!important;
+    }
+}
+@media(max-width:489px){
+    .property_details .content .grid_container.grid_desc .details{
+        flex-wrap: wrap;
+        justify-content: flex-start !important;
+    }
 }
 @media(max-width:767px){
+    .property_details .similar_boxs .box_simi .cont{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .property_details .content .flex_container.grid_desc .col.small .box_details .flex.btn{
+        flex-direction: column;
+    gap: 0.8rem;
+    }
+    .property_details .box_average .cont .flex_container
+{
+    width:90%;
+    padding: 1rem;
+}
+
+.property_details .box_average .cont .size_flex .flex, .property_details .box_average .cont .price_flex .flex{
+    display: flex
+    ;
+        align-items: flex-start;
+        gap: 3rem;
+        margin-top: 1rem;
+        flex-direction: column;
+}
+  
+    .property_details .content .flex_container.grid_desc .col.small .box_details .flex.btn a {
+        width: 70%;
+    }
+    .calculator .content .text{
+        width: 90%;
+    }
+    .property_details .content .flex_container.grid_desc .col.small{
+        margin-top: 5rem;
+        width: 100%;
+    }
+    .property_details .content .flex_container.grid_desc .col.small .box_details .flex div.fit{
+        width: 90%;
+    }
+    .calculator .content .grid_content{
+        display: block;
+    }
+    .calculator .content .grid_content .input_div{
+        justify-content: space-between;
+    }
+    .calculator .content .grid_content .input_box.submit_col{
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    .features .grid_features{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .property_details .content .flex_container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .property_details .content .grid_container.grid_desc .col{
+        align-items: center;
+    }
+    .property_details .content .grid_container.grid_desc .details{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .property_details .content .grid_container.grid_desc{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .property_details .content .grid_container.grid_desc .col {
+        grid-column: span 1;
+    }
+    /* .property_details .content .grid_container.grid_desc .details{
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    } */
+    .property_details .content .flex-row{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    .property_details .content .grid_container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .property_details .content .grid_container .col:first-of-type{
+        grid-column: span 1;
+    }
     .question .grid_container{
         grid-template-columns: repeat(1, 1fr);
 
