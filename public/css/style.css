@@ -46,6 +46,10 @@ body, html {
     background-color: #fff;
 
 }
+.container{
+      /* position: relative;
+    top: -77px; */
+}
 .container .search-realestate,
 .content{
     max-width: 1400px;
@@ -61,7 +65,8 @@ a{
     margin: 0;
     top:0;
     width: 100%;
-    position: fixed;
+    position: absolute;
+    background-color: transparent !important;
     transition: all 0.3s ease-in-out;
     z-index: 11111;
 
@@ -117,17 +122,18 @@ img.icon{
 
 }
 .search-realestate{
-    width: 95%;
-    position: relative;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    left: 50%;
+  width: 95%;
+  position: relative;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  left: 50%;
 }
 .desc_title{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap:1rem
     
 }
 .main_title{
@@ -138,7 +144,7 @@ img.icon{
 .desc_title .desc{
     font-size: 22px;
     color:rgba(255, 255, 255, 1);
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     text-align: center;
 }
 .input-search{
@@ -175,6 +181,13 @@ img.icon{
 }
 .search_input::placeholder{
     color: rgba(102, 102, 102, 1);
+}
+form.form_search{
+  position: relative;
+  top: -351px;
+}
+.about-section:first-of-type{
+  margin-top: -250px;
 }
 .submit_btn{
     background-color: rgba(206, 166, 105, 1);
@@ -415,11 +428,38 @@ display: none;
 .about-section,
 .question,
 .property_details{
-    background-color: #383838;
-  padding: 5rem 0 0.5rem;
+    /* background-color: #383838; */
+  padding: 2rem 0 1rem;
   position: relative;
   
 
+}
+.blog{
+  padding: 0 !important;
+}
+.blog .bg_empty{
+  height: 240px;
+  margin-top: -240px;
+
+}
+.blog{
+  background-color: transparent !important;
+  padding-top: 0 !important;
+}
+.property_details{
+  background-color: #383838;
+}
+.question,
+.services, .offplan_projects, .team, .blog{
+  background-color: #383838;
+}
+
+.bg_global{
+  background: linear-gradient(to bottom, #1e1e1e00, #272727 3%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
+  position: relative;
+  top: -81px;
+  z-index: 13;
+  padding-top: 7rem;
 }
 .about-section.after_about::after{
     position: absolute;
@@ -472,7 +512,7 @@ display: none;
 .offplan_projects,
 .team,
 .blog{
-    background-color: #383838;
+    /* background-color: #383838; */
     padding: 4rem 0;
     color:rgba(255, 255, 255, 1);
 }
@@ -904,7 +944,22 @@ background-size: cover;
     color:#fff;
     text-align: left;
     margin: 0% 5%;
+   
 }
+.home_page .col.only_search_result.new_villa{
+  display: none !important;
+
+}
+.services .content .title {
+  padding-top: 2rem;
+}
+.services .content .grid-container .desc, .content_result .content .grid-container .desc,
+.services .content .grid-container .title_col,
+.services .content .grid-container .flex_desc, .content_result .content .grid-container .flex_desc,
+.content_result .content .grid-container .title_col{
+  z-index: 11;
+}
+
 .services .content .grid-container .flex_desc,
 .content_result .content .grid-container .flex_desc {
     margin-bottom: 1rem !important;
@@ -1208,6 +1263,11 @@ font-size: 18px;
     font-size: 13px;
     width: 90%;
     margin: 0% auto 5%;
+    text-align: left;
+}
+.blog .grid-container .blog_2_box.col .title_box,
+.blog .grid-container .blog_2_box.col .desc_box{
+  text-align: left;
 }
 .blog .grid-container .date_desc .date{
     display: flex;
@@ -1217,6 +1277,7 @@ font-size: 18px;
 .blog .grid-container .breif{
     font-size: 18px;
     font-weight: 600;
+    text-align: left;
 }
 .blog .grid-container .blog_2_box.col .title_box{
     font-size: 25px;
@@ -1287,7 +1348,7 @@ font-size: 18px;
     background: linear-gradient(to bottom, #1e1e1e00, #272727 1%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
     /* background: linear-gradient(to bottom, #38383800, #272727 20%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%); */
     position: relative;
-    top: -155px;
+    top: -220px;
 }
 .content_result .flex_price .price_col .numb{
     color:#fff
@@ -1299,8 +1360,8 @@ font-size: 18px;
   
 }
 .bg_empty{
-    height:125px;
-    margin-top: -155px;
+    height:220px;
+    margin-top: -220px;
     background-color: #383838;
 }
 .content_result .content .desc_text{
@@ -1437,7 +1498,9 @@ font-size: 18px;
   .faq-item {
     border-bottom: 1px solid #92969C;
   }
-  
+  .faq-item .faq-question{
+    color: white;
+  }
   .faq-question {
     gap:1rem;
     background: none;
@@ -1447,14 +1510,14 @@ font-size: 18px;
     text-align: left;
     font-size: 18px;
     padding: 35px;
-    color: white;
+   
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   
-  .faq-question:hover {
+  .faq-item.active .faq-question {
     color: #CEA669; 
   }
   
@@ -2147,4 +2210,11 @@ color:#CEA669
     font-size: 18px;
     cursor: pointer;
 
+  }
+  /* .search_result .desc_title .desc{
+    margin-bottom: 10rem;
+  } */
+  .search_result form.form_search,
+  .blogs_page form.form_search{
+    top:-30px
   }

@@ -99,6 +99,9 @@
     }
 }
 @media(max-width:599px){
+    /* .home_page .search-realestate .main_title{
+        padding-top: 5rem;
+    } */
     .property_details .content .flex_container.grid_desc .details{
         flex-wrap: wrap;
         justify-content: flex-start;
@@ -118,6 +121,31 @@
     }
 }
 @media(max-width:767px){
+    .services .content .buttons{
+        flex-direction: column;
+        height:fit-content
+    }
+    .services .content .buttons div.active{
+        width: 100%;
+    }
+    .container_buttons .buttons div:last-child {
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .container_buttons .buttons div:first-child {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+    }
+    .about-section .title{
+        font-size: 36px;
+    }
+    .property_details .content .flex-row .name {
+        font-size: 30px;
+    }
     .property_details .similar_boxs .box_simi .cont{
         grid-template-columns: repeat(1, 1fr);
     }

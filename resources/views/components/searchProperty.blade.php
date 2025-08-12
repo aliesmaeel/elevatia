@@ -1,15 +1,6 @@
 <form class="form_search"  method="">
     {{-- search --}}
-    <div class="input-search">
-        <div class="content">
-            <input type="text" placeholder="Search For A Property" name="search" class="search_input"/>
-            <div class="submit_btn">
-                <img src="/images/Icon.svg">
-                <input type="submit" value="Find Property" class="submit">
-            </div>
-        </div>
-        
-    </div>
+    @include('components.search_box')
     <div style="display: flex;justify-content:center;flex-wrap:wrap;gap:0.5rem;margin-top:1rem">
         {{-- type --}}
         <div class="dropdown">

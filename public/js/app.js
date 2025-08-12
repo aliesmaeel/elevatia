@@ -1,26 +1,26 @@
 
-function bgHeader(){
-    var header = $('.header');
-    var scrollTop = $(window).scrollTop();
-    var currentPage = window.location.pathname;
-    if (currentPage === '/') {
-        header.css('background-color', 'transparent');
-        if (scrollTop > 50) {
-            header.css('background-color', '#383838');
-        } else {
-        header.css('background-color', 'transparent');
+// function bgHeader(){
+//     var header = $('.header');
+//     var scrollTop = $(window).scrollTop();
+//     var currentPage = window.location.pathname;
+//     if (currentPage === '/') {
+//         header.css('background-color', 'transparent');
+//         if (scrollTop > 50) {
+//             header.css('background-color', '#383838');
+//         } else {
+//         header.css('background-color', 'transparent');
 
-        }
-    }
-    else {
-        header.css('background-color', '#383838');
-    }
-  }
+//         }
+//     }
+//     else {
+//         header.css('background-color', '#383838');
+//     }
+//   }
 
-  bgHeader();
-  $(window).scroll(function() {
-    bgHeader();
-  });
+//   bgHeader();
+//   $(window).scroll(function() {
+//     bgHeader();
+//   });
 $(document).on('click', function(event) {
     const $sidebar = $('.right-list');
     const $svgIcon = $('img.icon');

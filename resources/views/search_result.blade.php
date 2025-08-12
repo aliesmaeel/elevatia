@@ -24,7 +24,7 @@
     </div>
     <div class="content_result">
         <div class="content first_section">
-            @include('components.seachProperty')
+            @include('components.searchProperty')
             <a class="reset_filter" href="#">
                 Reset all filters
             </a>

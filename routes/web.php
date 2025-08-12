@@ -11,3 +11,6 @@ Route::get('/search_result', function () {
 Route::get('/property_details', function () {
     return view('property_details');
 });
+Route::get('/blogs', function () {
+    return view('blogs');
+});

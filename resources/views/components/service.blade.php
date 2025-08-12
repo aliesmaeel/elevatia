@@ -143,7 +143,7 @@
         </div>
     </div>
 </div>
-<div class="col only_search_result new_villa" data-type="For Rent">
+<div class="col only_search_result new_villa">
     <div class="overlay"></div>
     <img src="/images/banner.png" class="bg">
    
