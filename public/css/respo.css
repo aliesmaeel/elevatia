@@ -58,7 +58,9 @@
    
 }
 @media(max-width:991px){
-   
+    .content_result{
+        background: linear-gradient(to bottom, #1e1e1e00, #272727 4%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
+    }
     #contactForm_view .grid_container{
         display: block;
      }

@@ -1345,7 +1345,7 @@ font-size: 18px;
     padding-bottom: 2rem;
 }
 .content_result{
-    background: linear-gradient(to bottom, #1e1e1e00, #272727 4%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
+    background: linear-gradient(to bottom, #1e1e1e00, #272727 6%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
     /* background: linear-gradient(to bottom, #38383800, #272727 20%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%); */
     position: relative;
     top: -220px;
