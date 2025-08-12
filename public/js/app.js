@@ -1,26 +1,26 @@
 
-function bgHeader(){
-    var header = $('.header');
-    var scrollTop = $(window).scrollTop();
-    var currentPage = window.location.pathname;
-    if (currentPage === '/') {
-        header.css('background-color', 'transparent');
-        if (scrollTop > 50) {
-            header.css('background-color', 'rgba(52, 52, 52, 1)');
-        } else {
-        header.css('background-color', 'transparent');
+// function bgHeader(){
+//     var header = $('.header');
+//     var scrollTop = $(window).scrollTop();
+//     var currentPage = window.location.pathname;
+//     if (currentPage === '/') {
+//         header.css('background-color', 'transparent');
+//         if (scrollTop > 50) {
+//             header.css('background-color', '#383838');
+//         } else {
+//         header.css('background-color', 'transparent');
 
-        }
-    }
-    else {
-        header.css('background-color', 'rgba(52, 52, 52, 1)');
-    }
-  }
+//         }
+//     }
+//     else {
+//         header.css('background-color', '#383838');
+//     }
+//   }
 
-  bgHeader();
-  $(window).scroll(function() {
-    bgHeader();
-  });
+//   bgHeader();
+//   $(window).scroll(function() {
+//     bgHeader();
+//   });
 $(document).on('click', function(event) {
     const $sidebar = $('.right-list');
     const $svgIcon = $('img.icon');
@@ -178,7 +178,50 @@ $(document).ready(function () {
           $item.addClass("active");
         }
       });
-   
+      $('#contactForm_view').on('submit', function (e) {
+        e.preventDefault();
+        let isValid = true;
+        $('.error-message').hide();
+        $('#contactForm_view input[type="text"], #contactForm_view textarea, #contactForm_view select').each(function () {
+            var value = $.trim($(this).val());
+            var placeholder = ($(this).attr('placeholder') || '').toLowerCase();
+            var errorField = $(this).closest('.col').find('.error-message');
+            if (value === '') {
+                errorField.text('This field is required').show();
+                isValid = false;
+                return;
+            }
+            if (placeholder.includes('email')) {
+                var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(value)) {
+                    errorField.text('Please enter a valid email address').show();
+                    isValid = false;
+                }
+            }
+        });
+
+        if (!$('#agreeCheckbox').is(':checked')) {
+            $('#agreeCheckbox').closest('.checkbox_div').find('.error-message')
+                .text('You must agree before submitting').show();
+            isValid = false;
+        }
+        if (isValid) {
+            this.submit();
+        }
+    });
+    
+    $('#contactForm_view input[placeholder*="Email"]').on('input', function() {
+        var val = $(this).val();
+        var errorField = $(this).closest('.col').find('.error-message');
+        if (val.length > 0 && !val.includes('@')) {
+        errorField.text('Email should contain @').show();
+        } else {
+        errorField.hide();
+        }
+    });
+    $('#phoneInput').on('input', function() {
+        this.value = this.value.replace(/\D/g, '');
+      });
     
 });
 

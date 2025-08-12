@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'HomePage')
+@section('title', 'Search Results')
 {{-- header --}}
 @section('header')
     @include('layouts.header')
@@ -24,7 +24,7 @@
     </div>
     <div class="content_result">
         <div class="content first_section">
-            @include('components.seachProperty')
+            @include('components.searchProperty')
             <a class="reset_filter" href="#">
                 Reset all filters
             </a>
@@ -35,14 +35,14 @@
                     <span>1094</span>results
                 </b>
             </div>
-            <div class="grid-container">
+            <div class="grid-container" data-aos="fade-up">
                 @include('components.service')
             </div>
          </div>
     </div>
     <div class="bg_empty"></div>
-    <div class="question">
-        <div class="content">
+    <div class="question" >
+        <div class="content" data-aos="fade-up">
             <giv class="grid_container">
                 <div class="text">
                     <div class="title">Frequently Asked <br>Question</div>
@@ -62,7 +62,7 @@
                               Proin nec ante vitae purus tempus egestas. Curabitur euismod
                               purus sed elit faucibus. Vivamus in ante sed libero feugiat fermentum.
                             </p>
-                          </div>
+                          </div>                                             
                         </div>
                       
                         <div class="faq-item">
