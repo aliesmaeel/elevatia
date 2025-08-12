@@ -22,6 +22,10 @@
 }
 }
 @media(max-width:991px) and (min-width:768px){
+    .home_page .bg_global{
+        background: linear-gradient(to bottom, #1e1e1e00, #272727 5%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
+
+      }
    
     .features .grid_features{
         grid-template-columns: repeat(3, 1fr);
@@ -54,6 +58,7 @@
    
 }
 @media(max-width:991px){
+   
     #contactForm_view .grid_container{
         display: block;
      }
@@ -69,9 +74,9 @@
     .property_details .content .flex_container.grid_desc .col.big {
         width: 100%;
     }    
-    .content_result {
+    /* .content_result {
         background: linear-gradient(to bottom, #1e1e1e00, #272727 1%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
-    }
+    } */
     .offplan_projects .main_content .flex_container .col{
         width:100%
     }
@@ -121,6 +126,19 @@
     }
 }
 @media(max-width:767px){
+    .about-section:first-of-type{
+        margin-top: -305px;
+    }
+    .search_result form.form_search{
+        top: 22px;
+      }
+      .search_result .content_result{
+        background: linear-gradient(to bottom, #1e1e1e00, #272727 3%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
+
+      }
+    .bg_global{
+        background: linear-gradient(to bottom, #1e1e1e00, #272727 2%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
+    }
     .services .content .buttons{
         flex-direction: column;
         height:fit-content

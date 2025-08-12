@@ -144,7 +144,7 @@ img.icon{
 .desc_title .desc{
     font-size: 22px;
     color:rgba(255, 255, 255, 1);
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
     text-align: center;
 }
 .input-search{
@@ -187,7 +187,7 @@ form.form_search{
   top: -351px;
 }
 .about-section:first-of-type{
-  margin-top: -250px;
+  margin-top: -170px;
 }
 .submit_btn{
     background-color: rgba(206, 166, 105, 1);
@@ -455,7 +455,7 @@ display: none;
 }
 
 .bg_global{
-  background: linear-gradient(to bottom, #1e1e1e00, #272727 3%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
+  background: linear-gradient(to bottom, #1e1e1e00, #272727 6%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
   position: relative;
   top: -81px;
   z-index: 13;
@@ -1345,7 +1345,7 @@ font-size: 18px;
     padding-bottom: 2rem;
 }
 .content_result{
-    background: linear-gradient(to bottom, #1e1e1e00, #272727 1%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
+    background: linear-gradient(to bottom, #1e1e1e00, #272727 4%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
     /* background: linear-gradient(to bottom, #38383800, #272727 20%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%); */
     position: relative;
     top: -220px;
@@ -2216,5 +2216,28 @@ color:#CEA669
   } */
   .search_result form.form_search,
   .blogs_page form.form_search{
-    top:-30px
+    top:0px
   }
+  /* .blogs_page .search-realestate {
+    top:50%
+  } */
+  .search_result .search-realestate {
+    top:45%
+  }
+  .search_result form.form_search{
+    top: 54px;
+  }
+  .search_result .content_result form {
+    padding-bottom: 100px;
+}
+.home_page .blog{
+  background-color: #383838 !important;
+
+}
+.home_page form.form_search{
+  width: 90%;
+  margin: 0 auto;
+}
+.search_result .desc_title .desc{
+  margin-bottom: 2rem;
+}
