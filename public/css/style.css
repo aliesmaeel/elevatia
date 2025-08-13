@@ -2111,7 +2111,7 @@ color:#CEA669
     height: 115px;
   }
   #contactForm_view .grid_container .col.col_3{
-    height: 227px;
+    height: 250px;
   }
   #contactForm_view .grid_container .col{
     display: flex
@@ -2240,4 +2240,107 @@ color:#CEA669
 }
 .search_result .desc_title .desc{
   margin-bottom: 2rem;
+}
+/* .contact_us{
+  background-color: #383838;
+} */
+.contact_us .search-realestate {
+  top:50%
+}
+.get_started {
+   background: linear-gradient(to bottom, #1e1e1e00, #272727 6%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
+
+}
+.get_started .title{
+text-align: center;
+padding: 1rem 0;
+color: #C6A45A;
+font-weight: 700;
+font-size: 40px;
+}
+.get_started .desc{
+  text-align: center;
+  color:#fff;
+  padding: 1rem 0;
+  font-size: 19px;
+  
+}
+.get_started .grid-container{
+  padding: 2rem 0;
+  display: grid
+;
+    align-items: center;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  
+}
+.get_started{
+  padding-bottom: 3rem;
+  position: relative;
+  top: -93px;
+  z-index: 11;
+  padding-top: 7rem;
+}
+
+.get_started .grid-container .col{
+  display: flex
+  ;
+      flex-direction: column;
+      position: relative;
+      align-items: center;
+      justify-content: space-around;
+      gap: 1rem;
+      background: linear-gradient(to top left, rgb(144 144 144) 4% 0%, rgb(74 74 74), rgb(74 74 74), rgb(144 144 144));
+      border-radius: 43px;
+      padding: 2rem 1rem;
+      min-height: 353px;
+}
+.get_started .grid-container .col img{
+  width: 106px;
+  object-fit: cover;
+  
+}
+.get_started .grid-container .col .sub_title{
+  font-size: 25px;
+  font-weight: 600;
+  color: #fff;
+  
+}
+.get_started .grid-container .col .sub_desc{
+  color: #A9AFC3;
+    display: flex
+;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.6rem;
+    font-size: 22px;
+  
+}
+.get_started .grid-container .col .sub_desc a{
+  color: #A9AFC3;
+
+}
+.talking_expert{
+  padding: 1rem 0 5rem;
+  background-color: #383838;
+
+}
+.talking_expert .title{
+  color: #fff;
+  font-weight: 700;
+  font-size: 40px;
+  
+}
+.talking_expert .desc{
+  padding: 1rem 0 2rem;
+  color: #999999;
+  font-size: 19px;
+}
+.talking_expert .type_group,
+.talking_expert .date_group{
+  display: none !important;
+}
+.talking_expert .time_group{
+  grid-column: span 3;
 }

@@ -14,3 +14,7 @@ Route::get('/property_details', function () {
 Route::get('/blogs', function () {
     return view('blogs');
 });
+
+Route::get('/contact_us', function () {
+    return view('contact_us');
+});

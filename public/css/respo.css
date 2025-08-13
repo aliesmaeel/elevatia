@@ -9,7 +9,8 @@
         grid-template-columns: repeat(2, 1fr);
     }
     .services .content .grid-container,
-    .content_result .content .grid-container{
+    .content_result .content .grid-container,
+    .get_started .grid-container{
        
         grid-template-columns: repeat(2, 1fr);
        
@@ -22,6 +23,11 @@
 }
 }
 @media(max-width:991px) and (min-width:768px){
+    .get_started .grid-container{
+       
+        grid-template-columns: repeat(2, 1fr);
+       
+    }
     .home_page .bg_global{
         background: linear-gradient(to bottom, #1e1e1e00, #272727 5%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
 
@@ -128,6 +134,18 @@
     }
 }
 @media(max-width:767px){
+    .get_started{
+       
+        top: -173px;
+      
+        padding-top: 9rem;
+      }
+      
+    .get_started .grid-container{
+       
+        grid-template-columns: repeat(1, 1fr);
+       
+    }
     .about-section:first-of-type{
         margin-top: -305px;
     }
