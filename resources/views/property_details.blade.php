@@ -8,7 +8,7 @@
 {{-- main page --}}
 @section('content')
     <div class="property_details container">
-        <div class="content">
+        <div class="content" >
            <div class="flex-row">
                 <div class="name">High-rise Townhouse In califorlia</div>
                 <div class="price">$425,000 </div>
@@ -30,7 +30,7 @@
                     1,200/Sq Ft
                 </div>
             </div>
-            <div class="flex-row">
+            <div class="flex-row" >
                 <div class="first">
                     <img src="/images/location.svg">
                     <div>Southwestern Ontario, Ontario, Canada</div>
@@ -49,7 +49,7 @@
                     <img src="/images/house.png">
                 </div>
             </div>
-            <div class="flex_container grid_desc">
+            <div class="flex_container grid_desc" data-aos="fade-up">
                 <div class="col big">
                     <div class="title">Description</div>
                     <div class="desc">
@@ -314,7 +314,7 @@
                 </div>
                
             </div>
-            <div class="box_average">
+            <div class="box_average" data-aos="fade-up">
                 <div class="cont">
                     <div class="main_title">Average prices</div>
                     <div class="flex_container first_titles">
@@ -433,7 +433,7 @@
                     </div>
                 </div>
             </div>
-            <div class="book_view">
+            <div class="book_view" data-aos="fade-up">
                 <div class="cont">
                     <div class="main_title">Book your viewing</div>
                     <div class="desc">

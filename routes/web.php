@@ -18,3 +18,6 @@ Route::get('/blogs', function () {
 Route::get('/contact_us', function () {
     return view('contact_us');
 });
+Route::get('/about_us', function () {
+    return view('about_us');
+});

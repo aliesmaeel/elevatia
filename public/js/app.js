@@ -290,3 +290,27 @@ $('input[name="min_price"], input[name="max_price"]').on('input', function() {
         $('#price-error').hide();
     }
 });
+var swiper_expert = new Swiper('.swiper_expert', {
+    slidesPerView: 4,
+    
+    effect: 'slide',
+    speed: 500,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      1200: {
+        slidesPerView: 4,
+      },
+      1199: {
+        slidesPerView: 3,
+      },
+      600:{
+        slidesPerView: 2,
+      },
+      0: {
+        slidesPerView: 1,
+      },
+    }
+  });

@@ -2232,6 +2232,7 @@ color:#CEA669
 }
 .home_page .blog{
   background-color: #383838 !important;
+  padding: 4rem 0 5rem !important;
 
 }
 .home_page form.form_search{
@@ -2247,7 +2248,8 @@ color:#CEA669
 .contact_us .search-realestate {
   top:50%
 }
-.get_started {
+.get_started,
+.about_us {
    background: linear-gradient(to bottom, #1e1e1e00, #272727 6%, #3a3a3a 40%, #383838 100%, #58585800 0% 73%);
 
 }
@@ -2321,7 +2323,8 @@ font-size: 40px;
   color: #A9AFC3;
 
 }
-.talking_expert{
+.talking_expert,
+.our_expert{
   padding: 1rem 0 5rem;
   background-color: #383838;
 
@@ -2343,4 +2346,236 @@ font-size: 40px;
 }
 .talking_expert .time_group{
   grid-column: span 3;
+}
+.about_page .about_us{
+  padding-bottom: 3rem;
+  position: relative;
+  top: -149px;
+  z-index: 11;
+  padding-top: 13rem;
+
+}
+.about_page .about_us .title,
+.about_page  .our_expert .title{
+  position: relative;
+  color: #C6A45A;
+  font-size: 19px;
+  font-weight: 700;
+  left: 90px;
+  
+}
+.about_page .about_us .title::before,
+.about_page  .our_expert .title::before{
+  background-color: #C6A45A;
+  position: absolute;
+  content: '';
+  width: 77px;
+  height: 1px;
+  left: -47px;
+  top: 50%;
+  transform: translate(-50%);
+}
+.about_page .about_us .flex_col{
+  padding: 2rem 0;
+  display: flex
+;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.about_page .about_us .flex_col .col{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 7rem;
+  
+}
+
+.about_page .about_us .flex_col .col:nth-child(2) .second{
+  order:-1
+}
+.about_page .about_us .flex_col .col:first-child .title2{
+  font-size: 52px;
+
+}
+.about_page  .our_expert .title2{
+  font-size: 52px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 58px;
+  padding: 3rem 0 0;
+  width: 90%;
+
+}
+.about_page  .our_expert .title2 .flex{
+  display: flex
+  ;
+      gap: 2rem;
+
+
+}
+.about_page  .our_expert .title2 .circle{
+  width: 10px;
+  height: 10px;
+  background: #C6A45A;
+  border-radius: 50%;
+
+}
+.about_page .about_us .flex_col .col .title2{
+  font-size: 25px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 58px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap:1rem
+  
+}
+.about_page .about_us .flex_col .col .desc,
+.about_page .our_expert .desc{
+  color: #fff;
+  padding-top: 2rem;
+  font-size: 19px;
+  
+}
+
+.about_page .about_us .flex_col .circle{
+  display: flex
+  ;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  
+}
+.about_page .about_us .flex_col .col .first{
+  width: 100%;
+
+}
+.about_page .about_us .flex_col .col .second{
+  width: 85%;
+  position: relative;
+  left: 5%;
+  
+}
+.about_page .about_us .flex_col .circle img{
+  width: 300px;
+  object-fit: cover;
+  
+}
+.about_page .about_us .flex_col .circle .number_desc{
+  position: absolute;
+  color: #fff;
+  display: flex
+;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.about_page .about_us .flex_col .circle .number_desc span{
+  font-size: 66px;
+
+}
+.about_page .about_us .flex_col .circle .number_desc div{
+  font-size: 18px;
+  
+}
+.about_page .swiper_expert{
+  position: relative;
+  padding: 7rem 0 4rem;
+  overflow: hidden;
+  color: white;
+}
+.about_page .swiper_expert .swiper-slide.swiper-slide-active{
+  background: url(/images/bg_gradient.png);
+  transform: scale(1.05); 
+  z-index: 2;
+  transform: scale(1.05);
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.about_page .swiper_expert .swiper-slide{
+  flex-shrink: 0;
+  position: relative;
+  transition: transform 0.3s ease;
+  width: auto; /* Let Swiper calculate */
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  /* background: linear-gradient(
+    to bottom,
+    rgb(114 114 114) 28%,
+    rgb(120 120 120 / 80%),
+    rgb(69 69 69 / 70%),
+    rgb(81 79 79 / 70%)
+  ); */
+  /* box-shadow: rgb(255 255 255 / 10%) 0px 3px 12px; */
+}
+.about_page .swiper_expert .swiper-slide::before{
+  width:100%;
+  height:100%;
+  position: absolute;
+  content: '';
+  background: linear-gradient(to bottom, rgb(146 146 146) 28%, rgb(84 82 82 / 80%), rgb(50 49 49 / 70%), rgb(63 63 63 / 60%));
+}
+.about_page  .bg_empty {
+  height: 108px;
+}
+.about_page .swiper_expert .member-img {
+     width: 90%;
+    padding-top: 5%;
+    object-fit: cover;
+    margin: 0 auto;
+    position: relative;
+}
+.about_page .swiper_expert .member-info{
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+.about_page .swiper_expert .arrow{
+  padding-top: 1.4rem;
+  position: relative;
+}
+.about_page .swiper_expert .swiper-button-next,
+.about_page .swiper_expert .swiper-button-prev{
+  top:40px !important;
+
+}
+
+.about_page .swiper_expert .swiper-button-prev {
+  color: #fff; /* white text */
+  font-size: 14px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #fff; 
+  padding-bottom: 3px;
+  width:50px
+}
+
+.about_page .swiper_expert .swiper-button-next {
+  color: #C6A45A; /* orange text */
+  width:50px;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #C6A45A;
+  padding-bottom: 3px;
+}
+
+/* Remove default Swiper arrow icons */
+.about_page .swiper_expert .swiper-button-next:after,
+.about_page .swiper_expert .swiper-button-prev:after {
+  display: none;
+}
+.about_page .swiper_expert .swiper-button-prev{
+  left: 87% !important;
+}
+.about_page .swiper_expert .member-name{
+  padding: 0 0 0.3rem;
+  font-size: 19px;
 }

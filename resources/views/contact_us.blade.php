@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="get_started">
-            <div class="content">
+            <div class="content" data-aos="fade-up">
                 <div class="title">Get Started</div>
                 <div class="desc">
                     Take the first step towards achieving your real estate goals by talking 
@@ -55,7 +55,7 @@
         </div>
         <div class="bg_empty"></div>
             <div class="talking_expert">
-                <div class="content">
+                <div class="content" data-aos="fade-up">
                     <div class="title">Talk To An Expert</div>
                     <div class="desc">
                         Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect 
