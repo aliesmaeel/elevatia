@@ -21,3 +21,6 @@ Route::get('/contact_us', function () {
 Route::get('/about_us', function () {
     return view('about_us');
 });
+Route::get('/details_blog', function () {
+    return view('details_blog');
+});
