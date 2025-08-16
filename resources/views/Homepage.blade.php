@@ -24,7 +24,7 @@
 
                 {{-- about --}}
                 <div class="about-section">
-                        <div class="content"  >
+                        <div class="content"data-aos="fade-up"  >
                             <div class="text-content col-flex" >
                                 <div class="title">ABOUT ELEVATIA</div>
                                 <div class="desc">
@@ -43,7 +43,7 @@
 
                 {{-- vision --}}
                 <div class="about-section after_about">
-                    <div class="content" >
+                    <div class="content"data-aos="fade-up" >
                         <div class="text-content col-flex" >
                             <div class="title">Our Vision</div>
                             <div class="desc">
@@ -86,7 +86,7 @@
 
                 {{-- Mission --}}
                 <div class="about-section">
-                    <div class="content" >
+                    <div class="content"data-aos="fade-up" >
                         <div class="text-content col-flex" >
                             <div class="title">Our Mission</div>
                             <div class="desc">
@@ -150,7 +150,7 @@
 
             {{-- EXPLORE RECENT OFF PLAN PROJECTS --}}
             <div class="offplan_projects">
-                <div class="content">
+                <div class="content" data-aos="fade-up">
                     <div class="text-content">
                         <div class="title">
                             EXPLORE RECENT OFF PLAN PROJECTS
@@ -186,7 +186,7 @@
 
             {{-- Our Team --}}
             <div class="team">
-                <div class="content">
+                <div class="content" data-aos="fade-up">
                     <div class="text-content">
                         <div class="title">
                             Our Team
@@ -208,7 +208,7 @@
 
             {{-- Our Blogs --}}
             <div class="blog">
-                <div class="content">
+                <div class="content" data-aos="fade-up">
                     <div class="title">Our Blogs</div>
                     <div class="grid-container">
                         @include('components.blog_item')

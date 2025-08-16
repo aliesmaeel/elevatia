@@ -8,7 +8,7 @@
 {{-- main page --}}
 @section('content')
     <div class="property_details container">
-        <div class="content">
+        <div class="content" >
            <div class="flex-row">
                 <div class="name">High-rise Townhouse In califorlia</div>
                 <div class="price">$425,000 </div>
@@ -30,7 +30,7 @@
                     1,200/Sq Ft
                 </div>
             </div>
-            <div class="flex-row">
+            <div class="flex-row" >
                 <div class="first">
                     <img src="/images/location.svg">
                     <div>Southwestern Ontario, Ontario, Canada</div>
@@ -49,7 +49,7 @@
                     <img src="/images/house.png">
                 </div>
             </div>
-            <div class="flex_container grid_desc">
+            <div class="flex_container grid_desc" data-aos="fade-up">
                 <div class="col big">
                     <div class="title">Description</div>
                     <div class="desc">
@@ -314,7 +314,7 @@
                 </div>
                
             </div>
-            <div class="box_average">
+            <div class="box_average" data-aos="fade-up">
                 <div class="cont">
                     <div class="main_title">Average prices</div>
                     <div class="flex_container first_titles">
@@ -433,94 +433,14 @@
                     </div>
                 </div>
             </div>
-            <div class="book_view">
+            <div class="book_view" data-aos="fade-up">
                 <div class="cont">
                     <div class="main_title">Book your viewing</div>
                     <div class="desc">
                         Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect
                          match. Don't wait; let's embark on this exciting journey together.
                     </div>
-                    <form id="contactForm_view">
-                        <div class="grid_container">
-                            <div class="col">
-                                <div class="desc_text">Full Name</div>
-                                <div class="input_div">
-                                    <input type="text" placeholder="Enter First Name"/>
-                                </div>
-                                <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
-                            </div>
-                            <div class="col">
-                                <div class="desc_text">Your Phone</div>
-                                <div class="input_div">
-                                    <img src="/images/ph_white.svg">
-                                    <input type="text" id="phoneInput" placeholder="Enter Your Number"/>
-                                </div>
-                                <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
-                            </div>
-                            <div class="col">
-                                <div class="desc_text">Your Email</div>
-                                <div class="input_div">
-                                    <img src="/images/email_white.svg">
-                                    <input type="text" placeholder="Enter Your Email"/>
-                                </div>
-                                <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
-                            </div>
-                            <div class="col select_group">
-                                <div class="desc_text">Preferred Time</div>
-                                <div class="input_div">
-                                    <select id="time" name="time">
-                                        <option value="">Select Time</option>
-                                        <option value="option1">option1</option>
-                                        <option value="option2">option2</option>
-                                        <option value="option3">option3</option>
-                                      </select>
-                                </div>
-                                <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
-                            </div>
-                            <div class="col select_group">
-                                <div class="desc_text">Preferred Date</div>
-                                <div class="input_div">
-                                    <select id="date" name="date">
-                                        <option value="">Select Date</option>
-                                        <option value="option1">option1</option>
-                                        <option value="option2">option2</option>
-                                        <option value="option3">option3</option>
-                                      </select>
-                                </div>
-                                <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
-                            </div>
-                            <div class="col select_group">
-                                <div class="desc_text">Property Type</div>
-                                <div class="input_div">
-                                    <select id="type" name="type">
-                                        <option value="">Select Type</option>
-                                        <option value="option1">option1</option>
-                                        <option value="option2">option2</option>
-                                        <option value="option3">option3</option>
-                                      </select>
-                                </div>
-                                <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
-                            </div>
-                            <div class="col col_3">
-                                <div class="desc_text">Message</div>
-                                <div class="input_div">
-                                    <textarea placeholder="Enter your Message here.." cols="3" rows="5"></textarea>
-                                </div>
-                                <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
-                            </div>
-                            
-                        </div>
-                        <div class="flex_container">
-                            <div class="checkbox_div">
-                                <label>
-                                    <input type="checkbox" id="agreeCheckbox"> I agree to the terms and conditions
-                                </label>
-                                <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
-                            </div>
-                            <button class="submit_view" type="submit">Send Your Message</button>
-                        </div>
-                        <img src="/images/bt.png" class="abs_img">
-                    </form>
+                    @include('components.contact_form')
                 </div>
             </div>
        

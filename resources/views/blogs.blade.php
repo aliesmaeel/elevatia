@@ -9,7 +9,7 @@
 @section('content')
 <div class="blogs_page container blog">
     {{-- banner --}}
-    <div style="position:relative;height: 100vh;" >
+    <div style="position:relative;height: 110vh;" >
         <img src="/images/banner.png" class="banner">
         <div class="search-realestate">
             <div class="desc_title">
