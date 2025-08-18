@@ -32,7 +32,7 @@ jobs:
             sudo chown -R www-data:www-data storage bootstrap/cache
             sudo chmod -R 775 storage bootstrap/cache
 
-            sudo composer install --no-interaction --prefer-dist --optimize-autoloader
+            sudo composer install
 
             sudo php artisan config:clear
             sudo php artisan route:clear
