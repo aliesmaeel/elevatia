@@ -5,37 +5,26 @@
     <title>{{ $businessCard->name }} - Business Card</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        body{
-            height: 700px;
+        body {
+            min-height: 100vh; /* full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f3f4f6; /* Tailwind gray-100 */
         }
 
-
-
-        /* Tablet / desktop */
-        @media (min-width: 200px) and (max-width: 700px) {
-            .business-card {
-                width: 80%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                margin: auto;
-            }
-
-
+        .business-card {
+            width: 40%;
+            max-width: 400px; /* prevent too wide on desktop */
+            height: auto; /* let content define height */
+            margin: auto;
         }
 
-        /* Large screens >1500px */
-        @media (min-width: 710px) and (max-width: 1500px) {
+        @media (max-width: 767px) {
             .business-card {
-                width: 40%; /* example */
-                height: 500px;
-                margin:auto ;
+                width: 90%; /* better for small screens */
             }
         }
-
-
-
-
 
 
     </style>
