@@ -1145,6 +1145,11 @@ hr{
   height: 400px;
   object-fit: contain;
   border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+.offplan_projects .main_content .flex_container img:hover{
+  opacity: 0.7;
+   transform: scale(1.05);
 }
 .team_swiper{
   position: relative;
@@ -1181,7 +1186,7 @@ hr{
 .team .swiper-slide {
   width: 434px;
   background: #fff;
-  padding: 1rem;
+  padding: 0.5rem;
   margin-right: 1rem;
   height: 217px;
   border-radius: 27px;
