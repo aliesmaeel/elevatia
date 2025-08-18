@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <title>{{ $businessCard->name }} - Business Card</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body{
+            height: 800px;
+        }
+        .business-card {
+            width: 90%; /* default for mobile */
+            max-width: 600px; /* optional, prevents it from getting too wide */
+            margin-top: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .business-card {
+                width: 100%; /* desktop */
+            }
+        }
+    </style>
+
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-<div class="bg-white rounded-xl shadow-lg w-full max-w-md mx-4 overflow-hidden">
+<body class="bg-gray-100 flex items-center justify-center ">
+<div class="bg-white rounded-xl shadow-lg overflow-hidden business-card">
+
     <!-- logo -->
     <div class="flex items-center justify-center h-40 sm:h-48 bg-cover bg-center"
          style="background-image: url({{ asset('logo.jpg') }});">
