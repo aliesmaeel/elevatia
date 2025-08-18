@@ -178,20 +178,21 @@ $(document).ready(function () {
           $item.addClass("active");
         }
       });
-      $('#contactForm_view').on('submit', function (e) {
+      // Form submit validation
+    $('#contactForm_view').on('submit', function (e) {
         e.preventDefault();
         let isValid = true;
         $('.error-message').hide();
+
         $('#contactForm_view input[type="text"], #contactForm_view textarea, #contactForm_view select').each(function () {
             var value = $.trim($(this).val());
             var placeholder = ($(this).attr('placeholder') || '').toLowerCase();
             var errorField = $(this).closest('.col').find('.error-message');
+
             if (value === '') {
                 errorField.text('This field is required').show();
                 isValid = false;
-                return;
-            }
-            if (placeholder.includes('email')) {
+            } else if (placeholder.includes('email')) {
                 var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailPattern.test(value)) {
                     errorField.text('Please enter a valid email address').show();
@@ -205,24 +206,63 @@ $(document).ready(function () {
                 .text('You must agree before submitting').show();
             isValid = false;
         }
+
         if (isValid) {
             this.submit();
         }
     });
-    
-    $('#contactForm_view input[placeholder*="Email"]').on('input', function() {
-        var val = $(this).val();
+
+    // validation for all text/textarea inputs
+    $('#contactForm_view input[type="text"], #contactForm_view textarea').on('input', function () {
+        var value = $.trim($(this).val());
+        var placeholder = ($(this).attr('placeholder') || '').toLowerCase();
         var errorField = $(this).closest('.col').find('.error-message');
-        if (val.length > 0 && !val.includes('@')) {
-        errorField.text('Email should contain @').show();
+
+        if (value === '') {
+            errorField.text('This field is required').show();
+        } else if (placeholder.includes('email')) {
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                errorField.text('Please enter a valid email address').show();
+            } else {
+                errorField.hide();
+            }
         } else {
-        errorField.hide();
+            errorField.hide();
         }
     });
-    $('#phoneInput').on('input', function() {
+
+    // validation for selects
+    $('#contactForm_view select').on('change', function () {
+        var value = $(this).val();
+        var errorField = $(this).closest('.col').find('.error-message');
+        if (value === '') {
+            errorField.text('This field is required').show();
+        } else {
+            errorField.hide();
+        }
+    });
+
+    // only numbers + live error
+    $('#phoneInput').on('input', function () {
         this.value = this.value.replace(/\D/g, '');
-      });
-    
+        var errorField = $(this).closest('.col').find('.error-message');
+        if (this.value === '') {
+            errorField.text('This field is required').show();
+        } else {
+            errorField.hide();
+        }
+    });
+
+    // Checkbox validation
+    $('#agreeCheckbox').on('change', function () {
+        var errorField = $(this).closest('.checkbox_div').find('.error-message');
+        if ($(this).is(':checked')) {
+            errorField.hide();
+        } else {
+            errorField.text('You must agree before submitting').show();
+        }
+    });
+
 });
 
 function initializeSwipers(selector) {

@@ -40,6 +40,11 @@
 }
 }
 @media(max-width:991px) and (min-width:768px){
+    .property_details .content .flex_container.grid_desc .col.small,
+    .property_details .similar_boxs .box_simi .cont{
+        margin-top: 5rem;
+        width: 100%;
+    }
     .details_blog_page .details_blog{
         top: -200px;
         padding-top: 17rem;

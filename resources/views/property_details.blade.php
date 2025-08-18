@@ -161,9 +161,9 @@
                     </div>
                     <div class="calculator">
                         <div class="content">
-                            <div class="title">Mortgage Calculator</div>
-                            <div class="text">Estimate your monthly mortgage payments</div>
-                            <form>
+                            <div class="title px_2">Mortgage Calculator</div>
+                            <div class="text pl_2 top">Estimate your monthly mortgage payments</div>
+                            <form >
                                 <div class="grid_content">
                                     <div class="input_box">
                                         <div class="text">Property Price</div>
@@ -198,7 +198,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <div class="payment_value">
+                            <div class="payment_value pl_2">
                                 <div>Monthly Payment</div>
                                 <div>AED 13,329</div>
                             </div>
@@ -206,8 +206,8 @@
                     </div>
                     <div class="calculator">
                         <div class="content">
-                            <div class="title">Rental Yield Calculator</div>
-                            <div class="text">Calculate the gross and net rental yields on a property.</div>
+                            <div class="title px_2">Rental Yield Calculator</div>
+                            <div class="text pl_2 top">Calculate the gross and net rental yields on a property.</div>
                             <form>
                                 <div class="grid_content">
                                     <div class="input_box">
@@ -243,7 +243,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <div class="payment_value">
+                            <div class="payment_value pl_2">
                                 <div class="flex">
                                     <div>
                                         <div>Net Rent</div>
