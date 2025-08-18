@@ -6,19 +6,38 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         body{
-            height: 800px;
-        }
-        .business-card {
-            width: 90%; /* default for mobile */
-            max-width: 600px; /* optional, prevents it from getting too wide */
-            margin-top: 10px;
+            height: 700px;
         }
 
-        @media (min-width: 768px) {
+
+
+        /* Tablet / desktop */
+        @media (min-width: 200px) and (max-width: 700px) {
             .business-card {
-                width: 100%; /* desktop */
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin: auto;
+            }
+
+
+        }
+
+        /* Large screens >1500px */
+        @media (min-width: 710px) and (max-width: 1500px) {
+            .business-card {
+                width: 40%; /* example */
+                height: 500px;
+                margin:auto ;
             }
         }
+
+
+
+
+
+
     </style>
 
 </head>
