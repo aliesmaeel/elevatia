@@ -6,39 +6,30 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-<div class="bg-white rounded-xl shadow-lg max-w-sm w-full overflow-hidden">
-
-    <!-- 1️⃣ Company Logo Section -->
-    <div class=" flex items-center justify-center p-4"
-    style="background-image: url({{ asset('logo.jpg') }});
-    height: 200px; background-size: cover;background-repeat: no-repeat">
-
+<div class="bg-white rounded-xl shadow-lg w-full max-w-md mx-4 overflow-hidden">
+    <!-- logo -->
+    <div class="flex items-center justify-center h-40 sm:h-48 bg-cover bg-center"
+         style="background-image: url({{ asset('logo.jpg') }});">
     </div>
 
-    <!-- 2️⃣ Name, Title, Company Name -->
+    <!-- name, title, company -->
     <div class="text-center p-4 border-b">
-        <h1 class="text-2xl font-bold">{{ $businessCard->name }}</h1>
+        <h1 class="text-xl sm:text-2xl font-bold">{{ $businessCard->name }}</h1>
         <p class="text-gray-600">{{ $businessCard->job_title }}</p>
         <p class="text-gray-500">{{ $businessCard->company_name }}</p>
     </div>
 
-    <!-- 3️⃣ Clickable Email and Phone -->
+    <!-- email & phone -->
     <div class="text-center p-4 border-b space-y-2">
         <p>
-            <span>📧</span>
-            <a href="mailto:{{ $businessCard->email }}" class="text-blue-500 hover:underline">
-                {{ $businessCard->email }}
-            </a>
+            📧 <a href="mailto:{{ $businessCard->email }}" class="text-blue-500 hover:underline">{{ $businessCard->email }}</a>
         </p>
         <p>
-            <span>📞</span>
-            <a href="tel:{{ $businessCard->phone }}" class="text-blue-500 hover:underline">
-                {{ $businessCard->phone }}
-            </a>
+            📞 <a href="tel:{{ $businessCard->phone }}" class="text-blue-500 hover:underline">{{ $businessCard->phone }}</a>
         </p>
     </div>
 
-    <!-- 4️⃣ Contact Us Section -->
+    <!-- contact & vcard -->
     <div class="text-center p-4 space-y-2">
         <p>Email: {{ $businessCard->email }}</p>
         <p>Phone: {{ $businessCard->phone }}</p>
@@ -48,9 +39,7 @@
             Add to Contacts
         </a>
     </div>
-
-
-
 </div>
+
 </body>
 </html>
