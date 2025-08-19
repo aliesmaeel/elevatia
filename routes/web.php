@@ -26,7 +26,12 @@ Route::get('/about_us', function () {
 Route::get('/details_blog', function () {
     return view('details_blog');
 });
-
+Route::get('/our_team', function () {
+    return view('our_team');
+});
+Route::get('/offplan', function () {
+    return view('offplan');
+});
 Route::get('/business-card/{businessCard}', function (BusinessCard $businessCard) {
     return view('business-card-public', compact('businessCard'));
 })->name('business-card.show');

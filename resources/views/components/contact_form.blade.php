@@ -5,7 +5,7 @@
             <div class="input_div">
                 <input type="text" placeholder="Enter First Name"/>
             </div>
-            <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
+            <div class="error-message" style="color:#CEA669; font-size:13px; display:none;">This field is required</div>
         </div>
         <div class="col">
             <div class="desc_text">Your Phone</div>
@@ -13,7 +13,7 @@
                 <img src="/images/ph_white.svg">
                 <input type="text" id="phoneInput" placeholder="Enter Your Number"/>
             </div>
-            <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
+            <div class="error-message" style="color:#CEA669; font-size:13px; display:none;">This field is required</div>
         </div>
         <div class="col">
             <div class="desc_text">Your Email</div>
@@ -21,7 +21,7 @@
                 <img src="/images/email_white.svg">
                 <input type="text" placeholder="Enter Your Email"/>
             </div>
-            <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
+            <div class="error-message" style="color:#CEA669; font-size:13px; display:none;">This field is required</div>
         </div>
         <div class="col select_group time_group">
             <div class="desc_text">Preferred Time</div>
@@ -33,7 +33,7 @@
                     <option value="option3">option3</option>
                   </select>
             </div>
-            <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
+            <div class="error-message" style="color:#CEA669; font-size:13px; display:none;">This field is required</div>
         </div>
         <div class="col select_group date_group">
             <div class="desc_text">Preferred Date</div>
@@ -45,7 +45,7 @@
                     <option value="option3">option3</option>
                   </select>
             </div>
-            <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
+            <div class="error-message" style="color:#CEA669; font-size:13px; display:none;">This field is required</div>
         </div>
         <div class="col select_group type_group">
             <div class="desc_text">Property Type</div>
@@ -57,14 +57,14 @@
                     <option value="option3">option3</option>
                   </select>
             </div>
-            <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
+            <div class="error-message" style="color:#CEA669; font-size:13px; display:none;">This field is required</div>
         </div>
         <div class="col col_3">
             <div class="desc_text">Message</div>
             <div class="input_div">
                 <textarea placeholder="Enter your Message here.." cols="3" rows="5"></textarea>
             </div>
-            <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
+            <div class="error-message" style="color:#CEA669; font-size:13px; display:none;">This field is required</div>
         </div>
         
     </div>
@@ -73,7 +73,7 @@
             <label>
                 <input type="checkbox" id="agreeCheckbox"> I agree to the terms and conditions
             </label>
-            <div class="error-message" style="color:red; font-size:13px; display:none;">This field is required</div>
+            <div class="error-message" style="color:#CEA669; font-size:13px; display:none;">This field is required</div>
         </div>
         <button class="submit_view" type="submit">Send Your Message</button>
     </div>

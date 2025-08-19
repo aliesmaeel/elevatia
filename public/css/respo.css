@@ -40,6 +40,12 @@
 }
 }
 @media(max-width:991px) and (min-width:768px){
+    .signup_email_form{
+        width: 80%;
+    }
+    .offplan_page .sign_up .content .flex_col .desc {
+        width: 95%;
+    }
     .property_details .content .flex_container.grid_desc .col.small,
     .property_details .similar_boxs .box_simi .cont{
         margin-top: 5rem;
@@ -101,6 +107,18 @@
    
 }
 @media(max-width:991px){
+    .offplan_page .grid_offplan{
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    .our_team_page .few_words .grid_container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .our_team_page .few_words .grid_container .col.grid_col{
+        width:100%
+    }
+    .our_team_page .few_words .grid_container .col.flex_dir_col .sub_title {
+        font-size: 42px;
+    }
     .details_blog .grid_container.sections .col:nth-of-type(2){
         order:3;
         grid-column: span 6;
@@ -163,16 +181,21 @@
     }
     .footer .content .grid-container{
         grid-template-columns: repeat(1, 1fr);
+        width:100%
     }
     .footer .content .grid-container .col{
         justify-content: flex-start;
         align-items: flex-start;
+        width:100%
     }
     .footer .content .grid-container div{
-        width: 100%;
+        width: 98%;
     }
 }
 @media(max-width:599px){
+    .offplan_page .grid_offplan .col{
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
     .details_blog_page .details_blog{
         top: -284px;
         padding-top: 17rem;
@@ -200,6 +223,7 @@
     }
 }
 @media(max-width:489px){
+  
     .about_page .about_us{
         top: -186px;
         z-index: 11;
@@ -212,6 +236,53 @@
     }
 }
 @media(max-width:767px){
+    .signup_email_form{
+        width: 100%;
+    }
+    .signup_email_form .contact_email button{
+        cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 0.9rem 1rem;
+    background-color: #C6A45A;
+    display: flex
+;
+    color: #fff;
+    font-size: 17px;
+    align-items: center;
+    gaP: 0.5REM;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    width: 100%;
+    text-align: center;
+    display: flex
+;
+    justify-content: center;
+    }
+    .signup_email_form .contact_email{
+        flex-direction: column;
+    }
+    .offplan_page .sign_up .content .flex_col .desc,
+    .signup_email_form .contact_email .flex input {
+        width: 100%;
+    }
+    .signup_email_form .left_s {
+        left: 0.5rem;
+    }
+    .offplan_page .sign_up .content .flex_col{
+        width: calc(100% - 4rem);
+        padding-top: 2rem;
+        padding-bottom: 5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin: 0 auto;
+        display: flex
+    ;
+        flex-direction: column;
+        gap: 1rem;
+    }
     .get_started{
        
         top: -173px;
@@ -397,6 +468,8 @@
 }
 .search_input{
     text-align: center;
+    width: 86%;
+    padding: 0;
 }
 .input-search {
     height: 130px;

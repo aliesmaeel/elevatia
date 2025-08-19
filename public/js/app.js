@@ -47,22 +47,6 @@ $('.submit_btn').on('click', function () {
     $('.form_search').submit();
 });
 
-$('.contact_email button').on('click', function (e) {
-    e.preventDefault(); 
-    var emailInput = $('.contact_email_form input[name="email"]');
-    var email = emailInput.val().trim();
-    var errorMessage = $('.email_error');
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (email === '' || !emailRegex.test(email)) {
-        errorMessage.show();
-    } else {
-        errorMessage.hide();
-        $('.contact_email_form').submit(); 
-    }
-});
-
-
 // Setup handlers for each group
 function updateHiddenInputAndActiveClass(groupName, hiddenInputId) {
     $('.group-options.' + groupName + ' input[type="radio"]').each(function () {
@@ -354,3 +338,18 @@ var swiper_expert = new Swiper('.swiper_expert', {
       },
     }
   });
+  $(document).on('click', '.contact_email button', function (e) {
+    e.preventDefault();
+    var form = $(this).closest('form');
+    var emailInput = form.find('input[name="email"]');
+    var errorMessage = form.find('.email_error');
+    var email = emailInput.val().trim();
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === '' || !emailRegex.test(email)) {
+        errorMessage.show();
+    } else {
+        errorMessage.hide();
+        form.submit(); 
+    }
+});
