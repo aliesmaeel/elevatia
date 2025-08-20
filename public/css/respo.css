@@ -12,7 +12,8 @@
     .details_likes, .details_shared{
         width: 93%;
     }
-    .about_page .swiper_expert .swiper-button-prev {
+    .about_page .swiper_expert .swiper-button-prev,
+    .team_details.our_team_page .testimonials_section.titles_section  .swiper_testimonials .swiper-button-prev  {
         left: 83% !important;
     }
     .property_details .content .grid_container.grid_desc .details{
@@ -40,6 +41,11 @@
 }
 }
 @media(max-width:991px) and (min-width:768px){
+    .team_details .box_details .box_container .grid_container{
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 3rem;
+
+    }
     .signup_email_form{
         width: 80%;
     }
@@ -55,7 +61,8 @@
         top: -200px;
         padding-top: 17rem;
        }
-    .about_page .swiper_expert .swiper-button-prev {
+    .about_page .swiper_expert .swiper-button-prev,
+    .team_details.our_team_page .testimonials_section.titles_section  .swiper_testimonials .swiper-button-prev{
         left: 80% !important;
     }
     .get_started .grid-container{
@@ -101,7 +108,8 @@
         top: -200px;
         padding-top: 17rem;
        }
-    .about_page .swiper_expert .swiper-button-prev {
+    .about_page .swiper_expert .swiper-button-prev,
+    .team_details.our_team_page .testimonials_section.titles_section  .swiper_testimonials .swiper-button-prev{
         left: 75% !important;
     }
    
@@ -204,7 +212,8 @@
         height: 284px;
         margin-top: -284px;
     }
-    .about_page .swiper_expert .swiper-button-prev {
+    .about_page .swiper_expert .swiper-button-prev,
+    .team_details.our_team_page .testimonials_section.titles_section  .swiper_testimonials .swiper-button-prev {
         left: 63% !important;
     }
     /* .home_page .search-realestate .main_title{
@@ -236,6 +245,25 @@
     }
 }
 @media(max-width:767px){
+    .team_details .grid_container.details_section{
+        justify-content: center;
+        display: flex !important
+    ;
+        flex-direction: column;
+        gap:1rem
+    }
+    .team_details .grid_container.details_section .col.pic{
+        text-align: center;
+        order:1
+    }
+    .team_details .box_details .box_container{
+        width:90%
+    }
+    .team_details .box_details .box_container .grid_container{
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 3rem;
+
+    }
     .signup_email_form{
         width: 100%;
     }

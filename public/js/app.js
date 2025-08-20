@@ -314,14 +314,30 @@ $('input[name="min_price"], input[name="max_price"]').on('input', function() {
         $('#price-error').hide();
     }
 });
+
+  $(document).on('click', '.contact_email button', function (e) {
+    e.preventDefault();
+    var form = $(this).closest('form');
+    var emailInput = form.find('input[name="email"]');
+    var errorMessage = form.find('.email_error');
+    var email = emailInput.val().trim();
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === '' || !emailRegex.test(email)) {
+        errorMessage.show();
+    } else {
+        errorMessage.hide();
+        form.submit(); 
+    }
+});
 var swiper_expert = new Swiper('.swiper_expert', {
     slidesPerView: 4,
     
     effect: 'slide',
     speed: 500,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper_expert .swiper-button-next',
+      prevEl: '.swiper_expert .swiper-button-prev',
     },
     breakpoints: {
       1200: {
@@ -338,18 +354,27 @@ var swiper_expert = new Swiper('.swiper_expert', {
       },
     }
   });
-  $(document).on('click', '.contact_email button', function (e) {
-    e.preventDefault();
-    var form = $(this).closest('form');
-    var emailInput = form.find('input[name="email"]');
-    var errorMessage = form.find('.email_error');
-    var email = emailInput.val().trim();
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (email === '' || !emailRegex.test(email)) {
-        errorMessage.show();
-    } else {
-        errorMessage.hide();
-        form.submit(); 
-    }
-});
+  var swiper_testimonials = new Swiper('.swiper_testimonials', {
+    slidesPerView: 'auto',
+    
+    effect: 'slide',
+    speed: 500,
+    navigation: {
+      nextEl: '.swiper_testimonials .swiper-button-next',
+      prevEl: '.swiper_testimonials .swiper-button-prev',
+    },
+    // breakpoints: {
+    //   1200: {
+    //     slidesPerView: 'auto',
+    //   },
+    //   1199: {
+    //     slidesPerView: 3,
+    //   },
+    //   600:{
+    //     slidesPerView: 2,
+    //   },
+    //   0: {
+    //     slidesPerView: 1,
+    //   },
+    //}
+  });
