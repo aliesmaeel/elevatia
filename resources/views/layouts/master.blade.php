@@ -21,6 +21,7 @@
     @yield('footer')
     <script src="{{asset('js/jquery-3.6.1.min.js')}}"></script>
     <script src="{{asset('js/swiper-bundle.min.js')}}"></script>
+    
     <script src="{{asset('js/app.js?v=0.8')}}"></script>
     <script src="{{asset('js/aos.js')}}"></script>
     <script>

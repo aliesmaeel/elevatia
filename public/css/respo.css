@@ -104,6 +104,9 @@
     
 }
 @media(max-width:767px) and (min-width:600px){
+    .offplan_details_page  .paymant_plans .boxes_paymant_plans{
+        grid-template-columns: repeat(2, 1fr);
+    }
     .details_blog_page .details_blog{
         top: -200px;
         padding-top: 17rem;
@@ -115,6 +118,13 @@
    
 }
 @media(max-width:991px){
+    .offplan_details_page.property_details .content .flex_container.grid_desc .col.big,
+    .offplan_details_page.property_details .content .flex_container.grid_desc .col.small {
+        width: 100%;
+    }
+    .maps-section{
+        width: 100%;
+    }
     .offplan_page .grid_offplan{
         grid-template-columns: repeat(1, 1fr) !important;
     }
@@ -201,6 +211,9 @@
     }
 }
 @media(max-width:599px){
+    .offplan_details_page  .paymant_plans .boxes_paymant_plans{
+        grid-template-columns: repeat(1, 1fr);
+    }
     .offplan_page .grid_offplan .col{
         grid-template-columns: repeat(1, 1fr) !important;
     }
@@ -245,6 +258,10 @@
     }
 }
 @media(max-width:767px){
+    .property_details .content .flex_container .col:first-of-type {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
     .team_details .grid_container.details_section{
         justify-content: center;
         display: flex !important

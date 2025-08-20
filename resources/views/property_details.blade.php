@@ -36,23 +36,13 @@
                     <div>Southwestern Ontario, Ontario, Canada</div>
                 </div>
             </div>
-            <div class="flex_container">
-                <div class="col">
-                    <img src="/images/house.png">
-                </div>
-                <div class="col">
-                    <img src="/images/house.png">
-                    <img src="/images/house.png">
-                </div>
-                <div class="col">
-                    <img src="/images/house.png">
-                    <img src="/images/house.png">
-                </div>
+            <div class="flex_container start_align" id="images_details"> 
+                <!-- Images will be injected dynamically -->
             </div>
             <div class="flex_container grid_desc" data-aos="fade-up">
                 <div class="col big">
-                    <div class="title">Description</div>
-                    <div class="desc">
+                    <div class="title max-width">Description</div>
+                    <div class="desc max-width">
                         Discover your own piece of paradise with the Seaside Serenity Villa. T With an open floor 
                         planplanpla, breathtaking ocean views from every room, and direct access
                          to a pristine sandy beach,
@@ -111,49 +101,49 @@
                             </div>
                             <div class="col">
                                 <div class="flex">
-                                    <img src="/images/bedroom_white.svg">
+                                    <img src="/images/bedroom_white_bold.svg">
                                     <span>Shared gym</span>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="flex">
-                                    <img src="/images/bedroom_white.svg">
+                                    <img src="/images/bedroom_white_bold.svg">
                                     <span>Shared gym</span>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="flex">
-                                    <img src="/images/bath_white.svg">
+                                    <img src="/images/bathroom_bold.svg">
                                     <span>Shared spa</span>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="flex">
-                                    <img src="/images/bath_white.svg">
+                                    <img src="/images/bathroom_bold.svg">
                                     <span>Shared spa</span>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="flex">
-                                    <img src="/images/bath_white.svg">
+                                    <img src="/images/bathroom_bold.svg">
                                     <span>Shared spa</span>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="flex">
-                                    <img src="/images/walk.svg">
+                                    <img src="/images/walk_bold.svg">
                                     <span>Children's play area</span>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="flex">
-                                    <img src="/images/walk.svg">
+                                    <img src="/images/walk_bold.svg">
                                     <span>Walk-in closet</span>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="flex">
-                                    <img src="/images/walk.svg">
+                                    <img src="/images/walk_bold.svg">
                                     <span>Children's play area</span>
                                 </div>
                             </div>

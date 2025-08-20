@@ -8,7 +8,7 @@
 
 {{-- main page --}}
 @section('content')
-    <div class="home_page container">
+    <div class="home_page container home_only">
         {{-- banner --}}
             <div style="position:relative;height: 110vh;z-index: 1;" >
                 <img src="/images/banner.png" class="banner">
@@ -185,7 +185,7 @@
             </div>
 
             {{-- Our Team --}}
-            <div class="team">
+            {{-- <div class="team">
                 <div class="content" data-aos="fade-up">
                     <div class="text-content">
                         <div class="title">
@@ -203,6 +203,88 @@
                         <div class="swiper-pagination"></div>
                     </div> 
 
+                </div>
+            </div> --}}
+            
+            <div class="our_expert">
+                <div class="content" data-aos="fade-up">
+                    <div class="text-content">
+                        <div class="title">
+                            Our Team
+                        </div>
+                        <div class="desc">
+                            Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and
+                            investments available through Estatein. Click "View Details" for more information.
+                        </div>
+                    </div>
+                    {{-- our expert  --}}
+                    <div class="swiper_expert">
+                       
+                        <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <img src="/images/user_expert.png" alt="Member" class="member-img" />
+                            <div class="member-info">
+                            <div class="member-name">Maria Yaltekee</div>
+                            <div class="member-role">Graphic Designer</div>
+                            <a href="#">
+                                <img class="arrow" src="/images/arrow-right.svg">
+                            </a>
+                            </div>
+                        </div>
+                        <!-- Duplicate as needed -->
+                        <div class="swiper-slide">
+                            <img src="/images/user_expert.png" alt="Member" class="member-img" />
+                            <div class="member-info">
+                            <div class="member-name">Maria Yaltekee</div>
+                            <div class="member-role">Graphic Designer</div>
+                            <a href="#">
+                                <img class="arrow" src="/images/arrow-right.svg">
+                            </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/images/user_expert.png" alt="Member" class="member-img" />
+                            <div class="member-info">
+                            <div class="member-name">Maria Yaltekee</div>
+                            <div class="member-role">Graphic Designer</div>
+                            <a href="#">
+                                <img class="arrow" src="/images/arrow-right.svg">
+                            </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/images/user_expert.png" alt="Member" class="member-img" />
+                            <div class="member-info">
+                            <div class="member-name">Maria Yaltekee</div>
+                            <div class="member-role">Graphic Designer</div>
+                            <a href="#">
+                                <img class="arrow" src="/images/arrow-right.svg">
+                            </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/images/user_expert.png" alt="Member" class="member-img" />
+                            <div class="member-info">
+                            <div class="member-name">Maria Yaltekee</div>
+                            <div class="member-role">Graphic Designer</div>
+                            <a href="#">
+                                <img class="arrow" src="/images/arrow-right.svg">
+                            </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/images/user_expert.png" alt="Member" class="member-img" />
+                            <div class="member-info">
+                            <div class="member-name">Maria Yaltekee</div>
+                            <div class="member-role">Graphic Designer</div>
+                            <a href="#">
+                                <img class="arrow" src="/images/arrow-right.svg">
+                            </a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
