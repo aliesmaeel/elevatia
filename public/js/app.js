@@ -47,22 +47,6 @@ $('.submit_btn').on('click', function () {
     $('.form_search').submit();
 });
 
-$('.contact_email button').on('click', function (e) {
-    e.preventDefault(); 
-    var emailInput = $('.contact_email_form input[name="email"]');
-    var email = emailInput.val().trim();
-    var errorMessage = $('.email_error');
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (email === '' || !emailRegex.test(email)) {
-        errorMessage.show();
-    } else {
-        errorMessage.hide();
-        $('.contact_email_form').submit(); 
-    }
-});
-
-
 // Setup handlers for each group
 function updateHiddenInputAndActiveClass(groupName, hiddenInputId) {
     $('.group-options.' + groupName + ' input[type="radio"]').each(function () {
@@ -178,20 +162,21 @@ $(document).ready(function () {
           $item.addClass("active");
         }
       });
-      $('#contactForm_view').on('submit', function (e) {
+      // Form submit validation
+    $('#contactForm_view').on('submit', function (e) {
         e.preventDefault();
         let isValid = true;
         $('.error-message').hide();
+
         $('#contactForm_view input[type="text"], #contactForm_view textarea, #contactForm_view select').each(function () {
             var value = $.trim($(this).val());
             var placeholder = ($(this).attr('placeholder') || '').toLowerCase();
             var errorField = $(this).closest('.col').find('.error-message');
+
             if (value === '') {
                 errorField.text('This field is required').show();
                 isValid = false;
-                return;
-            }
-            if (placeholder.includes('email')) {
+            } else if (placeholder.includes('email')) {
                 var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailPattern.test(value)) {
                     errorField.text('Please enter a valid email address').show();
@@ -205,24 +190,63 @@ $(document).ready(function () {
                 .text('You must agree before submitting').show();
             isValid = false;
         }
+
         if (isValid) {
             this.submit();
         }
     });
-    
-    $('#contactForm_view input[placeholder*="Email"]').on('input', function() {
-        var val = $(this).val();
+
+    // validation for all text/textarea inputs
+    $('#contactForm_view input[type="text"], #contactForm_view textarea').on('input', function () {
+        var value = $.trim($(this).val());
+        var placeholder = ($(this).attr('placeholder') || '').toLowerCase();
         var errorField = $(this).closest('.col').find('.error-message');
-        if (val.length > 0 && !val.includes('@')) {
-        errorField.text('Email should contain @').show();
+
+        if (value === '') {
+            errorField.text('This field is required').show();
+        } else if (placeholder.includes('email')) {
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                errorField.text('Please enter a valid email address').show();
+            } else {
+                errorField.hide();
+            }
         } else {
-        errorField.hide();
+            errorField.hide();
         }
     });
-    $('#phoneInput').on('input', function() {
+
+    // validation for selects
+    $('#contactForm_view select').on('change', function () {
+        var value = $(this).val();
+        var errorField = $(this).closest('.col').find('.error-message');
+        if (value === '') {
+            errorField.text('This field is required').show();
+        } else {
+            errorField.hide();
+        }
+    });
+
+    // only numbers + live error
+    $('#phoneInput').on('input', function () {
         this.value = this.value.replace(/\D/g, '');
-      });
-    
+        var errorField = $(this).closest('.col').find('.error-message');
+        if (this.value === '') {
+            errorField.text('This field is required').show();
+        } else {
+            errorField.hide();
+        }
+    });
+
+    // Checkbox validation
+    $('#agreeCheckbox').on('change', function () {
+        var errorField = $(this).closest('.checkbox_div').find('.error-message');
+        if ($(this).is(':checked')) {
+            errorField.hide();
+        } else {
+            errorField.text('You must agree before submitting').show();
+        }
+    });
+
 });
 
 function initializeSwipers(selector) {
@@ -290,14 +314,30 @@ $('input[name="min_price"], input[name="max_price"]').on('input', function() {
         $('#price-error').hide();
     }
 });
+
+  $(document).on('click', '.contact_email button', function (e) {
+    e.preventDefault();
+    var form = $(this).closest('form');
+    var emailInput = form.find('input[name="email"]');
+    var errorMessage = form.find('.email_error');
+    var email = emailInput.val().trim();
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === '' || !emailRegex.test(email)) {
+        errorMessage.show();
+    } else {
+        errorMessage.hide();
+        form.submit(); 
+    }
+});
 var swiper_expert = new Swiper('.swiper_expert', {
     slidesPerView: 4,
     
     effect: 'slide',
     speed: 500,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper_expert .swiper-button-next',
+      prevEl: '.swiper_expert .swiper-button-prev',
     },
     breakpoints: {
       1200: {
@@ -313,4 +353,28 @@ var swiper_expert = new Swiper('.swiper_expert', {
         slidesPerView: 1,
       },
     }
+  });
+  var swiper_testimonials = new Swiper('.swiper_testimonials', {
+    slidesPerView: 'auto',
+    
+    effect: 'slide',
+    speed: 500,
+    navigation: {
+      nextEl: '.swiper_testimonials .swiper-button-next',
+      prevEl: '.swiper_testimonials .swiper-button-prev',
+    },
+    // breakpoints: {
+    //   1200: {
+    //     slidesPerView: 'auto',
+    //   },
+    //   1199: {
+    //     slidesPerView: 3,
+    //   },
+    //   600:{
+    //     slidesPerView: 2,
+    //   },
+    //   0: {
+    //     slidesPerView: 1,
+    //   },
+    //}
   });

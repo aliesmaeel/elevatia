@@ -161,44 +161,44 @@
                     </div>
                     <div class="calculator">
                         <div class="content">
-                            <div class="title">Mortgage Calculator</div>
-                            <div class="text">Estimate your monthly mortgage payments</div>
-                            <form>
+                            <div class="title px_2">Mortgage Calculator</div>
+                            <div class="text pl_2 top">Estimate your monthly mortgage payments</div>
+                            <div >
                                 <div class="grid_content">
                                     <div class="input_box">
                                         <div class="text">Property Price</div>
                                         <div class="input_div">
-                                            <input type="text" placeholder="2,850,000">
+                                            <div class="input">23</div>
                                              <span>AED</span>
                                         </div>
                                     </div>
                                     <div class="input_box">
                                         <div class="text">Deposit</div>
                                         <div class="input_div">
-                                            <input type="text" placeholder="2,850,000">
+                                            <div class="input">23</div>
                                              <span>AED</span>
                                         </div>
                                     </div>
                                     <div class="input_box">
                                         <div class="text">Mortgage Period</div>
                                         <div class="input_div">
-                                            <input type="text" placeholder="23">
+                                            <div class="input">23</div>
                                             <span>Years</span>
                                         </div>
                                     </div>
                                     <div class="input_box">
                                         <div class="text">Interest Rate</div>
                                         <div class="input_div">
-                                            <input type="text" placeholder="23">
+                                            <div class="input">23</div>
                                             <span>Years</span>
                                         </div>
                                     </div>
                                     <div class="input_box submit_col">
-                                        <input type="submit" value="Get Pre - approved">
+                                        <div class="input">Get Pre - approved</div>
                                     </div>
                                 </div>
-                            </form>
-                            <div class="payment_value">
+                            </div>
+                            <div class="payment_value pl_2">
                                 <div>Monthly Payment</div>
                                 <div>AED 13,329</div>
                             </div>
@@ -206,44 +206,44 @@
                     </div>
                     <div class="calculator">
                         <div class="content">
-                            <div class="title">Rental Yield Calculator</div>
-                            <div class="text">Calculate the gross and net rental yields on a property.</div>
-                            <form>
+                            <div class="title px_2">Rental Yield Calculator</div>
+                            <div class="text pl_2 top">Calculate the gross and net rental yields on a property.</div>
+                            <div>
                                 <div class="grid_content">
                                     <div class="input_box">
                                         <div class="text">Property Price</div>
                                         <div class="input_div">
-                                            <input type="text" placeholder="2,850,000">
+                                            <div class="input">2,850,000</div>
                                              <span>AED</span>
                                         </div>
                                     </div>
                                     <div class="input_box">
                                         <div class="text">Annual services charges</div>
                                         <div class="input_div">
-                                            <input type="text" placeholder="2,850,000">
+                                            <div class="input">2,850,000</div>
                                              <span>AED</span>
                                         </div>
                                     </div>
                                     <div class="input_box">
                                         <div class="text">Additional charges</div>
                                         <div class="input_div">
-                                            <input type="text" placeholder="2,850,000">
+                                            <div class="input">2,850,000</div>
                                             <span>AED</span>
                                         </div>
                                     </div>
                                     <div class="input_box">
                                         <div class="text">Annual rental price</div>
                                         <div class="input_div">
-                                            <input type="text" placeholder="2,850,000">
+                                            <div class="input">2,850,000</div>
                                             <span>AED</span>
                                         </div>
                                     </div>
                                     <div class="input_box submit_col">
-                                        <input type="submit" value="Get Pre - approved">
+                                        <div class="input">Get Pre - approved</div>
                                     </div>
                                 </div>
-                            </form>
-                            <div class="payment_value">
+                            </div>
+                            <div class="payment_value pl_2">
                                 <div class="flex">
                                     <div>
                                         <div>Net Rent</div>

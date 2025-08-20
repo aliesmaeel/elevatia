@@ -25,7 +25,7 @@
                                 <img src="/images/send.svg">
                             </button>
                         </div>
-                        <span class="email_error" style="color: red; display: none; font-size: 14px;">Please enter a valid email.</span>
+                        <span class="email_error" style="color:#CEA669; display: none; font-size: 14px;">Please enter a valid email.</span>
 
                     </form>
                 </div>
