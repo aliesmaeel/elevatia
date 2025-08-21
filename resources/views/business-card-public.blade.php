@@ -37,7 +37,7 @@
                         </div>
                         <div class="text">
                             <span>Website:</span> <a href="{{ $businessCard->url }}" class="text-blue-500 hover:underline" target="_blank">{{ $businessCard->url }}</a>
-                            
+
                         </div>
                         <div class="btn_contact">
                             <a href="{{ route('business-card.vcard', $businessCard->id) }}">

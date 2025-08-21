@@ -14,6 +14,7 @@ class BusinessCard extends Model
         'phone',
         'address',
         'url',
+        'logo',
     ];
 
     protected $casts = [

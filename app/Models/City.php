@@ -4,18 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Community extends Model
+class City extends Model
 {
-    protected $fillable=['name','slug','city_id'];
+    protected $fillable = [
+        'name',
+    ];
 
     public function properties()
     {
         return $this->hasMany(Property::class);
     }
 
-    public function city()
+    public function communities()
     {
-        return $this->belongsTo(City::class);
+        return $this->hasMany(Community::class);
     }
 
 }

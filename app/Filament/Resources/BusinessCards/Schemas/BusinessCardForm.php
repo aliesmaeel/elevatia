@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\BusinessCards\Schemas;
 
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
@@ -11,6 +12,14 @@ class BusinessCardForm
     {
         return $schema
             ->components([
+                FileUpload::make('logo')
+                    ->label('Logo')
+                    ->image()
+                    ->disk('public')
+                    ->directory('business-cards')
+                    ->visibility('public')
+                    ->default(null)
+                    ->required(),
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('email')

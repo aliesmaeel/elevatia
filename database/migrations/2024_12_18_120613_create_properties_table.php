@@ -16,19 +16,23 @@ return new class extends Migration
             $table->string('type', 100)->nullable();
             $table->string('slug', 191)->nullable();
             $table->text('title')->nullable();
-            $table->string('permit_number')->nullable();
-            $table->decimal('price', 10, 2)->nullable();
-            $table->string('city')->default('Dubai')->nullable();
-            $table->foreignId('community_id')->constrained();
-            $table->text('description')->nullable();
-            $table->string('size')->nullable();
-            $table->foreignId('agent_id')->constrained();
-            $table->boolean('featured')->nullable();
-            $table->boolean('furnished')->nullable();
-            $table->boolean('active')->nullable();
-            $table->string('image')->nullable();
             $table->double('latitude')->nullable();
             $table->double('longitude')->nullable();
+            $table->string('location');
+            $table->string('size')->nullable();
+            $table->decimal('price', 10, 2)->nullable();
+            $table->foreignId('city_id')->constrained();
+            $table->foreignId('community_id')->constrained();
+            $table->foreignId('sub_community_id')->nullable()->constrained();
+            $table->text('description')->nullable();
+            $table->foreignId('agent_id')->constrained();
+            $table->string('image')->nullable();
+            $table->integer('rating')->default(0);
+            $table->integer('reviews')->default(0);
+            $table->boolean('active')->nullable();
+
+
+
 
             $table->timestamps();
         });
