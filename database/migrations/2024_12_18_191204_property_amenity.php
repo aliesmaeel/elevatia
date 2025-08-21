@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('property_id')->constrained();
             $table->foreignId('amenity_id')->constrained();
+            $table->string('value')->nullable();
             $table->timestamps();
         });
 

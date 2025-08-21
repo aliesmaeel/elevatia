@@ -12,7 +12,7 @@ class Property extends Model
         'title',
         'permit_number',
         'price',
-        'city',
+        'city_id',
         'community_id',
         'sub_community_id',
         'description',
@@ -29,6 +29,10 @@ class Property extends Model
     ];
 
 
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
     public function community()
     {
         return $this->belongsTo(Community::class);
@@ -71,7 +75,6 @@ class Property extends Model
 
     public function propertyImages()
     {
-
         return $this->hasMany(PropertyImage::class);
     }
 

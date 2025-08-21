@@ -22,6 +22,12 @@ class BusinessCardResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['name','email'];
+    }
+
     public static function form(Schema $schema): Schema
     {
         return BusinessCardForm::configure($schema);

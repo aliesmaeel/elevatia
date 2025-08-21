@@ -35,7 +35,8 @@
 
     <!-- logo -->
     <div class="flex items-center justify-center h-40 sm:h-48 bg-cover bg-center"
-         style="background-image: url({{ asset('logo.jpg') }});">
+         style="background-image: url({{asset('storage/' . $businessCard->logo) }});
+         background-size: contain;background-repeat: no-repeat">
     </div>
 
     <!-- name, title, company -->
