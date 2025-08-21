@@ -8,22 +8,22 @@
 
 {{-- main page --}}
 @section('content')
-<div class="contact_us container about_page details_blog_page">
+<div class="contact_us container about_page details_blog_page only_blogs_details">
         
     {{-- banner --}}
     <div style="position:relative;height: 110vh;z-index: 1;" >
         <img src="/images/banner_contact.png" class="banner">
         <div class="search-realestate">
             <div class="desc_title">
-                {{-- <div class="main_title">Search Luxury Homes In Dubai</div>
-                <div class="desc">   Explore Dubai’s Diverse Communities: Where Tradition Meets Innovation in Every Neighborhood.</div> --}}
+                <div class="main_title">Search Luxury Homes In Dubai</div>
+                <div class="desc">   Explore Dubai’s Diverse Communities: Where Tradition Meets Innovation in Every Neighborhood.</div>
             </div>
         </div>
     </div>
     <div class="details_blog">
-        <div class="content" data-aos="fade-up">
+        <div class="content">
             <div class="grid_container sections">
-                <div class="col icons_Section">
+                <div class="col icons_Section"  data-aos="fade-up">
                     <a class="icon_social" href="#">
                         <img src="/images/twitter_orange.svg">
                     </a>
@@ -34,7 +34,7 @@
                         <img src="/images/facebook_orange.svg">
                     </a>
                 </div>
-                <div class="col ">
+                <div class="col "  data-aos="fade-up">
                     <div class="flex_col">
                         {{-- first title + desc --}}
                         <div class="title">
@@ -48,7 +48,7 @@
                             At its core, minimalism in design challenges conventional notions, encouraging a shift from excess to essence. It invites both creators and consumers to engage in a thoughtful dialogue with the visual elements, promoting a sense of mindfulness and intentionality. The essence of minimalistic design, therefore, lies not just in its visual appeal but in the profound impact it has on the way we perceive and interact with the world of design.
                         </div>
                     </div>
-                    <div class="flex_col">
+                    <div class="flex_col"  data-aos="fade-up">
                         {{-- second title + desc --}}
                         <div class="title">
                             Minimalism Beyond Aesthetics
@@ -63,7 +63,7 @@
                             <img src="/images/blog_details.png">
                         </div>
                     </div>
-                    <div class="flex_col">
+                    <div class="flex_col"  data-aos="fade-up">
                         {{-- second title + desc --}}
                         <div class="title">
                             Practical Tips for Mastering Minimalistic Design
@@ -77,7 +77,7 @@
                         </div>
                     </div>  
                 </div>
-                <div class="col third_section">
+                <div class="col third_section"  data-aos="fade-up">
                     <div class="art_director">
                         <div class="flex">
                             <img src="/images/person.png" class="director">
@@ -144,7 +144,7 @@
         </div>
     </div>
     <div class="bg_empty"></div>
-    <div class="similar_blogs">
+    <div class="similar_blogs mt_small" >
         <div class="content">
             <div class="grid-container" data-aos="fade-up">
                 @include('components.blog_item')

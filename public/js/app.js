@@ -330,6 +330,14 @@ $('input[name="min_price"], input[name="max_price"]').on('input', function() {
         form.submit(); 
     }
 });
+var swiper_expert_offplan = new Swiper('.swiper_expert_offplan', {
+    slidesPerView: 'auto',
+    
+    effect: 'slide',
+    speed: 500,
+   
+    
+  });
 var swiper_expert = new Swiper('.swiper_expert', {
     slidesPerView: 4,
     
@@ -363,18 +371,81 @@ var swiper_expert = new Swiper('.swiper_expert', {
       nextEl: '.swiper_testimonials .swiper-button-next',
       prevEl: '.swiper_testimonials .swiper-button-prev',
     },
-    // breakpoints: {
-    //   1200: {
-    //     slidesPerView: 'auto',
-    //   },
-    //   1199: {
-    //     slidesPerView: 3,
-    //   },
-    //   600:{
-    //     slidesPerView: 2,
-    //   },
-    //   0: {
-    //     slidesPerView: 1,
-    //   },
-    //}
+    
   });
+ // All images (you can fetch dynamically too)
+ var allImages_property = [
+    "/images/house.png",
+    "/images/house2.png",
+    "/images/house3.png",
+    "/images/house2.png",
+    "/images/house.png",
+    "/images/house2.png",
+    "/images/house3.png",
+    "/images/house2.png",
+    "/images/house.png",
+    "/images/house2.png",
+    "/images/house3.png",
+    "/images/house2.png",
+    "/images/house.png"
+  ];
+
+  var currentIndex_img = 0;
+  var container_grid_img = document.getElementById("images_details");
+  var perPage = 5;
+  var details_Page = document.querySelector('property_details');
+  function renderImages() {
+        container_grid_img.innerHTML = ""; 
+        
+        var slice = allImages_property.slice(currentIndex_img, currentIndex_img + perPage);
+        
+        slice.forEach((src, i) => {
+        var col = document.createElement("div");
+        col.className = "col";
+
+        var img = document.createElement("img");
+        img.src = src;
+        col.appendChild(img);
+
+        // If this is the 5th image and more images exist
+        if (i === perPage - 1 && currentIndex_img + perPage < allImages_property.length) {
+            var remaining = allImages_property.length - (currentIndex_img + perPage);
+            var overlay = document.createElement("div");
+            overlay.className = "overlay";
+            overlay.innerText = `+${remaining}`;
+            overlay.onclick = () => {
+                currentIndex_img += perPage;
+            renderImages();
+            };
+            col.appendChild(overlay);
+        }
+
+        container_grid_img.appendChild(col);
+        });
+    
+    
+  }
+  
+  if (!container_grid_img) {
+    console.log("No #images_details container found on this page");
+} else {
+    renderImages();
+}
+  
+  // Dubai coordinates
+  var lat = 25.276987;
+  var lng = 55.296249;
+  
+  // Create Google Maps Embed URL
+  var mapUrl = "https://www.google.com/maps?q=" + lat + "," + lng + "&hl=en&z=14&output=embed";
+  var iframe = document.createElement("iframe");
+  iframe.src = mapUrl;
+  iframe.width = "100%";
+  iframe.height = "400";
+  iframe.style.border = "0";
+  iframe.allowFullscreen = true;
+  if(document.getElementById("map-container")){
+    document.getElementById("map-container").appendChild(iframe);
+  }
+  
+  
