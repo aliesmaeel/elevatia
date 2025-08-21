@@ -423,9 +423,14 @@ var swiper_expert = new Swiper('.swiper_expert', {
         container_grid_img.appendChild(col);
         });
     
+    
   }
   
-  renderImages();
+  if (!container_grid_img) {
+    console.log("No #images_details container found on this page");
+} else {
+    renderImages();
+}
   
   // Dubai coordinates
   var lat = 25.276987;

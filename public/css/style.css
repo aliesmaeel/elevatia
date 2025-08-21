@@ -852,10 +852,20 @@ background-size: cover;
   color:rgba(255, 255, 255, 0.72);
   gap:2rem
 }
+.services .content .buttons div{
+  width:100%
+}
 .services .content .buttons div.active{
   background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   color:#fff;
   position: relative;
+}
+.mt_small{
+  margin-top: -6rem;
+}
+.property_details .similar_boxs .box_simi .list .desc,
+.property_details .similar_boxs .box_simi .list .title{
+  width: 100% !important;
 }
 .services .content .buttons div.active::after{
   content: "";
@@ -2132,8 +2142,8 @@ color:#CEA669
 }
 .book_view .cont .desc{
   color:#999999;
-  padding: 1rem 0;
-  font-size: 15px;
+  padding: 1rem 0 2rem;
+  font-size: 19px;
   width: 90%;
 
 }

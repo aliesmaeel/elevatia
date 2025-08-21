@@ -14,10 +14,10 @@
                 <!-- Images will be injected dynamically -->
             </div>
             
-            <div class="flex_container grid_desc" data-aos="fade-up">
+            <div class="flex_container grid_desc">
                 <div class="col big">
-                    <div class="title max-width">Description</div>
-                    <div class="desc max-width" >
+                    <div class="title max-width" data-aos="fade-up">Description</div>
+                    <div class="desc max-width" data-aos="fade-up">
                         Discover your own piece of paradise with the Seaside Serenity Villa. T With an open floor 
                         planplanpla, breathtaking ocean views from every room, and direct access
                          to a pristine sandy beach,
@@ -29,7 +29,7 @@
                          Seaside Serenity VillSeaside Serenity VillSeaside Serenity VillSeaside Serenity Villa.
                     </div>
                     {{-- Jumeirah Asora Bay Experts --}}
-                    <div class="our_expert">
+                    <div class="our_expert" data-aos="fade-up">
                             <div class="title">OUR EXPERT</div>
                             <div class="swiper_expert_offplan">
                                 <div class="swiper-wrapper">

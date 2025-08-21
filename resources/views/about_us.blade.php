@@ -26,7 +26,7 @@
                 <div class="flex_col">
                     <div class="col">
                         <div class="first">
-                            <div class="title2">Wa are creative & strong team</div>
+                            <div class="title2 w_100">Wa are creative & strong team</div>
                             <div class="desc">
                                 Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt facilisis justo eget elit. 
                                 <br><br>
