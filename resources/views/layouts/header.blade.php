@@ -6,30 +6,18 @@
         <div class="flex-col">
             
             <ul class="col-list">
-                <a href="#">
-                    <li class="link">Home</li>
-                </a>
-                <a href="#">
-                    <li class="link">Properties</li>
-                </a>
-                <a href="#">
-                    <li class="link">Our Team</li>
-                </a>
-    
-                <a href="#">
-                    <li class="link">About Us</li>
-                </a>
-                <a href="#">
-                    <li class="link">Blogs</li>
-                </a>
-                <a href="#">
-                    <li class="link">Contact Us</li>
-                </a>
-    
-    
+                <li class="link link_img">
+                    <a href="{{ route('home') }}" class="logo">
+                        <img src="/images/logo.png" class="logo_img">
+                    </a>
+                </li>
+                <li class="link"><a href="{{ route('home') }}">Home Page</a></li>
+                <li class="link"><a href="{{ route('blogs') }}">Our Blogs</a></li>
+                <li class="link"><a href="{{ route('our_team') }}">Our Team</a></li>
+                <li class="link"><a href="{{ route('offplan') }}">OffPlan Project</a></li>
+                <li class="link"><a href="{{ route('about_us') }}">About Us</a></li>
+                <li class="link"><a href="{{ route('contact_us') }}">Contact Us</a></li>
             </ul>
-          
-        
         </div>
     </div>
 </div>
