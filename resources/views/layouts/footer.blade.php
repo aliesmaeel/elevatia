@@ -33,32 +33,32 @@
             <div class="col flex-center">
                 <div class="title">Contact Us.</div>
                 <div class="flex-col">
-                    <a href="#">
+                    <a href="{{ route('home') }}">
                         <div class="row">
                             <div class="over-text-hide">Home Page</div>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="{{ route('blogs') }}">
                         <div class="row">
                             <div class="over-text-hide">Our Blogs</div>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="{{ route('our_team') }}">
                         <div class="row">
                             <div class="over-text-hide">Our Team</div>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="{{ route('offplan') }}">
                         <div class="row">
                             <div class="over-text-hide">OffPlan Project</div>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="{{ route('about_us') }}">
                         <div class="row">
                             <div class="over-text-hide">About Us </div>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="{{ route('contact_us') }}">
                         <div class="row">
                             <div class="over-text-hide">Contact Us </div>
                         </div>

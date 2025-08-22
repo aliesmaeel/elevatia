@@ -2134,6 +2134,9 @@ color:#CEA669
 .property_details .box_average .cont .flex_container span,  .property_details .box_average .cont .flex_container a{
   color:#fff
 }
+.logo_img{
+  width:200px
+}
 .book_view .cont .main_title{
   text-align: left;
   font-size: 37px;
