@@ -28,41 +28,11 @@ class HomePageResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name'),
-                Forms\Components\FileUpload::make('video_section_web'),
-                Forms\Components\FileUpload::make('video_section_mobile'),
-
-                Forms\Components\RichEditor::make('about_section_text')->required(),
-
-                Forms\Components\Repeater::make('images')
-                ->relationship('images')
-                ->schema([
-                    Forms\Components\FileUpload::make('url')
-                    ->directory('homepage-images')
-                        ->required(),
-                ]),
-                Forms\Components\Textarea::make('what_we_do_section_text')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('our_team_section_text')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('blogs_section_text')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\Toggle::make('active')
-                    ->required()->rules([
-                        fn (): \Closure => function (string $attribute, $value, Closure $fail) use ($form) {
-
-                            if ($value && HomePage::where('active', true)->where('id', '!=', $form->model->id?? '')->exists()) {
-                                $fail('Only one page can be active at a time. To activate this HomePage, please deactivate any other active HomePage.');
-                            }
-                        }
-                    ])->default(0),
-                // spped
-                Forms\Components\TextInput::make('speed')
-                    ->required()
-                    ->numeric(),
+                Forms\Components\TextInput::make('banner'),
+                Forms\Components\Textarea::make('about_elevatia')->required(),
+                Forms\Components\Textarea::make('our_vision')->required(),
+                Forms\Components\Textarea::make('our_mission')->required(),
+                Forms\Components\Toggle::make('active')->unique(),
             ]);
     }
 
@@ -70,17 +40,9 @@ class HomePageResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('banner'),
                 Tables\Columns\IconColumn::make('active')
                     ->boolean(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

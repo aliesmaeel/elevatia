@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\AllPropertyResource\Pages;
-use App\Filament\Resources\AllPropertyResource\RelationManagers;
-use App\Models\AllProperty;
+use App\Filament\Resources\UserResource\Pages;
+use App\Filament\Resources\UserResource\RelationManagers;
+use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,31 +13,29 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class AllPropertyResource extends Resource
+class UserResource extends Resource
 {
-    protected static ?string $model = AllProperty::class;
+    protected static ?string $model = User::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
+    protected static ?string $navigationGroup = 'User Management';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('type')
+                Forms\Components\TextInput::make('name')
                     ->required()
-                    /// type should be unique in his table
-                    ->options([
-                        'LABOR CAMPS' => 'LABOR CAMPS',
-                        'RESIDENTIAL BUILDINGS' => 'RESIDENTIAL BUILDINGS',
-                        'COMMERCIAL SPACES' => 'COMMERCIAL SPACES',
-                        'SHOWROOMS' => 'SHOWROOMS',
-                    ])->unique(AllProperty::class, 'type', ignoreRecord: true),
-                Forms\Components\FileUpload::make('image')
-                    ->image()
-                    ->required(),
-                Forms\Components\TextInput::make('url')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('email')
+                    ->email()
                     ->required()
-                    ->maxLength(191),
+                    ->maxLength(255),
+                Forms\Components\DateTimePicker::make('email_verified_at'),
+                Forms\Components\TextInput::make('password')
+                    ->password()
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
@@ -45,11 +43,13 @@ class AllPropertyResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('type')
+                Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('url')
+                Tables\Columns\TextColumn::make('email')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('email_verified_at')
+                    ->dateTime()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -82,9 +82,9 @@ class AllPropertyResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAllProperties::route('/'),
-            'create' => Pages\CreateAllProperty::route('/create'),
-            'edit' => Pages\EditAllProperty::route('/{record}/edit'),
+            'index' => Pages\ListUsers::route('/'),
+            'create' => Pages\CreateUser::route('/create'),
+            'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
     }
 }

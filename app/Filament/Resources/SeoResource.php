@@ -17,7 +17,8 @@ class SeoResource extends Resource
 {
     protected static ?string $model = Seo::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-camera';
+    protected static ?string $navigationGroup = 'Services';
 
     public static function form(Form $form): Form
     {

@@ -30,7 +30,7 @@ jobs:
             sudo chown -R www-data:www-data storage bootstrap/cache
             sudo chmod -R 775 storage bootstrap/cache
 
-            sudo composer install
+            sudo composer update
 
             sudo php artisan config:clear
             sudo php artisan route:clear
