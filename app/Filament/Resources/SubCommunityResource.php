@@ -16,8 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class SubCommunityResource extends Resource
 {
     protected static ?string $model = SubCommunity::class;
-    protected static ?string $navigationGroup='Community';
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup='Locations';
+    protected static ?string $navigationIcon = 'heroicon-o-cube-transparent';
 
     public static function form(Form $form): Form
     {
@@ -30,6 +30,7 @@ class SubCommunityResource extends Resource
                 Forms\Components\Select::make('community_id')
                     ->label('Community')
                     ->relationship('community', 'name')
+                    ->searchable()
                     ->required(),
             ]);
     }
@@ -40,17 +41,10 @@ class SubCommunityResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('community.name') // Display the section name
+                Tables\Columns\TextColumn::make('community.name')
                 ->label('Community')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('community.city.name')
             ])
             ->filters([
                 //

@@ -19,7 +19,7 @@ class CommunityResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-square-3-stack-3d';
 
-    protected static ?string $navigationGroup='Community';
+    protected static ?string $navigationGroup='Locations';
 
     public static function form(Form $form): Form
     {
@@ -31,6 +31,11 @@ class CommunityResource extends Resource
                 Forms\Components\TextInput::make('slug')
                     ->required()
                     ->maxLength(70),
+
+                Forms\Components\Select::make('city_id')
+                    ->relationship('city', 'name')
+                    ->searchable()
+                    ->required(),
             ]);
     }
 

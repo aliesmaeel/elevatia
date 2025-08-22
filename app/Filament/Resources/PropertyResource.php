@@ -48,6 +48,7 @@ class PropertyResource extends Resource
                         'Whole Building' => 'Whole Building',
                         'Warehouse' => 'Warehouse',
                     ])
+                    ->searchable()
                     ->required(),
 
                 Forms\Components\Textarea::make('title')
@@ -60,24 +61,27 @@ class PropertyResource extends Resource
                         if ($slug !== Str::slug($state)) {
                             $set('slug', Str::slug($state));
                         }
-                    })
-                    ->columnSpanFull()
-                    ->lazy(),
+                    })->lazy(),
                 Forms\Components\TextInput::make('slug')
                     ->maxLength(191)->required(),
 
-                Forms\Components\TextInput::make('permit_number')
-                    ->maxLength(191),
                 Forms\Components\TextInput::make('price')
                     ->maxLength(191),
-                Forms\Components\TextInput::make('city')
-                    ->maxLength(191)
-                    ->default('Dubai')
-                    ->placeholder('Dubai')
-                    ->disabled(),
+                Forms\Components\Select::make('city_id')
+                    ->relationship('city', 'name'),
+
                 Forms\Components\Select::make('community_id')
                     ->relationship('community', 'name')
+                    ->searchable()
                     ->required(),
+                Forms\Components\Select::make('subCommunity_id')
+                    ->relationship('subCommunity', 'name')
+                    ->searchable()
+                    ->required(),
+                Forms\Components\TextInput::make('bedrooms')->numeric(),
+                Forms\Components\TextInput::make('bathrooms')->numeric(),
+                Forms\Components\TextInput::make('garage')->numeric(),
+                Forms\Components\TextInput::make('build_year')->numeric(),
                 Forms\Components\RichEditor::make('description')
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('size')
@@ -85,8 +89,13 @@ class PropertyResource extends Resource
                 Forms\Components\Select::make('agent_id')
                     ->relationship('agent', 'name')
                     ->required(),
-                Forms\Components\Toggle::make('featured'),
-                Forms\Components\Toggle::make('furnished'),
+                Forms\Components\TextInput::make('rating')
+                    ->numeric()
+                    ->maxLength(191),
+                Forms\Components\TextInput::make('reviews')
+                    ->numeric()
+                    ->maxLength(191),
+
                 Forms\Components\Toggle::make('active'),
                 Forms\Components\MultiSelect::make('amenity_id')
                     ->relationship('amenities', 'name')
@@ -132,6 +141,8 @@ class PropertyResource extends Resource
                         $set('longitude', $state['lng']);
                     }),
 
+                Forms\Components\TextInput::make('address')->required()->columnSpanFull(),
+
 
 
             ]);
@@ -143,36 +154,18 @@ class PropertyResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('type')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('title'),
                 Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('permit_number')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('price')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('city')
+                Tables\Columns\TextColumn::make('city.name')
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make('size')
                     ->searchable(),
-                Tables\Columns\IconColumn::make('featured')
-                    ->boolean(),
-                Tables\Columns\IconColumn::make('furnished')
-                    ->boolean(),
                 Tables\Columns\IconColumn::make('active')
                     ->boolean(),
-                Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('latitude')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('longitude')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
