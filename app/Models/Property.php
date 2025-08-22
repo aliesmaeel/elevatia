@@ -26,8 +26,26 @@ class Property extends Model
         'image',
         'latitude',
         'longitude',
+        'address',
+        'bedrooms',
+        'bathrooms',
+        'garage',
+        'build_year',
     ];
 
+    protected function location(): \Attribute
+    {
+        return \Attribute::make(
+            get: fn (mixed $value, array $attributes) => [
+                'latitude' => $attributes['latitude'],
+                'longitude' => $attributes['longitude']
+            ],
+            set: fn (array $value) => [
+                'latitude' => $value['latitude'],
+                'longitude' => $value['longitude']
+            ],
+        );
+    }
 
     public function city()
     {
@@ -53,19 +71,7 @@ class Property extends Model
         return $this->belongsToMany(Amenity::class,'property_amenity');
     }
 
-    protected function location(): \Attribute
-    {
-        return \Attribute::make(
-            get: fn (mixed $value, array $attributes) => [
-                'latitude' => $attributes['latitude'],
-                'longitude' => $attributes['longitude']
-            ],
-            set: fn (array $value) => [
-                'latitude' => $value['latitude'],
-                'longitude' => $value['longitude']
-            ],
-        );
-    }
+
 
     public function scopeActive($query)
     {

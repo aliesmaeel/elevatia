@@ -16,8 +16,10 @@ return new class extends Migration
             $table->string('name', 100)->nullable();
             $table->string('email', 191)->nullable();
             $table->string('phone', 191)->nullable();
-            $table->text('address')->nullable();
             $table->string('position', 191)->nullable();
+            $table->text('description')->nullable();
+            $table->integer('experience')->default(0);
+            $table->string('languages', 191)->nullable();
             $table->string('image', 191)->nullable();
             $table->timestamps();
         });

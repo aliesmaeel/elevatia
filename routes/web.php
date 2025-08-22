@@ -49,6 +49,7 @@ Route::get('/offplan_details', function () {
 })->name('offplan_details');
 
 Route::get('/business-card/{businessCard}', function (BusinessCard $businessCard) {
+
     return view('business-card-public', compact('businessCard'));
 })->name('business-card.show');
 

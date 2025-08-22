@@ -18,12 +18,16 @@ return new class extends Migration
             $table->text('title')->nullable();
             $table->double('latitude')->nullable();
             $table->double('longitude')->nullable();
-            $table->string('location');
+            $table->string('address');
             $table->string('size')->nullable();
             $table->decimal('price', 10, 2)->nullable();
             $table->foreignId('city_id')->constrained();
             $table->foreignId('community_id')->constrained();
             $table->foreignId('sub_community_id')->nullable()->constrained();
+            $table->integer('bedrooms')->nullable();
+            $table->integer('bathrooms')->nullable();
+            $table->integer('garage')->nullable();
+            $table->integer('build_year')->nullable();
             $table->text('description')->nullable();
             $table->foreignId('agent_id')->constrained();
             $table->string('image')->nullable();
