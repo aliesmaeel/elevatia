@@ -6,7 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Agent extends Model
 {
-    protected $fillable=['name','email','phone','address','position','image'];
+    protected $fillable=[
+        'name',
+        'email',
+        'phone',
+        'image',
+        'description',
+        'experience',
+        'languages',
+        'position',
+    ];
+
+    protected $casts = [
+        'languages' => 'array',
+        'experience' => 'integer',
+    ];
 
     public function properties()
     {
