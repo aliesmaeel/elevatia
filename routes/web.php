@@ -64,12 +64,19 @@ Route::get('/business-card/{businessCard}/qr', function (BusinessCard $businessC
 })->name('business-card.qr.download');
 
 Route::get('/business-card/{businessCard}/vcard', function (BusinessCard $businessCard) {
-    $vcard = "BEGIN:VCARD\r\n";
+    // Split name into first & last for iOS compatibility
+    $nameParts = explode(' ', $businessCard->name, 2);
+    $firstName = $nameParts[0] ?? '';
+    $lastName  = $nameParts[1] ?? '';
+
+    // Build vCard with proper CRLF line endings
+    $vcard  = "BEGIN:VCARD\r\n";
     $vcard .= "VERSION:3.0\r\n";
-    $vcard .= "FN:{$businessCard->name}\r\n";
+    $vcard .= "N:{$lastName};{$firstName};;;\r\n";     // Structured name (required by iOS)
+    $vcard .= "FN:{$businessCard->name}\r\n";          // Formatted full name
     $vcard .= "ORG:{$businessCard->company_name}\r\n";
     $vcard .= "TITLE:{$businessCard->job_title}\r\n";
-    $vcard .= "TEL;TYPE=WORK,VOICE:{$businessCard->phone}\r\n";
+    $vcard .= "TEL;TYPE=CELL:{$businessCard->phone}\r\n"; // CELL works best for iOS/Android
     $vcard .= "EMAIL:{$businessCard->email}\r\n";
     $vcard .= "ADR;TYPE=WORK:;;{$businessCard->address};;;;\r\n";
     $vcard .= "URL:{$businessCard->url}\r\n";
