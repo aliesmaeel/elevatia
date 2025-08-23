@@ -60,7 +60,7 @@
     <div class="text-center p-4 space-y-2">
         <p>Email: {{ $businessCard->email }}</p>
         <p>Phone: {{ $businessCard->phone }}</p>
-        <p>Website: <a href="{{ $businessCard->url }}" class="text-blue-500 hover:underline" target="_blank">{{ $businessCard->url }}</a></p>
+        <p>Website: <a href="//{{ $businessCard->url }}" class="text-blue-500 hover:underline" target="_blank">{{ $businessCard->url }}</a></p>
         <a href="{{ route('business-card.vcard', $businessCard->id) }}"
            class="mt-2 bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 inline-block">
             Add to Contacts
