@@ -64,18 +64,20 @@ Route::get('/business-card/{businessCard}/qr', function (BusinessCard $businessC
 })->name('business-card.qr.download');
 
 Route::get('/business-card/{businessCard}/vcard', function (BusinessCard $businessCard) {
-    $vcard = "BEGIN:VCARD\n";
-    $vcard .= "VERSION:3.0\n";
-    $vcard .= "FN:{$businessCard->name}\n";
-    $vcard .= "ORG:{$businessCard->company_name}\n";
-    $vcard .= "TITLE:{$businessCard->job_title}\n";
-    $vcard .= "TEL;TYPE=WORK,VOICE:{$businessCard->phone}\n";
-    $vcard .= "EMAIL:{$businessCard->email}\n";
-    $vcard .= "ADR;TYPE=WORK:;;{$businessCard->address};;;;\n";
-    $vcard .= "URL:{$businessCard->url}\n";
-    $vcard .= "END:VCARD";
+    $vcard = "BEGIN:VCARD\r\n";
+    $vcard .= "VERSION:3.0\r\n";
+    $vcard .= "FN:{$businessCard->name}\r\n";
+    $vcard .= "ORG:{$businessCard->company_name}\r\n";
+    $vcard .= "TITLE:{$businessCard->job_title}\r\n";
+    $vcard .= "TEL;TYPE=WORK,VOICE:{$businessCard->phone}\r\n";
+    $vcard .= "EMAIL:{$businessCard->email}\r\n";
+    $vcard .= "ADR;TYPE=WORK:;;{$businessCard->address};;;;\r\n";
+    $vcard .= "URL:{$businessCard->url}\r\n";
+    $vcard .= "END:VCARD\r\n";
+
+    $fileName = \Illuminate\Support\Str::slug($businessCard->name) . ".vcf";
 
     return response($vcard)
-        ->header('Content-Type', 'text/vcard')
-        ->header('Content-Disposition', "attachment; filename=\"{$businessCard->name}.vcf\"");
+        ->header('Content-Type', 'text/vcard; charset=utf-8')
+        ->header('Content-Disposition', "inline; filename=\"{$fileName}\"");
 })->name('business-card.vcard');
