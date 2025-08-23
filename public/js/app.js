@@ -129,7 +129,7 @@ $(document).ready(function () {
         });
     });
   
-    $('.services .content .grid-container .desc, .content_result .grid-container .desc').each(function() {
+    $('.services .content .grid-container .desc, .content_result .grid-container .desc, .footer .desc_min.desc').each(function() {
         var fullText = $(this).text().trim();
         if (fullText.length > 100) {
           var truncatedText = fullText.substring(0, 100) + '...';

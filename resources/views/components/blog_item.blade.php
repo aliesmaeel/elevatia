@@ -2,9 +2,9 @@
     <div class="img_container">
         <img src="/images/img.png">
     </div>
-    <div class="breif">
+    <a class="breif" href="#">
         Want to succeed in real estate? Focus  habits
-    </div>
+    </a>
     <div class="date_desc">
         <div class="date">
             <img src="/images/calendar.svg">
@@ -25,9 +25,9 @@
     <div class="img_container">
         <img src="/images/img.png">
     </div>
-    <div class="breif">
+    <a class="breif" href="#">
         Want to succeed in real estate? Focus  habits
-    </div>
+    </a>
     <div class="date_desc">
         <div class="date">
             <img src="/images/calendar.svg">
@@ -48,9 +48,9 @@
     <div class="img_container">
         <img src="/images/img.png">
     </div>
-    <div class="breif">
+    <a class="breif" href="#">
         Want to succeed in real estate? Focus  habits
-    </div>
+    </a>
     <div class="date_desc">
         <div class="date">
             <img src="/images/calendar.svg">
@@ -71,9 +71,9 @@
     <div class="img_container">
         <img src="/images/img.png">
     </div>
-    <div class="breif">
+    <a class="breif" href="#">
         Want to succeed in real estate? Focus  habits
-    </div>
+    </a>
     <div class="date_desc">
         <div class="date">
             <img src="/images/calendar.svg">
@@ -108,9 +108,9 @@
     <div class="img_container">
         <img src="/images/img.png">
     </div>
-    <div class="breif">
+    <a class="breif" href="#">
         Want to succeed in real estate? Focus  habits
-    </div>
+    </a>
     <div class="date_desc">
         <div class="date">
             <img src="/images/calendar.svg">
@@ -131,9 +131,9 @@
     <div class="img_container">
         <img src="/images/img.png">
     </div>
-    <div class="breif">
+    <a class="breif" href="#">
         Want to succeed in real estate? Focus  habits
-    </div>
+    </a>
     <div class="date_desc">
         <div class="date">
             <img src="/images/calendar.svg">
@@ -154,9 +154,9 @@
     <div class="img_container">
         <img src="/images/img.png">
     </div>
-    <div class="breif">
+    <a class="breif" href="#">
         Want to succeed in real estate? Focus  habits
-    </div>
+    </a>
     <div class="date_desc">
         <div class="date">
             <img src="/images/calendar.svg">

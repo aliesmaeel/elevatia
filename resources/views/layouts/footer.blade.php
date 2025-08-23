@@ -5,12 +5,12 @@
     <div class="content">
         <div class="grid-container">
             <div class="col">
-                <div class="desc">
+                <div class="desc desc_min">
                     ELEVATIA Properties is committed to delivering a high level of expertise,  customer service, and attention to detail to the marketing and sales of  luxury real estate and rental properties 
-                    <a href="#">
+                    {{-- <a href="#">
                         Read More
                         
-                    </a>
+                    </a> --}}
                 </div>
                 <div>
                     <form class="contact_email_form">

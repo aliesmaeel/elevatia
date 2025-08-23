@@ -703,7 +703,7 @@ background-size: cover;
   width:100%;
  
 }
-.footer .content .grid-container .desc a{
+.footer .content .grid-container .read-more{
   color:rgba(198, 164, 90, 1) !important;
   font-weight: 600;
   text-decoration: underline;
@@ -3665,3 +3665,7 @@ display: grid
   width: 38%;
 
 }
+/* .shared_btn,
+.like_btn{
+  cursor: pointer;
+} */
