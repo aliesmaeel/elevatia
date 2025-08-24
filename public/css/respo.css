@@ -41,6 +41,18 @@
 }
 }
 @media(max-width:991px) and (min-width:768px){
+    .business_card_page .grid_container{
+        display: grid;
+          grid-template-columns: repeat(1, 1fr) !important;
+          gap: 2rem;
+          padding: 2rem 0;
+          align-items: center;
+    
+     }
+     .business_card_page .grid_container .col{
+        grid-column:span 1 !important;
+        padding: 1rem 0; 
+     }
     .team_details .box_details .box_container .grid_container{
         grid-template-columns: repeat(2, 1fr);
         row-gap: 3rem;
