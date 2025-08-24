@@ -2,6 +2,8 @@
 <html lang="en" >
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>{{ $businessCard->name }} - Business Card</title>
     <link rel="stylesheet" href="/css/style.css?v={{ time() }}">
     <link rel="stylesheet" href="/css/respo.css?v={{ time() }}">
