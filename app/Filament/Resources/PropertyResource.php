@@ -23,7 +23,7 @@ class PropertyResource extends Resource
     protected static ?string $model = Property::class;
     protected static ?string $navigationGroup='Properties';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-home';
 
     public static function form(Form $form): Form
     {
@@ -109,6 +109,7 @@ class PropertyResource extends Resource
                     ->required()
                     ->reactive()
                     ->afterStateUpdated(function (Forms\Set $set, $state): void {
+
                         $set('location.lat', $state);
                     }),
 
