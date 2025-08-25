@@ -59,7 +59,7 @@ class AgentResource extends Resource
                         'hi' => 'Hindi',
                     ])
                     ->searchable()
-                ->multiple(),
+                    ->multiple(),
                 Forms\Components\FileUpload::make('image')
                     ->image(),
             ]);

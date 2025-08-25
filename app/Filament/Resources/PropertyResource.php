@@ -129,7 +129,6 @@ class PropertyResource extends Resource
                     ->showMarker(true)
                     ->showFullscreenControl(true)
 
-                    ->liveLocation(true, true, 5000)
                     ->draggable()
                     ->showZoomControl()
                     ->zoom(14)
@@ -142,9 +141,19 @@ class PropertyResource extends Resource
                     }),
 
                 Forms\Components\TextInput::make('address')->required()->columnSpanFull(),
-
-
-
+                Forms\Components\Repeater::make('propertyImages')
+                    ->relationship()
+                    ->schema([
+                        Forms\Components\FileUpload::make('image')
+                            ->image()
+                            ->label('Image')
+                            ->required(),
+                    ])
+                    ->columns(2)
+                    ->columnSpanFull()
+                    ->collapsible()
+                    ->minItems(0)
+                    ->maxItems(10),
             ]);
     }
 

@@ -28,10 +28,6 @@ class CommunityResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(70),
-                Forms\Components\TextInput::make('slug')
-                    ->required()
-                    ->maxLength(70),
-
                 Forms\Components\Select::make('city_id')
                     ->relationship('city', 'name')
                     ->searchable()
@@ -45,8 +41,9 @@ class CommunityResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('city.name')
+                ->searchable(),
+
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

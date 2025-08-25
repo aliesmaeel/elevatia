@@ -114,9 +114,7 @@ class EmailResource extends Resource
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
-                    FilamentExportBulkAction::make('export')
-
-
+                    Tables\Actions\ExportBulkAction::make('export')
                 ]),
             ]);
     }
