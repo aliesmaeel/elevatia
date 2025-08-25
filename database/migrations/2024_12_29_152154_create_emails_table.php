@@ -1,5 +1,6 @@
 <?php
 
+use App\EmailTypes;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,12 +14,21 @@ return new class extends Migration
     {
         Schema::create('emails', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->enum('type',
+                [
+                    EmailTypes::CONTACT,
+                    EmailTypes::REVIEW,
+                    EmailTypes::SUBSCRIPTION
+                ]
+            )->default('contact');
+            $table->string('name')->nullable();
             $table->string('email');
-            $table->string('phone');
-            $table->string('message');
+            $table->string('phone')->nullable();
+            $table->time('time')->nullable();
+            $table->date('date')->nullable();
+            $table->string('property_type')->nullable();
+            $table->text('message')->nullable();
             $table->boolean('is_read')->default(0);
-            $table->string('location');
             $table->timestamps();
         });
     }
