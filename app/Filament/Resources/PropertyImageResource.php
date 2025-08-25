@@ -17,7 +17,7 @@ class PropertyImageResource extends Resource
 {
     protected static ?string $model = PropertyImage::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-camera';
     protected static ?string $navigationGroup='Properties';
 
 
@@ -31,9 +31,6 @@ class PropertyImageResource extends Resource
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->required(),
-                Forms\Components\TextInput::make('order')
-                    ->numeric()
-                    ->required(),
             ]);
     }
 
@@ -45,8 +42,6 @@ class PropertyImageResource extends Resource
                     ->label('Property Slug')
                     ->sortable(),
                 Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('order')
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

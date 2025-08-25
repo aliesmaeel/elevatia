@@ -20,7 +20,7 @@ class ContactEmailResource extends Resource
 {
     protected static ?string $model = Email::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-phone';
     protected static ?string $navigationGroup = 'Emails';
 
     protected static ?string $label = 'Contact Email';
@@ -51,16 +51,50 @@ class ContactEmailResource extends Resource
                 Tables\Columns\TextColumn::make('message')->limit(50)->wrap()->searchable(),
                 Tables\Columns\IconColumn::make('is_read')->boolean(),
             ])
-            ->filters([
-                //
-            ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make()
+                    ->modalHeading('Contact Email Details')
+                    ->modalWidth('lg')
+                    ->extraModalFooterActions(function (Model $record): array {
+
+                        if ($record->is_read) {
+                            return [
+                                Tables\Actions\Action::make('mark_unread')
+                                    ->label('Mark as Unread')
+                                    ->color('danger')
+                                    ->outlined()
+                                    ->action(function (Model $record) {
+                                        $record->update(['is_read' => false]);
+                                    })
+                                    ->close(),
+                            ];
+                        }else{
+                            $record->update(['is_read' => true]);
+                        }
+                        return [];
+                    })
+                    ->form([
+                        Forms\Components\TextInput::make('name')->disabled(),
+                        Forms\Components\TextInput::make('email')->disabled(),
+                        Forms\Components\TextInput::make('phone')->disabled(),
+                        Forms\Components\TextInput::make('time')->disabled(),
+                        Forms\Components\Textarea::make('message')->disabled()->dehydrated(false)->rows(6),
+
+                    ]),
             ])
+
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ])->filters([
+                //is read filter
+                Tables\Filters\SelectFilter::make('is_read')
+                    ->options([
+                        '1' => 'Read',
+                        '0' => 'Unread',
+                    ])
+                    ->label('Is Read'),
             ]);
     }
 
