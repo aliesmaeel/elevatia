@@ -11,15 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
+
         Schema::create('blogs', function (Blueprint $table) {
+
             $table->id();
-            $table->text('title')->nullable();
-            $table->string('url')->nullable();
-            $table->text('slug')->nullable();
+            $table->string('title')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('quotes')->nullable();
+            $table->foreignId('agent_id')->constrained()->onDelete('cascade');
             $table->text('description')->nullable();
-            $table->integer('order')->nullable();
+            $table->integer('likes')->default(0);
+            $table->integer('shares')->default(0);
+            $table->json('social_links')->nullable();
             $table->timestamps();
+
         });
+
     }
 
     /**
