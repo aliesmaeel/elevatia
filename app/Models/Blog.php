@@ -10,10 +10,20 @@ class Blog extends Model
             'title',
             'slug',
             'description',
-            'order',
-            'order',
-            'url'
+            'agent_id',
+            'quotes',
+            'likes',
+            'shares',
+            'social_links',
     ];
+
+    protected $casts = [
+        'social_links' => 'array',
+    ];
+
+    public function agent(){
+        return $this->belongsTo(Agent::class);
+    }
 
 
 

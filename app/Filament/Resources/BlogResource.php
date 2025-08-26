@@ -17,7 +17,7 @@ class BlogResource extends Resource
 {
     protected static ?string $model = Blog::class;
     protected static ?string $navigationGroup='Pages';
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 
 
     public static function form(Form $form): Form
@@ -27,29 +27,44 @@ class BlogResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->live()
                     ->afterStateUpdated(function (Forms\Get $get, Forms\Set $set, ?string $operation, ?string $old, ?string $state, ?Model $record) {
-
-                        // Only proceed if the operation is not 'edit'
                         if ($operation === 'edit') {
                             return;
                         }
-
                         $slug = $get('slug') ?? '';
                         if ($slug !== Str::slug($state)) {
                             $set('slug', Str::slug($state));
                         }
-                    }),
+                    })->lazy(),
 
                 Forms\Components\TextInput::make('slug')
                     ->unique(Blog::class, 'slug', ignoreRecord: true)
                 ->required(),
+                Forms\Components\Select::make('agent_id')
+                ->relationship('agent', 'name'),
+                Forms\Components\TextInput::make('quotes')
+                ->columnSpanFull(),
+                Forms\Components\Repeater::make('social_links')
+                    ->label('Social Links')
+                    ->schema([
+                        Forms\Components\TextInput::make('platform')
+                            ->label('Platform')
+                            ->placeholder('facebook, twitter, instagram'),
 
+                        Forms\Components\TextInput::make('url')
+                            ->label('URL')
+                            ->url()
+                            ->required(),
 
-                Forms\Components\RichEditor::make('description'),
+                        Forms\Components\TextInput::make('icon')
+                            ->label('Icon')
+                            ->placeholder('fa-brands fa-facebook'),
+                    ])
+                    ->default([])
+                    ->columns(3) // show inputs in one row
+                    ->columnSpanFull(),
+                Forms\Components\RichEditor::make('description')
+                ->columnSpanFull(),
 
-                Forms\Components\TextInput::make('order')
-                    ->numeric(),
-
-                Forms\Components\FileUpload::make('url'),
             ]);
     }
 
@@ -59,25 +74,13 @@ class BlogResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('url'),
-                Tables\Columns\TextColumn::make('order')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('title')->searchable(),
+                Tables\Columns\TextColumn::make('slug')->searchable(),
+                Tables\Columns\TextColumn::make('likes'),
+                Tables\Columns\TextColumn::make('shares'),
             ])
             ->filters([
-                //
+
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
