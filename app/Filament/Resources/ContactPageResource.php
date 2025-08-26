@@ -33,27 +33,8 @@ class ContactPageResource extends Resource
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->required(),
-                Forms\Components\RichEditor::make('description_text')->required(),
-
                 Forms\Components\Toggle::make('active')
-                    ->required()->rules([
-                        fn (): \Closure => function (string $attribute, $value, \Closure $fail) use ($form) {
-                            if ($value && ContactPage::where('active', true)->where('id', '!=', $form->model->id?? '')->exists()) {
-
-                                $fail('Only One Page Could Be active , To Active This
-                                Contact Page Please Go And Deactivate Any Other Contact Page');
-                            }
-                        }
-                    ])->default(0),
-                Forms\Components\TextInput::make('email')
-                    ->required()
-                    ->label('Email Globally')
-                    ->maxWidth(22),
-                Forms\Components\TextInput::make('phone')
-                    ->required()
-                    ->label('Phone Globally')
-                    ->maxLength(55),
-
+                    ->unique(ignorable: fn ($record) => $record),
             ]);
     }
 
@@ -65,15 +46,6 @@ class ContactPageResource extends Resource
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\ToggleColumn::make('active'),
-
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
