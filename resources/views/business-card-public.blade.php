@@ -30,14 +30,7 @@
                             <a href="tel:{{ $businessCard->phone }}" class="text-blue-500 hover:underline">{{ $businessCard->phone }}</a>
                         </div>
                         <div class="text">
-                            <span>Email:</span> {{ $businessCard->email }}
-                        </div>
-                        <div class="text">
-                            <span>Phone:</span> {{ $businessCard->phone }}
-                        </div>
-                        <div class="text">
                             <span>Website:</span> <a href="//{{ $businessCard->url }}" class="text-blue-500 hover:underline" target="_blank">{{ $businessCard->url }}</a>
-
                         </div>
                         <div class="btn_contact">
                             <a href="{{ route('business-card.vcard', $businessCard->id) }}">
@@ -45,8 +38,6 @@
                             </a>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
