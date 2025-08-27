@@ -11,7 +11,7 @@
     <div class="home_page container home_only">
         {{-- banner --}}
             <div style="position:relative;height: 110vh;z-index: 1;" >
-                <img src="/images/banner.png" class="banner">
+                <img src="{{asset('/storage/'.$home->banner)}}" class="banner">
                 <div class="search-realestate">
                     <div class="desc_title">
                         <div class="main_title">Search Luxury Homes In Dubai</div>
@@ -28,14 +28,7 @@
                             <div class="text-content col-flex" >
                                 <div class="title">ABOUT ELEVATIA</div>
                                 <div class="desc">
-                                    Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt 
-                                    facilisis justo eget elit. Augue montes in eu mollis dictum risus blan eget commodo 
-                                    amet Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt facilisis 
-                                    justo eget elit. Augue montes in eu mollis dictum risus blan eget commodo amet Lorem ipsum dolor
-                                    sit amet consectetur. A fringilla turpis duis eget tincidunt facilisis justo eget elit. Augue
-                                    montes in eu mollis dictum risus blan eget commodo amet Lorem ipsum dolor sit amet consectetur.
-                                    A fringilla turpis duis eget tincidunt
-                                    facilisis justo eget elit. Augue montes in eu mollis dictum risus blan eget commodo amet 
+                                    {{$home->about_elevatia}}
                                 </div>
                             </div>
                         </div>
@@ -47,83 +40,19 @@
                         <div class="text-content col-flex" >
                             <div class="title">Our Vision</div>
                             <div class="desc">
-                                Lorem ipsum dolor sit amet
-                                consectetur. A fringilla turpis duis eget tincidunt facilisis justo 
-                                eget elit. Augue montes in eu mollis dictum risus blan eget commodo amet 
-                                Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt 
-                                facilisis justo eget elit. Augue montes in eu mollis dictum risus blan eget commodo 
-                                amet Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt 
-                                facilisis justo eget elit. Augue montes in eu mollis dictum risus blan eget commodo 
-                                amet Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt
-                                facilisis justo eget elit. Augue montes in eu mollis dictum risus blan eget commodo amet
+                                {{$home->our_vision}}
                             </div>
                         </div>
-                        {{-- <div class="grid_container">
-                            <div class="col flex_col">
-                                <img src="/images/vision1.svg">
-                                <div class="text">
-                                    <div class="title">Creating Lifelong Partnerships</div>
-                                    <div class="desc">Lorem ipsum dolor sit amet consectetur fringilla turpis duis eget tincidunt facilisis just</div>
-                                </div>
-                            </div>
-                            <div class="col flex_col">
-                                <img src="/images/vision1.svg">
-                                <div class="text">
-                                    <div class="title">Creating Lifelong Partnerships</div>
-                                    <div class="desc">Lorem ipsum dolor sit amet consectetur fringilla turpis duis eget tincidunt facilisis just</div>
-                                </div>
-                            </div>
-                            <div class="col flex_col">
-                                <img src="/images/vision1.svg">
-                                <div class="text">
-                                    <div class="title">Creating Lifelong Partnerships</div>
-                                    <div class="desc">Lorem ipsum dolor sit amet consectetur fringilla turpis duis eget tincidunt facilisis just</div>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
-
-                {{-- Mission --}}
                 <div class="about-section">
                     <div class="content"data-aos="fade-up" >
                         <div class="text-content col-flex" >
                             <div class="title">Our Mission</div>
                             <div class="desc">
-                                Lorem ipsum dolor sit amet
-                                consectetur. A fringilla turpis duis eget tincidunt facilisis justo 
-                                eget elit. Augue montes in eu mollis dictum risus blan eget commodo amet 
-                                Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt 
-                                facilisis justo eget elit. Augue montes in eu mollis dictum risus blan eget commodo 
-                                amet Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt 
-                                facilisis justo eget elit. Augue montes in eu mollis dictum risus blan eget commodo 
-                                amet Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt
-                                facilisis justo eget elit. Augue montes in eu mollis dictum risus blan eget commodo amet
+                                {{$home->our_mission}}
                             </div>
                         </div>
-                        {{-- <div class="grid_container">
-                            <div class="col flex_col">
-                                <img src="/images/vision1.svg">
-                                <div class="text">
-                                    <div class="title">Creating Lifelong Partnerships</div>
-                                    <div class="desc">Lorem ipsum dolor sit amet consectetur fringilla turpis duis eget tincidunt facilisis just</div>
-                                </div>
-                            </div>
-                            <div class="col flex_col">
-                                <img src="/images/vision1.svg">
-                                <div class="text">
-                                    <div class="title">Creating Lifelong Partnerships</div>
-                                    <div class="desc">Lorem ipsum dolor sit amet consectetur fringilla turpis duis eget tincidunt facilisis just</div>
-                                </div>
-                            </div>
-                            <div class="col flex_col">
-                                <img src="/images/vision1.svg">
-                                <div class="text">
-                                    <div class="title">Creating Lifelong Partnerships</div>
-                                    <div class="desc">Lorem ipsum dolor sit amet consectetur fringilla turpis duis eget tincidunt facilisis just</div>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -156,7 +85,7 @@
                             EXPLORE RECENT OFF PLAN PROJECTS
                         </div>
                         <div class="desc">
-                            Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes 
+                            Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes
                             and investments available through Estatein. Click "View Details" for more information.
                         </div>
                     </div>
@@ -166,17 +95,17 @@
                                 <img src="/images/off_plan_1.png">
                             </div>
                             <div class="col">
-                                <img src="/images/off_plan_2.png"> 
+                                <img src="/images/off_plan_2.png">
                             </div>
                         </div>
                         <div class="flex_container second_grid">
                             <div class="col">
                                 <img src="/images/offplan_3.png">
-                                
+
                             </div>
                             <div class="col">
                                 <img src="/images/off_plan_4.png">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -196,16 +125,16 @@
                             investments available through Estatein. Click "View Details" for more information.
                         </div>
                     </div>
-                    <div class="team_swiper">  
-                        <div class="swiper-wrapper">    
-                            @include('components.team_box')   
-                        </div> 
+                    <div class="team_swiper">
+                        <div class="swiper-wrapper">
+                            @include('components.team_box')
+                        </div>
                         <div class="swiper-pagination"></div>
-                    </div> 
+                    </div>
 
                 </div>
             </div> --}}
-            
+
             <div class="our_expert">
                 <div class="content" data-aos="fade-up">
                     <div class="text-content">
@@ -219,7 +148,7 @@
                     </div>
                     {{-- our expert  --}}
                     <div class="swiper_expert">
-                       
+
                         <div class="swiper-wrapper">
                         <!-- Slide 1 -->
                         <div class="swiper-slide">
@@ -295,10 +224,10 @@
                     <div class="grid-container">
                         @include('components.blog_item')
                     </div>
-                
+
                 </div>
             </div>
-            
+
     </div>
 @endsection
 

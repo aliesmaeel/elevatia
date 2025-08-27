@@ -15,6 +15,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Storage;
 
 class HomePageResource extends Resource
 {
@@ -28,7 +29,15 @@ class HomePageResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('banner'),
+                Forms\Components\FileUpload::make('banner')
+                    ->image()
+                    ->directory('home')
+                    ->required()
+                    ->deleteUploadedFileUsing(function ($file, $record) {
+                        if ($record && $record->getOriginal('banner')) {
+                            Storage::disk('public')->delete($record->getOriginal('banner'));
+                        }
+                    }),
                 Forms\Components\Textarea::make('about_elevatia')->required(),
                 Forms\Components\Textarea::make('our_vision')->required(),
                 Forms\Components\Textarea::make('our_mission')->required(),
