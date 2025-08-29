@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('experience')->default(0);
             $table->string('languages', 191)->nullable();
             $table->string('image', 191)->nullable();
+            $table->string('quoute', 191)->nullable();
             $table->timestamps();
         });
     }

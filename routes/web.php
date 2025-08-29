@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomePageController;
 use App\Models\BusinessCard;
 use Illuminate\Support\Facades\Route;
@@ -16,9 +17,10 @@ Route::get('/property_details', function () {
     return view('property_details');
 })->name('property_details');
 
-Route::get('/blogs', function () {
-    return view('blogs');
-})->name('blogs');
+Route::get('/blogs',[BlogController::class,'index'])->name('blogs.index');
+Route::get('/blog/{slug}',[BlogController::class,'show'])->name('blogs.details');
+Route::post('/blog/{id}/like', [BlogController::class, 'like']);
+Route::post('/blog/{id}/share', [BlogController::class, 'share']);
 
 Route::get('/contact_us', function () {
     return view('contact_us');
@@ -28,9 +30,7 @@ Route::get('/about_us', function () {
     return view('about_us');
 })->name('about_us');
 
-Route::get('/details_blog', function () {
-    return view('details_blog');
-})->name('details_blog');
+
 
 Route::get('/our_team', function () {
     return view('our_team');

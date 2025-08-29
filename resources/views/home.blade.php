@@ -131,70 +131,26 @@
                     {{-- our expert  --}}
                     <div class="swiper_expert">
 
-                        <div class="swiper-wrapper">
-                        <!-- Slide 1 -->
-                        <div class="swiper-slide">
-                            <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                            <div class="member-info">
-                            <div class="member-name">Maria Yaltekee</div>
-                            <div class="member-role">Graphic Designer</div>
-                            <a href="#">
-                                <img class="arrow" src="/images/arrow-right.svg">
-                            </a>
+
+                            <div class="swiper-wrapper">
+                                <!-- Slide 1 -->
+                                @foreach($agents as $agent)
+                                <div class="swiper-slide">
+                                    <img src="{{asset('/storage/'.$agent->image)}}" alt="Member" class="member-img" />
+                                    <div class="member-info">
+                                        <div class="member-name">{{$agent->name}}</div>
+                                        <div class="member-role">{{$agent->position}}</div>
+                                        <a href="#">
+                                            <img class="arrow" src="/images/arrow-right.svg">
+                                        </a>
+                                    </div>
+                                </div>
+                                @endforeach
                             </div>
-                        </div>
-                        <!-- Duplicate as needed -->
-                        <div class="swiper-slide">
-                            <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                            <div class="member-info">
-                            <div class="member-name">Maria Yaltekee</div>
-                            <div class="member-role">Graphic Designer</div>
-                            <a href="#">
-                                <img class="arrow" src="/images/arrow-right.svg">
-                            </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                            <div class="member-info">
-                            <div class="member-name">Maria Yaltekee</div>
-                            <div class="member-role">Graphic Designer</div>
-                            <a href="#">
-                                <img class="arrow" src="/images/arrow-right.svg">
-                            </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                            <div class="member-info">
-                            <div class="member-name">Maria Yaltekee</div>
-                            <div class="member-role">Graphic Designer</div>
-                            <a href="#">
-                                <img class="arrow" src="/images/arrow-right.svg">
-                            </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                            <div class="member-info">
-                            <div class="member-name">Maria Yaltekee</div>
-                            <div class="member-role">Graphic Designer</div>
-                            <a href="#">
-                                <img class="arrow" src="/images/arrow-right.svg">
-                            </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                            <div class="member-info">
-                            <div class="member-name">Maria Yaltekee</div>
-                            <div class="member-role">Graphic Designer</div>
-                            <a href="#">
-                                <img class="arrow" src="/images/arrow-right.svg">
-                            </a>
-                            </div>
-                        </div>
-                        </div>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -204,7 +160,7 @@
                 <div class="content" data-aos="fade-up">
                     <div class="title">Our Blogs</div>
                     <div class="grid-container">
-                        @include('components.blog_item')
+                        <x-blog_item :blogs="$blogs" />
                     </div>
 
                 </div>

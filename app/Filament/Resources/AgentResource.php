@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\AgentResource\Pages;
 use App\Filament\Resources\AgentResource\RelationManagers;
+use App\Helpers\PopularLanguages;
 use App\Models\Agent;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -45,23 +46,14 @@ class AgentResource extends Resource
                     ->numeric()
                     ->default(0),
                 Forms\Components\Select::make('languages')
-                    ->options([
-                        'ar' => 'Arabic',
-                        'en' => 'English',
-                        'fr' => 'French',
-                        'es' => 'Spanish',
-                        'de' => 'German',
-                        'zh' => 'Chinese',
-                        'ru' => 'Russian',
-                        'pt' => 'Portuguese',
-                        'it' => 'Italian',
-                        'ja' => 'Japanese',
-                        'hi' => 'Hindi',
-                    ])
+                    ->options(PopularLanguages::getLanguages())
                     ->searchable()
                     ->multiple(),
                 Forms\Components\FileUpload::make('image')
-                    ->image(),
+                    ->image()
+                    ->directory('agents')
+                    ->required(),
+                Forms\Components\TextInput::make('quoute')
             ]);
     }
 
