@@ -1,5 +1,6 @@
 <?php
 
+use App\Helpers\RealestateTypes;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,7 +21,7 @@ return new class extends Migration
             $table->double('longitude')->nullable();
             $table->string('address');
             $table->string('size');
-            $table->decimal('price', 10, 2)->nullable();
+            $table->integer('price')->nullable();
             $table->foreignId('city_id')->constrained();
             $table->foreignId('community_id')->constrained();
             $table->foreignId('sub_community_id')->nullable()->constrained();
@@ -33,6 +34,8 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->integer('rating')->default(0);
             $table->integer('reviews')->default(0);
+            $table->boolean('is_premium')->default(false);
+            $table->enum('status', array_keys(RealestateTypes::getPropertyStatus()))->default('for_sale');
             $table->boolean('active')->nullable();
 
 

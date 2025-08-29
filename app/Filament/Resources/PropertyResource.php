@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PropertyResource\Pages;
 use App\Filament\Resources\PropertyResource\RelationManagers;
+use App\Helpers\RealestateTypes;
 use App\Models\Property;
 use Cheesegrits\FilamentGoogleMaps\Fields\Map;
 use Filament\Facades\Filament;
@@ -30,24 +31,7 @@ class PropertyResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Select::make('type')
-                    ->options([
-                        'Labour Camp' => 'Labour Camp',
-                        'Residential Building' => 'Residential Building',
-                        'Commercial Spaces' => 'Commercial Spaces',
-                        'Showrooms' => 'Showrooms',
-                        'Apartment/Flat' => 'Apartment/Flat',
-                        'Duplex' => 'Duplex',
-                        'Land/Plot' => 'Land/Plot',
-                        'Penthouse' => 'Penthouse',
-                        'Townhouse' => 'Townhouse',
-                        'Villa' => 'Villa',
-                        'Factory' => 'Factory',
-                        'Full Floor' => 'Full Floor',
-                        'Office Space' => 'Office Space',
-                        'Shop' => 'Shop',
-                        'Whole Building' => 'Whole Building',
-                        'Warehouse' => 'Warehouse',
-                    ])
+                    ->options(RealestateTypes::getPropertyTypes())
                     ->searchable()
                     ->required(),
 
@@ -95,11 +79,14 @@ class PropertyResource extends Resource
                 Forms\Components\TextInput::make('reviews')
                     ->numeric()
                     ->maxLength(191),
-
                 Forms\Components\Toggle::make('active'),
                 Forms\Components\MultiSelect::make('amenity_id')
                     ->relationship('amenities', 'name')
                     ->placeholder('Select Amenities'),
+                Forms\Components\Toggle::make('is_premium')->label('Premium'),
+                Forms\Components\Select::make('status')
+                    ->options(RealestateTypes::getPropertyStatus())
+                    ->required(),
                 Forms\Components\FileUpload::make('image')
                     ->image()->label('Main Image')->columnSpanFull(),
 
