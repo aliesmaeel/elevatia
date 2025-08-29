@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\ActiveScope;
 use Illuminate\Database\Eloquent\Model;
 
 class HomePage extends Model
@@ -14,11 +15,11 @@ class HomePage extends Model
         'active',
     ];
 
-    public function scopeActive($query)
-    {
-        return $query->where('active', true);
-    }
 
+    protected static function booted()
+    {
+        static::addGlobalScope(new ActiveScope());
+    }
 
 
 }

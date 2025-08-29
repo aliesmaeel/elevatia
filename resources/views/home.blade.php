@@ -72,7 +72,11 @@
                         </div>
                     </div>
                     <div class="grid-container">
-                        @include('components.service')
+                        <x-service :premiumProperties="$premiumProperties" />
+                    </div>
+
+                    <div class="pagination-container">
+                        {{ $premiumProperties->links() }}
                     </div>
                 </div>
             </div>
@@ -112,28 +116,6 @@
 
                 </div>
             </div>
-
-            {{-- Our Team --}}
-            {{-- <div class="team">
-                <div class="content" data-aos="fade-up">
-                    <div class="text-content">
-                        <div class="title">
-                            Our Team
-                        </div>
-                        <div class="desc">
-                            Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and
-                            investments available through Estatein. Click "View Details" for more information.
-                        </div>
-                    </div>
-                    <div class="team_swiper">
-                        <div class="swiper-wrapper">
-                            @include('components.team_box')
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-
-                </div>
-            </div> --}}
 
             <div class="our_expert">
                 <div class="content" data-aos="fade-up">

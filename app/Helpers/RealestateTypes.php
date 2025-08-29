@@ -39,8 +39,8 @@ class RealestateTypes
         return [
             'for_sale' => 'For Sale',
             'for_rent' => 'For Rent',
-            'sold' => 'Sold',
-            'rented' => 'Rented',
+            'off_plan' => 'Off Plan',
         ];
     }
+
 }
