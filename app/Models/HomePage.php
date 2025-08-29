@@ -2,30 +2,23 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\ActiveScope;
 use Illuminate\Database\Eloquent\Model;
 
 class HomePage extends Model
 {
-protected $fillable= [
- 'name',
- 'video_section_web',
-'video_section_mobile',
-'about_section_text',
-'what_we_do_section_text',
-'our_team_section_text',
-'blogs_section_text',
-'active',
-'speed',
-];
+    protected $fillable = [
+        'banner',
+        'about_elevatia',
+        'our_vision',
+        'our_mission',
+        'active',
+    ];
 
-    public function scopeActive($query)
-    {
-        return $query->where('active',true);
-    }
 
-    public function images()
+    protected static function booted()
     {
-        return $this->hasMany(HomePageImage::class, 'homepage_id');
+        static::addGlobalScope(new ActiveScope());
     }
 
 
