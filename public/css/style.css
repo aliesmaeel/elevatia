@@ -920,6 +920,7 @@ background-size: cover;
   flex-direction: column;
   width: 100%;
   gap:0.4rem;
+  justify-content: space-between;
   /* padding: 1rem; */
   border-radius: 22px;
   background: linear-gradient(rgb(70 70 70), rgb(95 95 95 / 30%), rgb(165 165 165 / 0%), rgb(65 64 64));
