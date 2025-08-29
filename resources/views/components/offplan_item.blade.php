@@ -126,7 +126,7 @@
 </div>
 <div class="col">
     <div class="img_Container">
-        <img src="/images/property.png">
+        <img src="/images/property.png"> 
     </div>
     <div class="flex-col">
         <a class="name_offplan" href="#">Luxury 4-Bedroom | Sea and Park Views in Blue Waters</a>
