@@ -1,15 +1,15 @@
 {{-- <div class="shadow">
-   
+
 </div> --}}
 <div class="footer">
     <div class="content">
         <div class="grid-container">
             <div class="col">
                 <div class="desc desc_min">
-                    ELEVATIA Properties is committed to delivering a high level of expertise,  customer service, and attention to detail to the marketing and sales of  luxury real estate and rental properties 
+                    ELEVATIA Properties is committed to delivering a high level of expertise,  customer service, and attention to detail to the marketing and sales of  luxury real estate and rental properties
                     {{-- <a href="#">
                         Read More
-                        
+
                     </a> --}}
                 </div>
                 <div>
@@ -18,9 +18,9 @@
                             <div class="flex">
                                 <img src="/images/Vector.svg" class="left_s"/>
                                 <input type="email" name="email" placeholder="Enter Your Email" required>
-                                
+
                             </div>
-                            
+
                             <button type="submit">
                                 <img src="/images/send.svg">
                             </button>
@@ -38,7 +38,7 @@
                             <div class="over-text-hide">Home Page</div>
                         </div>
                     </a>
-                    <a href="{{ route('blogs') }}">
+                    <a href="{{ route('blogs.index') }}">
                         <div class="row">
                             <div class="over-text-hide">Our Blogs</div>
                         </div>
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="title">Contact Us.</div> 
+                <div class="title">Contact Us.</div>
                 <div class="flex-col">
                     <a href="#">
                         <div class="row">
@@ -100,7 +100,7 @@
                             <img src="/images/youtube.svg">
                         </a>
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
         <div class="terms flex">

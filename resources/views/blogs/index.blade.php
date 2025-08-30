@@ -14,7 +14,7 @@
         <div class="search-realestate">
             <div class="desc_title">
                 <div class="main_title">Search Luxury Homes In Dubai</div>
-                <div class="desc">   
+                <div class="desc">
                     Explore Dubai’s Diverse Communities: Where Tradition Meets Innovation in Every Neighborhood.
                 </div>
             </div>
@@ -34,9 +34,9 @@
                     </b>
                 </div>
             </div>
-            
+
             <div class="grid-container" data-aos="fade-up">
-                @include('components.blog_item')
+                <x-blog_item :blogs="$blogs" />
             </div>
          </div>
     </div>

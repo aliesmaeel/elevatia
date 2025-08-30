@@ -2714,6 +2714,9 @@ width: 77px;
 height: 76px;
 line-height: 101px;
 border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .details_blog .grid_container.sections .col .flex_col .title{
 color:#fff;

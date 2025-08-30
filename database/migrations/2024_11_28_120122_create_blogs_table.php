@@ -15,9 +15,10 @@ return new class extends Migration
         Schema::create('blogs', function (Blueprint $table) {
 
             $table->id();
+            $table->string('image')->nullable();
             $table->string('title')->nullable();
             $table->string('slug')->nullable();
-            $table->string('quotes')->nullable();
+
             $table->foreignId('agent_id')->constrained()->onDelete('cascade');
             $table->text('description')->nullable();
             $table->integer('likes')->default(0);
