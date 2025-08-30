@@ -74,9 +74,8 @@
                     <div class="grid-container">
                         <x-service :premiumProperties="$premiumProperties" />
                     </div>
-
-                    <div class="pagination-container">
-                        {{ $premiumProperties->links() }}
+                    <div class="main_pagination">
+                        @include('components.pagination', ['paginator' => $premiumProperties])
                     </div>
                 </div>
             </div>

@@ -3788,3 +3788,57 @@ transform: scale(1.1);
 .business_card_page a:hover{
   opacity: 0.8;
 }
+.main_pagination{
+  display: flex
+  ;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      margin: 0 auto;
+}
+.main_pagination .pagination-wrapper ul{
+  display: flex
+  ;
+      justify-content: center;
+      padding: 0;
+      gap:1rem;
+      align-items: center;
+}
+.main_pagination .pagination-wrapper .number_list_pag{
+  
+    font-size: 30px;
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    color: #fff;
+    width: 40px;
+    border-radius: 9px;
+    text-align: center;
+}
+
+.main_pagination .pagination-wrapper .number_list_pag_link{
+  background: linear-gradient(to bottom, rgb(203 203 203 / 80%), rgb(96 96 96 / 90%));
+  color: rgba(255, 255, 255, 0.72);
+  width: 40px;
+  font-size: 30px;
+  border-radius: 9px;
+  text-align: center;
+}
+.main_pagination .pagination-wrapper .number_list_pag_link a{
+  color:#383838
+}
+.main_pagination .pagination-wrapper .next img{
+  transform: rotate(180deg);
+}
+.main_pagination .pagination-wrapper li{
+  height:45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.main_pagination .pagination-wrapper li a{
+  height: 100%;
+  display: flex
+;
+  align-items: center;
+  justify-content: center;
+}
