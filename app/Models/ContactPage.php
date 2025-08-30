@@ -9,10 +9,6 @@ class ContactPage extends Model
     protected $fillable= [
         'name',
         'image',
-        'description_text',
-        'active',
-        'email',
-        'phone'
     ];
 
     public function scopeActive($query)
