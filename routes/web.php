@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomePageController;
 use App\Models\BusinessCard;
 use Illuminate\Support\Facades\Route;
@@ -22,9 +23,7 @@ Route::get('/blog/{slug}',[BlogController::class,'show'])->name('blogs.details')
 Route::post('/blog/{id}/like', [BlogController::class, 'like']);
 Route::post('/blog/{id}/share', [BlogController::class, 'share']);
 
-Route::get('/contact_us', function () {
-    return view('contact_us');
-})->name('contact_us');
+Route::get('/contact',[ContactController::class,'index'])->name('contact.index');
 
 Route::get('/about_us', function () {
     return view('about_us');

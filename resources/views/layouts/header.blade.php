@@ -16,7 +16,7 @@
                 <li class="link"><a href="{{ route('our_team') }}">Our Team</a></li>
                 <li class="link"><a href="{{ route('offplan') }}">OffPlan Project</a></li>
                 <li class="link"><a href="{{ route('about_us') }}">About Us</a></li>
-                <li class="link"><a href="{{ route('contact_us') }}">Contact Us</a></li>
+                <li class="link"><a href="{{ route('contact.index') }}">Contact Us</a></li>
             </ul>
         </div>
     </div>

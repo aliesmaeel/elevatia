@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\ActiveScope;
 use Illuminate\Database\Eloquent\Model;
 
 class ContactPage extends Model
@@ -11,9 +12,11 @@ class ContactPage extends Model
         'image',
     ];
 
-    public function scopeActive($query)
+    protected $table='contact_pages';
+
+    protected static function booted()
     {
-        return $query->where('active',true);
+        static::addGlobalScope(new ActiveScope());
     }
 
 }

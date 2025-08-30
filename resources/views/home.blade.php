@@ -159,7 +159,26 @@
                 <div class="content" data-aos="fade-up">
                     <div class="title">Our Blogs</div>
                     <div class="grid-container">
-                        <x-blog_item :blogs="$blogs" />
+                        @foreach($blogs as $blog)
+                        <x-blog_item :blog="$blog" />
+                        @if($loop->iteration == 4)
+
+                            <div class="blog_2_box col">
+                                <div class="title_box">Experience Effortless Property Management</div>
+                                <div class="desc_box">
+                                    Ready to experience hassle-free property management? Explore our Property Management Service categories and let us
+                                    handle the complexities while you enjoy the benefits of property ownership.
+                                </div>
+
+                                <a href="/blogs">
+                                    <div>See All</div>
+                                </a>
+
+                                <img src="/images/bt.png" class="abs_img">
+
+                            </div>
+                        @endif
+                        @endforeach
                     </div>
 
                 </div>

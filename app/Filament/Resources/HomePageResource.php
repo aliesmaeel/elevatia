@@ -25,6 +25,12 @@ class HomePageResource extends Resource
     protected static ?string $pluralLabel = 'Home Page';
     protected static ?string $navigationLabel='Home Page';
 
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->withoutGlobalScopes();
+    }
+
     public static function form(Form $form): Form
     {
         return $form

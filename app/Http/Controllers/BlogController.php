@@ -16,8 +16,8 @@ class BlogController
     public function show($slug)
     {
         $blog=Blog::with('agent')->where('slug',$slug)->firstOrFail();
-
-        return view('blogs.show',compact('blog'));
+        $relatedBlogs=Blog::where('id','!=',$blog->id)->inRandomOrder()->take(3)->get();
+        return view('blogs.show',compact('blog','relatedBlogs'));
     }
 
     public function like($id) {

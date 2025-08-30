@@ -125,10 +125,18 @@
         </div>
     </div>
     <div class="bg_empty"></div>
+    <div class="content">
+        <h1 class="col">you might be also interested in ...</h1>
+    </div>
     <div class="similar_blogs mt_small" >
         <div class="content">
             <div class="grid-container" data-aos="fade-up">
 
+                @foreach($relatedBlogs as $relatedBlog)
+                <div class="col">
+                  <x-blog_item :blog="$relatedBlog"/>
+                </div>
+                @endforeach
             </div>
         </div>
     </div>

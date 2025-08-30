@@ -26,17 +26,13 @@
                 <form class="form_search"  method="">
                 @include('components.search_box')
                 </form>
-                <div class="desc_text">
-                    Dubai’s property market offers an exceptional variety of homes suited...
-                    <br>
-                    <b>
-                        <span>1094</span>results
-                    </b>
-                </div>
             </div>
 
             <div class="grid-container" data-aos="fade-up">
-                <x-blog_item :blogs="$blogs" />
+                @foreach($blogs as $blog)
+                    <x-blog_item :blog="$blog" />
+                @endforeach
+
             </div>
          </div>
     </div>

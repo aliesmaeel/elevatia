@@ -58,7 +58,7 @@
                             <div class="over-text-hide">About Us </div>
                         </div>
                     </a>
-                    <a href="{{ route('contact_us') }}">
+                    <a href="{{ route('contact.index') }}">
                         <div class="row">
                             <div class="over-text-hide">Contact Us </div>
                         </div>
