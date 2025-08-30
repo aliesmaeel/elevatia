@@ -9,10 +9,10 @@
 {{-- main page --}}
 @section('content')
     <div class="contact_us container">
-        
+
         {{-- banner --}}
         <div style="position:relative;height: 110vh;z-index: 1;" >
-            <img src="/images/banner_contact.png" class="banner">
+            <img src="{{asset('/storage/'.$contact->image)}}" class="banner">
             <div class="search-realestate">
                 <div class="desc_title">
                     <div class="main_title">Search Luxury Homes In Dubai</div>
@@ -24,8 +24,8 @@
             <div class="content" data-aos="fade-up">
                 <div class="title">Get Started</div>
                 <div class="desc">
-                    Take the first step towards achieving your real estate goals by talking 
-                        to our team. Whether you are involved in residential or commercial  transactions or 
+                    Take the first step towards achieving your real estate goals by talking
+                        to our team. Whether you are involved in residential or commercial  transactions or
                     considering relocation, we have the support and systems  for your success.
                 </div>
                 <div class="grid-container">
@@ -58,7 +58,7 @@
             <div class="content" data-aos="fade-up">
                 <div class="title">Talk To An Expert</div>
                 <div class="desc">
-                    Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect 
+                    Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect
                     match. Don't wait; let's embark on this exciting journey together.
                 </div>
                 @include('components.contact_form')
