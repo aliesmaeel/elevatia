@@ -15,6 +15,7 @@ class Agent extends Model
         'experience',
         'languages',
         'position',
+        'quoute'
     ];
 
     protected $casts = [

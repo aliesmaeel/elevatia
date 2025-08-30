@@ -836,12 +836,12 @@ background-size: cover;
   text-align: center;
   color:rgba(255, 255, 255, 1)
 
-}
+}  
 .services .content .desc{
   text-align: center;
   color:rgba(153, 153, 153, 1);
   width:90%;
-
+  margin: 0 auto;
   margin: 0 auto;
 
 }
@@ -2716,6 +2716,9 @@ width: 77px;
 height: 76px;
 line-height: 101px;
 border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .details_blog .grid_container.sections .col .flex_col .title{
 color:#fff;

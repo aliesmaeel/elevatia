@@ -11,10 +11,10 @@ class Blog extends Model
             'slug',
             'description',
             'agent_id',
-            'quotes',
             'likes',
             'shares',
             'social_links',
+             'image'
     ];
 
     protected $casts = [

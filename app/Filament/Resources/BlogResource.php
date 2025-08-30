@@ -24,6 +24,10 @@ class BlogResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\FileUpload::make('image')
+                ->image()
+                ->directory('blog/images')
+                ->required(),
                 Forms\Components\TextInput::make('title')
                     ->live()
                     ->afterStateUpdated(function (Forms\Get $get, Forms\Set $set, ?string $operation, ?string $old, ?string $state, ?Model $record) {
@@ -37,12 +41,10 @@ class BlogResource extends Resource
                     })->lazy(),
 
                 Forms\Components\TextInput::make('slug')
-                    ->unique(Blog::class, 'slug', ignoreRecord: true)
-                ->required(),
+                    ->unique( ignoreRecord: true)
+                     ->required(),
                 Forms\Components\Select::make('agent_id')
                 ->relationship('agent', 'name'),
-                Forms\Components\TextInput::make('quotes')
-                ->columnSpanFull(),
                 Forms\Components\Repeater::make('social_links')
                     ->label('Social Links')
                     ->schema([
@@ -55,9 +57,12 @@ class BlogResource extends Resource
                             ->url()
                             ->required(),
 
-                        Forms\Components\TextInput::make('icon')
+                        Forms\Components\FileUpload::make('icon')
                             ->label('Icon')
-                            ->placeholder('fa-brands fa-facebook'),
+                            ->image()
+                            ->directory('blog/social_icons')
+                            ->maxSize(1024) // 1MB
+                            ->required(),
                     ])
                     ->default([])
                     ->columns(3) // show inputs in one row
