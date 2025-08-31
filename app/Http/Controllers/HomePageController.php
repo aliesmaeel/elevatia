@@ -34,20 +34,28 @@ class HomePageController extends Controller
 
     public function search(Request $request)
     {
-
         $query = Property::query();
 
-        if ($request->filled('search')) {
-            $query->where(function($q) use ($request) {
-                $q->where('title', 'LIKE', '%'.$request->search.'%')
-                    ->orWhere('description', 'LIKE', '%'.$request->search.'%')
-                    ->orWhere('address', 'LIKE', '%'.$request->search.'%');
-            });
+
+        if ($request->filled('property_type')) {
+            $types = (array) $request->property_type;
+
+            if (!in_array('any', $types)) {
+                $query->where(function ($q) use ($types) {
+                    $q->whereHas('city', function ($sub) use ($types) {
+                        $sub->whereIn('name', $types);
+                    })
+                        ->orWhereHas('community', function ($sub) use ($types) {
+                            $sub->whereIn('name', $types);
+                        })
+                        ->orWhereHas('subCommunity', function ($sub) use ($types) {
+                            $sub->whereIn('name', $types);
+                        });
+                });
+            }
         }
 
-        if ($request->filled('property_type') && $request->property_type !== 'any') {
-            $query->where('type', $request->property_type);
-        }
+
 
         if ($request->filled('bathrooms') && $request->bathrooms !== 'any') {
             $query->where('bathrooms', $request->bathrooms);
@@ -60,13 +68,14 @@ class HomePageController extends Controller
         if ($request->filled('min_price')) {
             $query->where('price', '>=', (int) $request->min_price);
         }
+
         if ($request->filled('max_price')) {
             $query->where('price', '<=', (int) $request->max_price);
         }
 
-        $properties = $query->paginate(12); // with pagination
-
+        $properties = $query->paginate(12);
 
         return view('search_result', compact('properties'));
     }
+
 }
