@@ -37,10 +37,6 @@ return new class extends Migration
             $table->boolean('is_premium')->default(false);
             $table->enum('status', array_keys(RealestateTypes::getPropertyStatus()))->default('for_sale');
             $table->boolean('active')->nullable();
-
-
-
-
             $table->timestamps();
         });
     }
