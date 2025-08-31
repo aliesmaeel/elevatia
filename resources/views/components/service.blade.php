@@ -1,4 +1,4 @@
-@foreach ($premiumProperties as $property)
+
     <div class="col" data-type="{{ App\Helpers\RealestateTypes::getPropertyStatus()[$property->status] }}">
         <div class="img-container">
             <img src="{{asset('storage/'.$property->image)}}">
@@ -43,5 +43,5 @@
             </div>
         </div>
     </div>
-@endforeach
+
 

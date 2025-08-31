@@ -2,29 +2,22 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\ActiveScope;
 use Illuminate\Database\Eloquent\Model;
 
     class AboutUs extends Model
 {
     protected $fillable=[
-        'about-us',
-        'about-us-image',
-        'our-vision',
-        'customer-satisfaction',
-        'customer-satisfaction-images',
-        'quality',
-        'quality-images',
-        'integrity',
-        'integrity-images',
-        'innovation',
-        'trust-heading',
-        'quote',
+        'banner',
+        'about_us',
+        'our_vision',
+        'our_mission',
+        'active'
     ];
 
-        protected $casts = [
-            'customer-satisfaction-images' => 'array',
-            'quality-images' => 'array',
-            'integrity-images' => 'array',
-        ];
+        protected static function booted()
+        {
+            static::addGlobalScope(new ActiveScope());
+        }
 
     }

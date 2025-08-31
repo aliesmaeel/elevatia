@@ -72,7 +72,9 @@
                         </div>
                     </div>
                     <div class="grid-container">
-                        <x-service :premiumProperties="$premiumProperties" />
+                        @foreach ($premiumProperties as $property)
+                        <x-service :property="$property" />
+                        @endforeach
                     </div>
                     <div class="main_pagination">
                         @include('components.pagination', ['paginator' => $premiumProperties])

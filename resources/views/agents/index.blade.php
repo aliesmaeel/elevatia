@@ -9,7 +9,7 @@
 {{-- main page --}}
 @section('content')
 <div class="contact_us container about_page our_team_page">
-        
+
     {{-- banner --}}
     <div style="position:relative;height: 110vh;z-index: 1;" >
         <img src="/images/banner_contact.png" class="banner">
@@ -26,7 +26,7 @@
             <div class="title">OUR EXPERT</div>
             <div class="title2">
                 <div class="flex">
-                    <div>Friendly</div> 
+                    <div>Friendly</div>
                     <div class="circle"></div>
                 </div>
                 <div> team</div>
@@ -39,68 +39,20 @@
                 <div class="swiper-button-prev">Prev</div>
                 <div class="swiper-button-next">Next</div>
                 <div class="swiper-wrapper">
-                  <!-- Slide 1 -->
-                  <div class="swiper-slide">
-                    <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                    <div class="member-info">
-                      <div class="member-name">Maria Yaltekee</div>
-                      <div class="member-role">Graphic Designer</div>
-                      <a href="#">
-                        <img class="arrow" src="/images/arrow-right.svg">
-                      </a>
-                    </div>
-                  </div>
-                  <!-- Duplicate as needed -->
-                  <div class="swiper-slide">
-                    <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                    <div class="member-info">
-                      <div class="member-name">Maria Yaltekee</div>
-                      <div class="member-role">Graphic Designer</div>
-                      <a href="#">
-                        <img class="arrow" src="/images/arrow-right.svg">
-                      </a>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                    <div class="member-info">
-                      <div class="member-name">Maria Yaltekee</div>
-                      <div class="member-role">Graphic Designer</div>
-                      <a href="#">
-                        <img class="arrow" src="/images/arrow-right.svg">
-                      </a>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                    <div class="member-info">
-                      <div class="member-name">Maria Yaltekee</div>
-                      <div class="member-role">Graphic Designer</div>
-                      <a href="#">
-                        <img class="arrow" src="/images/arrow-right.svg">
-                      </a>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                    <div class="member-info">
-                      <div class="member-name">Maria Yaltekee</div>
-                      <div class="member-role">Graphic Designer</div>
-                      <a href="#">
-                        <img class="arrow" src="/images/arrow-right.svg">
-                      </a>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                    <div class="member-info">
-                      <div class="member-name">Maria Yaltekee</div>
-                      <div class="member-role">Graphic Designer</div>
-                      <a href="#">
-                        <img class="arrow" src="/images/arrow-right.svg">
-                      </a>
-                    </div>
-                  </div>
+                  @foreach($agents as $agent)
+                        <div class="swiper-slide">
+                            <img src="{{asset('/storage/'.$agent->image)}}" alt="Member" class="member-img" />
+                            <div class="member-info">
+                                <div class="member-name">{{$agent->name}}</div>
+                                <div class="member-role">{{$agent->position}}</div>
+                                <a href="/team/{{$agent->id}}">
+                                    <img class="arrow" src="/images/arrow-right.svg">
+                                </a>
+                            </div>
+                        </div>
+                  @endforeach
+
+
                 </div>
             </div>
         </div>
@@ -133,7 +85,7 @@
                     <div class="title f_title">
                         <div class="line"></div>
                         <div>a few words</div>
-                        
+
                     </div>
                     <div class="sub_title">
                         Why choose <br> us
@@ -167,7 +119,7 @@
         <div class="content" data-aos="fade-up">
             <div class="title">Talk To An Expert</div>
             <div class="desc">
-                Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect 
+                Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect
                 match. Don't wait; let's embark on this exciting journey together.
             </div>
             @include('components.contact_form')
