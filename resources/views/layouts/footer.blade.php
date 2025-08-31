@@ -43,7 +43,7 @@
                             <div class="over-text-hide">Our Blogs</div>
                         </div>
                     </a>
-                    <a href="{{ route('our_team') }}">
+                    <a href="{{ route('agents.index') }}">
                         <div class="row">
                             <div class="over-text-hide">Our Team</div>
                         </div>
@@ -53,7 +53,7 @@
                             <div class="over-text-hide">OffPlan Project</div>
                         </div>
                     </a>
-                    <a href="{{ route('about_us') }}">
+                    <a href="{{ route('about.index') }}">
                         <div class="row">
                             <div class="over-text-hide">About Us </div>
                         </div>

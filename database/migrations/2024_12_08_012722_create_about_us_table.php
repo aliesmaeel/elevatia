@@ -13,18 +13,11 @@ return new class extends Migration
     {
         Schema::create('about_us', function (Blueprint $table) {
             $table->id();
-            $table->text('about-us')->nullable();
-            $table->string('about-us-image',200)->nullable();
-            $table->text('our-vision')->nullable();
-            $table->text('trust-heading')->nullable();
-            $table->text('customer-satisfaction')->nullable();
-            $table->text('quality')->nullable();
-            $table->text('integrity')->nullable();
-            $table->text('innovation')->nullable();
-            $table->json('customer-satisfaction-images')->nullable();
-            $table->json('quality-images')->nullable();
-            $table->json('integrity-images')->nullable();
-            $table->text('quote')->nullable();
+            $table->text('banner')->nullable();
+            $table->string('about_us',200)->nullable();
+            $table->text('our_vision')->nullable();
+            $table->text('our_mission')->nullable();
+            $table->boolean('active')->default(true);
 
             $table->timestamps();
         });

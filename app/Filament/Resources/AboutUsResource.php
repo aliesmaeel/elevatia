@@ -22,50 +22,31 @@ class AboutUsResource extends Resource
     protected static ?string $pluralLabel = 'About Us';
     protected static ?string $navigationLabel='About Us';
 
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->withoutGlobalScopes();
+    }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\Textarea::make('about-us')
-                    ->columnSpanFull(),
-                Forms\Components\FileUpload::make('about-us-image'),
-                Forms\Components\Textarea::make('our-vision')
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('trust-heading')
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('customer-satisfaction')
-                    ->columnSpanFull(),
-                Forms\Components\Repeater::make('customer-satisfaction-images')
-                    ->schema([
-                        Forms\Components\FileUpload::make('image')
-                            ->image()
-                            ->directory('')
-                    ])
+                Forms\Components\FileUpload::make('banner')
                     ->columnSpanFull()
-                    ->default([]),
-                Forms\Components\Textarea::make('quality')
+                    ->image()
+                ->directory('about-us'),
+                Forms\Components\Textarea::make('about_us')
                     ->columnSpanFull(),
-                Forms\Components\Repeater::make('quality-images')
-                    ->schema([
-                        Forms\Components\FileUpload::make('image')
-                            ->image()
-                            ->directory('')
-                    ])
-                    ->columnSpanFull()
-                    ->default([]),
-                Forms\Components\Textarea::make('integrity')
+                Forms\Components\Textarea::make('our_vision')
                     ->columnSpanFull(),
-                Forms\Components\Repeater::make('integrity-images')
-                    ->schema([
-                        Forms\Components\FileUpload::make('image')
-                            ->image()
-                            ->directory('')
-                    ])
-                    ->columnSpanFull()
-                    ->default([]),
-                Forms\Components\Textarea::make('innovation')
+                Forms\Components\Textarea::make('our_mission')
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('quote')
+                Forms\Components\Toggle::make('active')
+                    ->default(true)
+                    ->columnSpanFull()->unique(ignorable: fn ($record) => $record),
+
             ]);
     }
 
@@ -73,12 +54,14 @@ class AboutUsResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('about-us-image')
-                    ->label('About Us Image')
-                    ->disk('public') // Ensure your filesystem is configured
-                    ->height(50)
-                    ->width(50),
-
+                Tables\Columns\TextColumn::make('id')->sortable(),
+                Tables\Columns\ImageColumn::make('banner')->rounded(),
+                Tables\Columns\TextColumn::make('about-us')->limit(50),
+                Tables\Columns\TextColumn::make('our-vision')->limit(50),
+                Tables\Columns\TextColumn::make('our-mission')->limit(50),
+                Tables\Columns\IconColumn::make('active')
+                    ->boolean()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

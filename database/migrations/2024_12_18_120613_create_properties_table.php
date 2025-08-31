@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            $table->string('type', 100)->nullable();
+            $table->enum('type',RealestateTypes::getPropertyTypes())->nullable();
             $table->string('slug', 191)->nullable();
             $table->text('title')->nullable();
             $table->double('latitude')->nullable();
