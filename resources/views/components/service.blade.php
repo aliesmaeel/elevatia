@@ -22,7 +22,7 @@
                 <div class="small">Price</div>
                 <div class="numb"> $ {{$property->price}}</div>
             </div>
-            <a class="btn">View Property Details</a>
+            <a class="btn" href="{{route('property.details',['slug'=>$property->slug])}}">View Property Details</a>
         </div>
         <hr>
         <div class="space_between">

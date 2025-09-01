@@ -13,12 +13,13 @@
                     </a> --}}
                 </div>
                 <div>
-                    <form class="contact_email_form">
+                    <form class="contact_email_form" method="POST" action="{{ route('form.submit') }}">
+                        @csrf
                         <div class="contact_email">
                             <div class="flex">
                                 <img src="/images/Vector.svg" class="left_s"/>
                                 <input type="email" name="email" placeholder="Enter Your Email" required>
-
+                                <input type="hidden" name="type" value="subscription">
                             </div>
 
                             <button type="submit">
@@ -26,7 +27,6 @@
                             </button>
                         </div>
                         <span class="email_error" style="color:#CEA669; display: none; font-size: 14px;">Please enter a valid email.</span>
-
                     </form>
                 </div>
             </div>

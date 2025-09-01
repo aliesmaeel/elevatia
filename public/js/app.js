@@ -162,14 +162,15 @@ $(document).ready(function () {
     // Form submit validation
     $('#contactForm_view').on('submit', function (e) {
         e.preventDefault();
+
         let isValid = true;
         $('.error-message').hide();
 
-        $('#contactForm_view input[type="text"], #contactForm_view textarea, #contactForm_view select').each(function () {
+        $('#contactForm_view input[type="text"], #contactForm_view textarea').each(function () {
             var value = $.trim($(this).val());
             var placeholder = ($(this).attr('placeholder') || '').toLowerCase();
             var errorField = $(this).closest('.col').find('.error-message');
-
+            console.log(placeholder);
             if (value === '') {
                 errorField.text('This field is required').show();
                 isValid = false;
@@ -372,64 +373,11 @@ var swiper_testimonials = new Swiper('.swiper_testimonials', {
 
 });
 // All images (you can fetch dynamically too)
-var allImages_property = [
-    "/images/house.png",
-    "/images/house2.png",
-    "/images/house3.png",
-    "/images/house2.png",
-    "/images/house.png",
-    "/images/house2.png",
-    "/images/house3.png",
-    "/images/house2.png",
-    "/images/house.png",
-    "/images/house2.png",
-    "/images/house3.png",
-    "/images/house2.png",
-    "/images/house.png"
-];
-
-var currentIndex_img = 0;
-var container_grid_img = document.getElementById("images_details");
-var perPage = 5;
-var details_Page = document.querySelector('property_details');
-
-function renderImages() {
-    container_grid_img.innerHTML = "";
-
-    var slice = allImages_property.slice(currentIndex_img, currentIndex_img + perPage);
-
-    slice.forEach((src, i) => {
-        var col = document.createElement("div");
-        col.className = "col";
-
-        var img = document.createElement("img");
-        img.src = src;
-        col.appendChild(img);
-
-        // If this is the 5th image and more images exist
-        if (i === perPage - 1 && currentIndex_img + perPage < allImages_property.length) {
-            var remaining = allImages_property.length - (currentIndex_img + perPage);
-            var overlay = document.createElement("div");
-            overlay.className = "overlay";
-            overlay.innerText = `+${remaining}`;
-            overlay.onclick = () => {
-                currentIndex_img += perPage;
-                renderImages();
-            };
-            col.appendChild(overlay);
-        }
-
-        container_grid_img.appendChild(col);
-    });
 
 
-}
 
-if (!container_grid_img) {
-    console.log("No #images_details container found on this page");
-} else {
-    renderImages();
-}
+
+
 
 // Dubai coordinates
 var lat = 25.276987;

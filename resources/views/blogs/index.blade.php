@@ -22,11 +22,7 @@
     </div>
     <div class="content_result">
         <div class="content">
-            <div class="first_section">
-                <form class="form_search"  method="">
-                @include('components.search_box')
-                </form>
-            </div>
+
 
             <div class="grid-container" data-aos="fade-up">
                 @foreach($blogs as $blog)

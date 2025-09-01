@@ -6,6 +6,7 @@ use App\Models\Agent;
 use App\Models\Blog;
 use App\Models\City;
 use App\Models\Community;
+use App\Models\Email;
 use App\Models\HomePage;
 use App\Models\Property;
 use App\Models\SubCommunity;
@@ -76,6 +77,23 @@ class HomePageController extends Controller
         $properties = $query->paginate(12);
 
         return view('search_result', compact('properties'));
+    }
+
+    public function submit(Request $request)
+    {
+
+        $email=Email::create([
+            'email'=>$request->email,
+            'type'=>$request->type,
+            'name'=>$request->name ?? null,
+            'phone'=>$request->phone ?? null,
+            'message'=>$request->message ?? null,
+            'time'=>$request->time ?? null,
+            'date'=>$request->date ?? null,
+            'property_type'=>$request->property_type ?? null,
+        ]);
+
+        return redirect()->back()->with('success','Your email has been submitted successfully.');
     }
 
 }
