@@ -48,7 +48,7 @@
                             <div class="over-text-hide">Our Team</div>
                         </div>
                     </a>
-                    <a href="{{ route('offplan') }}">
+                    <a href="{{ route('offplan.index') }}">
                         <div class="row">
                             <div class="over-text-hide">OffPlan Project</div>
                         </div>

@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             AminitiesSeeder::class,
             AgentSeeder::class,
-            CityCommunitySeeder::class,
             HomePageSeeder::class,
         ]);
 

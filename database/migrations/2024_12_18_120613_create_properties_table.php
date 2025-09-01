@@ -29,6 +29,9 @@ return new class extends Migration
             $table->integer('bathrooms')->default(0);
             $table->integer('garage')->default(0);
             $table->integer('build_year')->default(2005);
+            $table->string('constructor')->nullable();
+            $table->string('price_starts_from')->nullable();
+            $table->string('handover_date')->nullable();
             $table->text('description')->nullable();
             $table->foreignId('agent_id')->constrained();
             $table->string('image')->nullable();

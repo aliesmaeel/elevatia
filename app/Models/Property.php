@@ -40,6 +40,9 @@ class Property extends Model
         'reviews',
         'is_premium',
         'status',
+        'constructor',
+        'price_starts_from',
+        'handover_date'
     ];
 
     ///get price attribute to format price with comma

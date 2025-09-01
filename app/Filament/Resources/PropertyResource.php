@@ -68,6 +68,9 @@ class PropertyResource extends Resource
                 Forms\Components\TextInput::make('build_year')->numeric(),
                 Forms\Components\RichEditor::make('description')
                     ->columnSpanFull(),
+                Forms\Components\TextInput::make('constructor'),
+                Forms\Components\TextInput::make('price_starts_from'),
+                Forms\Components\TextInput::make('handover_date'),
                 Forms\Components\TextInput::make('size')
                     ->maxLength(191)->numeric(),
                 Forms\Components\Select::make('agent_id')
