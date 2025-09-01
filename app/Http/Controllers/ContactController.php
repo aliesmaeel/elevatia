@@ -11,6 +11,6 @@ class ContactController
         $contact=ContactPage::first();
 
 
-        return view('contact',compact('contact'));
+        return view('contact.index',compact('contact'));
     }
 }

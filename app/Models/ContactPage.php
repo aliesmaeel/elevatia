@@ -10,6 +10,7 @@ class ContactPage extends Model
     protected $fillable= [
         'name',
         'image',
+        'active'
     ];
 
     protected $table='contact_pages';

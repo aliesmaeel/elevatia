@@ -1869,6 +1869,10 @@ color:#CEA669
   border-radius: 7px;
   margin-top: 1rem;
   padding: 0.5rem;
+
+}
+.submit_col button{
+    cursor: pointer;
 }
 .calculator .content .grid_content .input_box input::placeholder{
   color: rgba(255,255,255,0.7);
