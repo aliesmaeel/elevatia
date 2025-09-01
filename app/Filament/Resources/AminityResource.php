@@ -26,6 +26,7 @@ class AminityResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->maxLength(100),
                 Forms\Components\FileUpload::make('image')
+                    ->directory('amenities')
                     ->image(),
             ]);
     }

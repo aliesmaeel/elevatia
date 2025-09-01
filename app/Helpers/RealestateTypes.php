@@ -2,6 +2,10 @@
 
 namespace App\Helpers;
 
+use App\Models\City;
+use App\Models\Community;
+use App\Models\SubCommunity;
+
 class RealestateTypes
 {
     public static function getPropertyTypes(): array
@@ -41,6 +45,18 @@ class RealestateTypes
             'for_rent' => 'For Rent',
             'off_plan' => 'Off Plan',
         ];
+    }
+
+
+    public static function getSearchable()
+    {
+        $searchable = array_merge(
+            City::pluck('name')->toArray(),
+            Community::pluck('name')->toArray(),
+            SubCommunity::pluck('name')->toArray()
+        );
+
+        return $searchable;
     }
 
 }

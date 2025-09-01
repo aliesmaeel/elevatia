@@ -13,12 +13,13 @@
                     </a> --}}
                 </div>
                 <div>
-                    <form class="contact_email_form">
+                    <form class="contact_email_form" method="POST" action="{{ route('form.submit') }}">
+                        @csrf
                         <div class="contact_email">
                             <div class="flex">
                                 <img src="/images/Vector.svg" class="left_s"/>
                                 <input type="email" name="email" placeholder="Enter Your Email" required>
-
+                                <input type="hidden" name="type" value="subscription">
                             </div>
 
                             <button type="submit">
@@ -26,7 +27,6 @@
                             </button>
                         </div>
                         <span class="email_error" style="color:#CEA669; display: none; font-size: 14px;">Please enter a valid email.</span>
-
                     </form>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                             <div class="over-text-hide">Our Blogs</div>
                         </div>
                     </a>
-                    <a href="{{ route('our_team') }}">
+                    <a href="{{ route('agents.index') }}">
                         <div class="row">
                             <div class="over-text-hide">Our Team</div>
                         </div>
@@ -53,12 +53,12 @@
                             <div class="over-text-hide">OffPlan Project</div>
                         </div>
                     </a>
-                    <a href="{{ route('about_us') }}">
+                    <a href="{{ route('about.index') }}">
                         <div class="row">
                             <div class="over-text-hide">About Us </div>
                         </div>
                     </a>
-                    <a href="{{ route('contact_us') }}">
+                    <a href="{{ route('contact.index') }}">
                         <div class="row">
                             <div class="over-text-hide">Contact Us </div>
                         </div>

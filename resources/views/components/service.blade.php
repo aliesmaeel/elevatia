@@ -1,4 +1,4 @@
-@foreach ($premiumProperties as $property)
+
     <div class="col" data-type="{{ App\Helpers\RealestateTypes::getPropertyStatus()[$property->status] }}">
         <div class="img-container">
             <img src="{{asset('storage/'.$property->image)}}">
@@ -22,7 +22,7 @@
                 <div class="small">Price</div>
                 <div class="numb"> $ {{$property->price}}</div>
             </div>
-            <a class="btn">View Property Details</a>
+            <a class="btn" href="{{route('property.details',['slug'=>$property->slug])}}">View Property Details</a>
         </div>
         <hr>
         <div class="space_between">
@@ -43,5 +43,5 @@
             </div>
         </div>
     </div>
-@endforeach
+
 

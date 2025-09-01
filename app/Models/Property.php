@@ -3,11 +3,14 @@
 namespace App\Models;
 
 use App\Models\Scopes\ActiveScope;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Property extends Model
+
 {
+    use HasFactory;
     protected $fillable=[
         'type',
         'slug',

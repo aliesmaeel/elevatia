@@ -6,6 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Email extends Model
 {
-    protected $fillable = ['name', 'email', 'phone', 'message', 'is_read', 'location'];
+    protected $fillable = [
+        'email',
+        'type',
+        'phone',
+        'name',
+        'message',
+        'time',
+        'date',
+        'property_type',
+        'is_read'
+    ];
+
 
 }

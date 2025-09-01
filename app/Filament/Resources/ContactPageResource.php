@@ -22,6 +22,11 @@ class ContactPageResource extends Resource
     protected static ?string $pluralLabel = 'Contact Page';
     protected static ?string $navigationLabel='Contact Page';
 
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->withoutGlobalScopes();
+    }
 
     public static function form(Form $form): Form
     {
@@ -32,6 +37,7 @@ class ContactPageResource extends Resource
                     ->maxLength(55),
                 Forms\Components\FileUpload::make('image')
                     ->image()
+                    ->directory('contact')
                     ->required(),
                 Forms\Components\Toggle::make('active')
                     ->unique(ignorable: fn ($record) => $record),
@@ -40,12 +46,14 @@ class ContactPageResource extends Resource
 
     public static function table(Table $table): Table
     {
+
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\ToggleColumn::make('active'),
+                Tables\Columns\IconColumn::make('active')
+                    ->boolean(),
             ])
             ->filters([
                 //

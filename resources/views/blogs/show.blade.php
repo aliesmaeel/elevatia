@@ -125,16 +125,94 @@
         </div>
     </div>
     <div class="bg_empty"></div>
+    <div class="content">
+        <h1 class="col">you might be also interested in ...</h1>
+    </div>
     <div class="similar_blogs mt_small" >
         <div class="content">
             <div class="grid-container" data-aos="fade-up">
 
+                @foreach($relatedBlogs as $relatedBlog)
+                <div class="col">
+                  <x-blog_item :blog="$relatedBlog"/>
+                </div>
+                @endforeach
             </div>
         </div>
     </div>
 </div>
     @endsection
 
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const likeBtn = document.getElementById("like-btn");
+        const likeCount = document.getElementById("like-count");
+        const blogId = document.getElementById("blog-id").value;
+        const storageKey = "liked_blog_" + blogId;
+
+        // Check if user already liked this blog
+        if (localStorage.getItem(storageKey)) {
+            likeBtn.disabled = true;
+            likeBtn.innerText = "Liked";
+        }
+
+        likeBtn.addEventListener("click", function () {
+            if (!localStorage.getItem(storageKey)) {
+                // Send request to backend
+                fetch("/blog/" + blogId + "/like", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
+                    },
+                    body: JSON.stringify({})
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        likeCount.innerText = data.likes;
+                        localStorage.setItem(storageKey, "true"); // Save in localStorage
+                        likeBtn.disabled = true;
+                        likeBtn.innerText = "Liked";
+
+                    });
+            }
+        });
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const shareBtn = document.getElementById("share-btn");
+        const shareCount = document.getElementById("share-count");
+        const balloon = document.getElementById("share-balloon");
+        const blogId = document.getElementById("blog-id").value;
+        const storageKey = "shared_blog_" + blogId;
+
+
+        shareBtn.addEventListener("click", function () {
+
+            // Copy current link
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                balloon.style.display = "block";
+                setTimeout(() => { balloon.style.display = "none"; }, 2000);
+                fetch("/blog/" + blogId + "/share", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
+                    },
+                    body: JSON.stringify({})
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        shareCount.innerText = data.shares;
+                    });
+            });
+
+        });
+    });
+
+</script>
 
 {{-- footer --}}
 @section('footer')

@@ -162,14 +162,15 @@ $(document).ready(function () {
     // Form submit validation
     $('#contactForm_view').on('submit', function (e) {
         e.preventDefault();
+
         let isValid = true;
         $('.error-message').hide();
 
-        $('#contactForm_view input[type="text"], #contactForm_view textarea, #contactForm_view select').each(function () {
+        $('#contactForm_view input[type="text"], #contactForm_view textarea').each(function () {
             var value = $.trim($(this).val());
             var placeholder = ($(this).attr('placeholder') || '').toLowerCase();
             var errorField = $(this).closest('.col').find('.error-message');
-
+            console.log(placeholder);
             if (value === '') {
                 errorField.text('This field is required').show();
                 isValid = false;
@@ -372,64 +373,11 @@ var swiper_testimonials = new Swiper('.swiper_testimonials', {
 
 });
 // All images (you can fetch dynamically too)
-var allImages_property = [
-    "/images/house.png",
-    "/images/house2.png",
-    "/images/house3.png",
-    "/images/house2.png",
-    "/images/house.png",
-    "/images/house2.png",
-    "/images/house3.png",
-    "/images/house2.png",
-    "/images/house.png",
-    "/images/house2.png",
-    "/images/house3.png",
-    "/images/house2.png",
-    "/images/house.png"
-];
-
-var currentIndex_img = 0;
-var container_grid_img = document.getElementById("images_details");
-var perPage = 5;
-var details_Page = document.querySelector('property_details');
-
-function renderImages() {
-    container_grid_img.innerHTML = "";
-
-    var slice = allImages_property.slice(currentIndex_img, currentIndex_img + perPage);
-
-    slice.forEach((src, i) => {
-        var col = document.createElement("div");
-        col.className = "col";
-
-        var img = document.createElement("img");
-        img.src = src;
-        col.appendChild(img);
-
-        // If this is the 5th image and more images exist
-        if (i === perPage - 1 && currentIndex_img + perPage < allImages_property.length) {
-            var remaining = allImages_property.length - (currentIndex_img + perPage);
-            var overlay = document.createElement("div");
-            overlay.className = "overlay";
-            overlay.innerText = `+${remaining}`;
-            overlay.onclick = () => {
-                currentIndex_img += perPage;
-                renderImages();
-            };
-            col.appendChild(overlay);
-        }
-
-        container_grid_img.appendChild(col);
-    });
 
 
-}
 
-if (!container_grid_img) {
-    console.log("No #images_details container found on this page");
-} else {
-    renderImages();
-}
+
+
 
 // Dubai coordinates
 var lat = 25.276987;
@@ -449,72 +397,7 @@ if (document.getElementById("map-container")) {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const likeBtn = document.getElementById("like-btn");
-    const likeCount = document.getElementById("like-count");
-    const blogId = document.getElementById("blog-id").value;
-    const storageKey = "liked_blog_" + blogId;
 
-    // Check if user already liked this blog
-    if (localStorage.getItem(storageKey)) {
-        likeBtn.disabled = true;
-        likeBtn.innerText = "Liked";
-    }
-
-    likeBtn.addEventListener("click", function () {
-        if (!localStorage.getItem(storageKey)) {
-            // Send request to backend
-            fetch("/blog/" + blogId + "/like", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
-                },
-                body: JSON.stringify({})
-            })
-                .then(response => response.json())
-                .then(data => {
-                    likeCount.innerText = data.likes;
-                    localStorage.setItem(storageKey, "true"); // Save in localStorage
-                    likeBtn.disabled = true;
-                    likeBtn.innerText = "Liked";
-
-                });
-        }
-    });
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const shareBtn = document.getElementById("share-btn");
-    const shareCount = document.getElementById("share-count");
-    const balloon = document.getElementById("share-balloon");
-    const blogId = document.getElementById("blog-id").value;
-    const storageKey = "shared_blog_" + blogId;
-
-
-    shareBtn.addEventListener("click", function () {
-
-            // Copy current link
-            navigator.clipboard.writeText(window.location.href).then(() => {
-                balloon.style.display = "block";
-                setTimeout(() => { balloon.style.display = "none"; }, 2000);
-                fetch("/blog/" + blogId + "/share", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
-                    },
-                    body: JSON.stringify({})
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        shareCount.innerText = data.shares;
-                    });
-            });
-
-    });
-});
 
 
 
