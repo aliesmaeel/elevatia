@@ -94,29 +94,10 @@
                             and investments available through Estatein. Click "View Details" for more information.
                         </div>
                     </div>
-                    <div class="grid-container grid_offplan" data-aos="fade-up">
-                        @include('components.offplan_item')
-                    </div>
-                    
-                    <div class="main_content" data-aos="fade-up">
-                        <div class="flex_container first_grid">
-                            <div class="col">
-                                <img src="/images/off_plan_1.png">
-                            </div>
-                            <div class="col">
-                                <img src="/images/off_plan_2.png">
-                            </div>
-                        </div>
-                        <div class="flex_container second_grid">
-                            <div class="col">
-                                <img src="/images/offplan_3.png">
-
-                            </div>
-                            <div class="col">
-                                <img src="/images/off_plan_4.png">
-
-                            </div>
-                        </div>
+                    <div class="grid-container">
+                        @foreach($off_plan as $property)
+                        <x-offplan_item :property="$property"/>
+                        @endforeach
                     </div>
 
                 </div>

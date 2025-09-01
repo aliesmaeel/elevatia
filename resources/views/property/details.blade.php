@@ -107,28 +107,28 @@
                                     <div class="input_box">
                                         <div class="text">Property Price</div>
                                         <div class="input_div">
-                                            <input  id="price" type="number" class="input" value="23" >
+                                            <input  id="price" type="number" class="input" value="1640000" >
                                              <span>AED</span>
                                         </div>
                                     </div>
                                     <div class="input_box">
                                         <div class="text">Deposit</div>
                                         <div class="input_div">
-                                            <input id="deposit" type="number" class="input" value="23" >
+                                            <input id="deposit" type="number" class="input" value="328000" >
                                              <span>AED</span>
                                         </div>
                                     </div>
                                     <div class="input_box">
                                         <div class="text">Mortgage Period</div>
                                         <div class="input_div">
-                                            <input id="period"  type="number" class="input" value="23" >
+                                            <input id="period"  type="number" class="input" value="25" >
                                             <span>Years</span>
                                         </div>
                                     </div>
                                     <div class="input_box">
                                         <div class="text">Interest Rate</div>
                                         <div class="input_div">
-                                            <input step="0.01" id="rate" class="input" value="0.1" >
+                                            <input step="1" id="rate" class="input" value="5" >
                                             <span>Years</span>
                                         </div>
                                     </div>
@@ -139,7 +139,7 @@
                             </div>
                             <div class="payment_value pl_2">
                                 <div>Monthly Payment</div>
-                                <div id="result">AED 13,329</div>
+                                <div id="result">Monthly Payment: AED 7,670</div>
                             </div>
                         </div>
                     </div>
@@ -152,7 +152,7 @@
                                 <div class="input_box">
                                     <div class="text">Property Price</div>
                                     <div class="input_div">
-                                        <input type="number" id="price" class="input" placeholder="Enter property price">
+                                        <input type="number" value="1640000" id="price" class="input" placeholder="Enter property price">
                                         <span>AED</span>
                                     </div>
                                 </div>
@@ -160,7 +160,7 @@
                                 <div class="input_box">
                                     <div class="text">Annual Services Charges</div>
                                     <div class="input_div">
-                                        <input type="number" id="serviceCharges" class="input" placeholder="Enter service charges">
+                                        <input type="number" value="0" id="serviceCharges" class="input" placeholder="Enter service charges">
                                         <span>AED</span>
                                     </div>
                                 </div>
@@ -168,7 +168,7 @@
                                 <div class="input_box">
                                     <div class="text">Additional Charges</div>
                                     <div class="input_div">
-                                        <input type="number" id="extraCharges" class="input" placeholder="Enter additional charges">
+                                        <input type="number" value="0" id="extraCharges" class="input" placeholder="Enter additional charges">
                                         <span>AED</span>
                                     </div>
                                 </div>
@@ -176,7 +176,7 @@
                                 <div class="input_box">
                                     <div class="text">Annual Rental Price</div>
                                     <div class="input_div">
-                                        <input type="number" id="annualRent" class="input" placeholder="Enter annual rental income">
+                                        <input type="number" value="98400" id="annualRent" class="input" placeholder="Enter annual rental income">
                                         <span>AED</span>
                                     </div>
                                 </div>
@@ -190,11 +190,12 @@
                                 <div class="flex">
                                     <div>
                                         <div>Net Rent</div>
-                                        <div id="netRent" class="numb">AED 0</div>
+                                        <div id="netRent" class="numb">AED 98,400
+                                        </div>
                                     </div>
                                     <div>
                                         <div>NET ROI</div>
-                                        <div id="netRoi" class="numb">0%</div>
+                                        <div id="netRoi" class="numb">6.00%</div>
                                     </div>
                                 </div>
                             </div>
@@ -339,7 +340,7 @@
         if (isNaN(monthlyPayment) || !isFinite(monthlyPayment)) {
             document.getElementById("result").innerText = "Monthly Payment: AED 0";
         } else {
-            document.getElementById("result").innerText = "Monthly Payment: AED " + monthlyPayment.toLocaleString(undefined, {maximumFractionDigits: 2});
+            document.getElementById("result").innerText = "Monthly Payment: AED " + monthlyPayment.toLocaleString(undefined, {maximumFractionDigits: 0});
         }
     }
 

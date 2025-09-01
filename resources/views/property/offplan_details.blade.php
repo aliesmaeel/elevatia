@@ -5,28 +5,26 @@
     @include('layouts.header')
 @endsection
 
+<style>
+    .property_details .content .flex_container .col:first-of-type{
+        grid-row: span 1 !important;
+    }
+</style>
 {{-- main page --}}
 @section('content')
     <div class="property_details container offplan_details_page">
         <div class="overlay_orange"></div>
         <div class="content" >
-            <div class="flex_container start_align" id="images_details"> 
+            <div class="flex_container start_align" id="images_details">
                 <!-- Images will be injected dynamically -->
             </div>
-            
+
             <div class="flex_container grid_desc">
                 <div class="col big">
                     <div class="title max-width" data-aos="fade-up">Description</div>
                     <div class="desc max-width" data-aos="fade-up">
-                        Discover your own piece of paradise with the Seaside Serenity Villa. T With an open floor 
-                        planplanpla, breathtaking ocean views from every room, and direct access
-                         to a pristine sandy beach,
-                        this property is the epitome of coastal living.Discover your own piece of
-                         paradise with the Seaside Serenity Villa. T With an open floor plan, 
-                         breathtaking ocean views from every room, and direct access to a pristine
-                          sandy beach, this property is the epitome of coastal living.Discover your 
-                          own piece of paradise with the
-                         Seaside Serenity VillSeaside Serenity VillSeaside Serenity VillSeaside Serenity Villa.
+                 {!! $property->description !!}
+
                     </div>
                     {{-- Jumeirah Asora Bay Experts --}}
                     <div class="our_expert" data-aos="fade-up">
@@ -34,69 +32,23 @@
                             <div class="swiper_expert_offplan">
                                 <div class="swiper-wrapper">
                                 <!-- Slide 1 -->
+                                @foreach($agents as $agent)
                                 <div class="swiper-slide">
-                                    <img src="/images/user_expert.png" alt="Member" class="member-img" />
+                                    <img src="{{asset('/storage/'.$agent->image)}}" alt="Member" class="member-img" />
                                     <div class="member-info">
-                                    <div class="member-name">Maria Yaltekee</div>
-                                    <div class="member-role">Graphic Designer</div>
+                                    <div class="member-name">{{$agent->name}}</div>
+                                    <div class="member-role">{{$agent->position}}</div>
                                     <a href="#">
                                         <img class="arrow" src="/images/arrow-right.svg">
                                     </a>
                                     </div>
                                 </div>
+                               @endforeach
+
+
                                 <!-- Duplicate as needed -->
-                                <div class="swiper-slide">
-                                    <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                                    <div class="member-info">
-                                    <div class="member-name">Maria Yaltekee</div>
-                                    <div class="member-role">Graphic Designer</div>
-                                    <a href="#">
-                                        <img class="arrow" src="/images/arrow-right.svg">
-                                    </a>
-                                    </div>
+
                                 </div>
-                                <div class="swiper-slide">
-                                    <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                                    <div class="member-info">
-                                    <div class="member-name">Maria Yaltekee</div>
-                                    <div class="member-role">Graphic Designer</div>
-                                    <a href="#">
-                                        <img class="arrow" src="/images/arrow-right.svg">
-                                    </a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                                    <div class="member-info">
-                                    <div class="member-name">Maria Yaltekee</div>
-                                    <div class="member-role">Graphic Designer</div>
-                                    <a href="#">
-                                        <img class="arrow" src="/images/arrow-right.svg">
-                                    </a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                                    <div class="member-info">
-                                    <div class="member-name">Maria Yaltekee</div>
-                                    <div class="member-role">Graphic Designer</div>
-                                    <a href="#">
-                                        <img class="arrow" src="/images/arrow-right.svg">
-                                    </a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="/images/user_expert.png" alt="Member" class="member-img" />
-                                    <div class="member-info">
-                                    <div class="member-name">Maria Yaltekee</div>
-                                    <div class="member-role">Graphic Designer</div>
-                                    <a href="#">
-                                        <img class="arrow" src="/images/arrow-right.svg">
-                                    </a>
-                                    </div>
-                                </div>
-                                </div>
-                            
                         </div>
                     </div>
 
@@ -125,62 +77,17 @@
                     <div class="features" data-aos="fade-up">
                         <div class="title">Features & amenities</div>
                         <div class="grid_features">
-                            <div class="col">
-                                <div class="flex">
-                                    <img src="/images/bedroom_white_bold.svg">
-                                    <span>Built-in kitchen appliances</span>
+                            @foreach($property->amenities as $amenity)
+                                <div class="col">
+                                    <div class="flex">
+                                        <img style="filter: brightness(5)" src="{{asset('/storage/'.$amenity->image)}}">
+                                        <span>{{$amenity->name}}</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="flex">
-                                    <img src="/images/bedroom_white_bold.svg">
-                                    <span>Shared gym</span>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="flex">
-                                    <img src="/images/bedroom_white_bold.svg">
-                                    <span>Shared gym</span>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="flex">
-                                    <img src="/images/bathroom_bold.svg">
-                                    <span>Shared spa</span>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="flex">
-                                    <img src="/images/bathroom_bold.svg">
-                                    <span>Shared spa</span>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="flex">
-                                    <img src="/images/bathroom_bold.svg">
-                                    <span>Shared spa</span>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="flex">
-                                    <img src="/images/walk_bold.svg">
-                                    <span>Children's play area</span>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="flex">
-                                    <img src="/images/walk_bold.svg">
-                                    <span>Walk-in closet</span>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="flex">
-                                    <img src="/images/walk_bold.svg">
-                                    <span>Children's play area</span>
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
-                    </div>  
+                    </div>
                     {{-- Location --}}
                     <div class="maps-section" data-aos="fade-up">
                         <div class="title">Our Location</div>
@@ -194,24 +101,16 @@
                         <div class="title">Starting Price</div>
                         <div class="price_sta">
                             <span>AED</span>
-                             45M
+                            {{$property->price_starts_from}}
                         </div>
                         <div class="flex-col">
                             <div class="flex_row">
                                 <div class="sub_title">Completion :</div>
-                                <div class="sub_desc">Q1-2001</div>
-                            </div>
-                            <div class="flex_row">
-                                <div class="sub_title">Title type : </div>
-                                <div class="sub_desc">Freehold</div>
-                            </div>
-                            <div class="flex_row">
-                                <div class="sub_title">Lifestyle :</div>
-                                <div class="sub_desc">Standard</div>
+                                <div class="sub_desc">{{$property->handover_date}}</div>
                             </div>
                             <div class="flex_row">
                                 <div class="sub_title">Developer :</div>
-                                <div class="sub_desc">Meraas</div>
+                                <div class="sub_desc">{{$property->constructor}}</div>
                             </div>
                         </div>
                         <div class="buttons">
@@ -222,12 +121,12 @@
                                 Download brochure
                             </a>
                         </div>
-                       
+
                     </div>
-                    
+
 
                 </div>
-               
+
             </div>
             <div class="question" >
                 <div class="content" data-aos="fade-up">
@@ -250,9 +149,9 @@
                                       Proin nec ante vitae purus tempus egestas. Curabitur euismod
                                       purus sed elit faucibus. Vivamus in ante sed libero feugiat fermentum.
                                     </p>
-                                  </div>                                             
+                                  </div>
                                 </div>
-                              
+
                                 <div class="faq-item">
                                     <button class="faq-question">
                                         How do I update my billing information?
@@ -295,7 +194,7 @@
                                         </p>
                                     </div>
                                 </div>
-                              
+
                                 <div class="faq-item">
                                     <button class="faq-question">
                                         How do I update my billing information?
@@ -311,15 +210,32 @@
                                     </div>
                                 </div>
                             </div>
-                              
+
                         </div>
                     </div>
                 </div>
             </div>
-           
+
         </div>
     </div>
 @endsection
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var lat = {{$property->latitude}};
+        var lng = {{$property->longitude}};
+        console.log(lat, lng);
+
+        var mapUrl = "https://www.google.com/maps?q=" + lat + "," + lng + "&hl=en&z=14&output=embed";
+        var iframe = document.createElement("iframe");
+        iframe.src = mapUrl;
+        iframe.width = "100%";
+        iframe.height = "400";
+        iframe.style.border = "0";
+        iframe.setAttribute("allowfullscreen", ""); // ✅ correct way
+
+        document.getElementById("map-container").appendChild(iframe);
+    });
+</script>
 
 
 {{-- footer --}}

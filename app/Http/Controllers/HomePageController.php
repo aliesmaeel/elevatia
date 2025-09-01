@@ -25,11 +25,12 @@ class HomePageController extends Controller
         }
 
         $blogs=Blog::with('agent')->limit(7)->get();
-
+        $off_plan=Property::where('status','off_plan')->take(3)->get();
 
         return view('home',compact('home',
             'premiumProperties',
             'blogs',
+            'off_plan',
             'agents'));
     }
 
