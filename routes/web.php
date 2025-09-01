@@ -28,14 +28,8 @@ Route::get('/team/{id}',[TeamController::class,'show'])->name('agents.show');
 Route::get('/property/{slug}', [PropertyController::class, 'propertyDetails'])->name('property.details');
 Route::get('/average-prices/{type}', [PropertyController::class, 'averagePrice']);
 
-Route::get('/offplan', function () {
-    return view('offplan');
-})->name('offplan');
-
-
-Route::get('/offplan_details', function () {
-    return view('offplan_details');
-})->name('offplan_details');
+Route::get('/offplan',[PropertyController::class,'offplan'])->name('offplan.index');
+Route::get('/offplan/{slug}',[PropertyController::class,'offplanDetails'])->name('offplan.details');
 
 
 

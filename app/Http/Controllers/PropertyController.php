@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agent;
 use App\Models\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -42,6 +43,20 @@ class PropertyController
             ->get();
 
         return response()->json($averages);
+    }
+
+    public function offplan()
+    {
+        $properties = Property::where('status', 'off_plan')->get();
+
+        return view('property.offplan', compact('properties'));
+    }
+
+    public function offplanDetails($slug)
+    {
+        $property = Property::where('slug', $slug)->firstOrFail();
+        $agents=Agent::all();
+        return view('property.offplan_details', compact('property','agents'));
     }
 
 }

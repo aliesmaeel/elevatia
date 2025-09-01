@@ -379,21 +379,7 @@ var swiper_testimonials = new Swiper('.swiper_testimonials', {
 
 
 
-// Dubai coordinates
-var lat = 25.276987;
-var lng = 55.296249;
 
-// Create Google Maps Embed URL
-var mapUrl = "https://www.google.com/maps?q=" + lat + "," + lng + "&hl=en&z=14&output=embed";
-var iframe = document.createElement("iframe");
-iframe.src = mapUrl;
-iframe.width = "100%";
-iframe.height = "400";
-iframe.style.border = "0";
-iframe.allowFullscreen = true;
-if (document.getElementById("map-container")) {
-    document.getElementById("map-container").appendChild(iframe);
-}
 
 
 
