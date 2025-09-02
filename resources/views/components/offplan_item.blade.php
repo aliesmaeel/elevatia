@@ -1,4 +1,4 @@
-<div class="col">
+<div class="col" data-aos="fade-up">
     <div class="img_Container">
         <img src="/images/property.png">
     </div>
@@ -19,7 +19,7 @@
         <div class="desc"> Handover  in Q1 2029</div>
     </div>
 </div>
-<div class="col">
+<div class="col" data-aos="fade-up">
     <div class="img_Container">
         <img src="/images/property.png">
     </div>
@@ -40,7 +40,7 @@
         <div class="desc"> Handover  in Q1 2029</div>
     </div>
 </div>
-<div class="col">
+<div class="col" data-aos="fade-up">
     <div class="img_Container">
         <img src="/images/property.png">
     </div>
@@ -61,7 +61,7 @@
         <div class="desc"> Handover  in Q1 2029</div>
     </div>
 </div>
-<div class="col">
+<div class="col" data-aos="fade-up">
     <div class="img_Container">
         <img src="/images/property.png">
     </div>
@@ -82,7 +82,7 @@
         <div class="desc"> Handover  in Q1 2029</div>
     </div>
 </div>
-<div class="col">
+<div class="col" data-aos="fade-up">
     <div class="img_Container">
         <img src="/images/property.png">
     </div>
@@ -103,7 +103,7 @@
         <div class="desc"> Handover  in Q1 2029</div>
     </div>
 </div>
-<div class="col">
+<div class="col" data-aos="fade-up">
     <div class="img_Container">
         <img src="/images/property.png">
     </div>
@@ -124,7 +124,7 @@
         <div class="desc"> Handover  in Q1 2029</div>
     </div>
 </div>
-<div class="col">
+<div class="col" data-aos="fade-up">
     <div class="img_Container">
         <img src="/images/property.png"> 
     </div>

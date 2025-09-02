@@ -82,8 +82,8 @@
 
             {{-- EXPLORE RECENT OFF PLAN PROJECTS --}}
             <div class="offplan_projects">
-                <div class="content" data-aos="fade-up">
-                    <div class="text-content">
+                <div class="content">
+                    <div class="text-content" data-aos="fade-up">
                         <div class="title">
                             EXPLORE RECENT OFF PLAN PROJECTS
                         </div>
@@ -92,7 +92,11 @@
                             and investments available through Estatein. Click "View Details" for more information.
                         </div>
                     </div>
-                    <div class="main_content">
+                    <div class="grid-container grid_offplan" data-aos="fade-up">
+                        @include('components.offplan_item')
+                    </div>
+                    
+                    <div class="main_content" data-aos="fade-up">
                         <div class="flex_container first_grid">
                             <div class="col">
                                 <img src="/images/off_plan_1.png">
@@ -117,8 +121,8 @@
             </div>
 
             <div class="our_expert">
-                <div class="content" data-aos="fade-up">
-                    <div class="text-content">
+                <div class="content">
+                    <div class="text-content" data-aos="fade-up">
                         <div class="title">
                             Our Team
                         </div>
@@ -128,7 +132,7 @@
                         </div>
                     </div>
                     {{-- our expert  --}}
-                    <div class="swiper_expert">
+                    <div class="swiper_expert" data-aos="fade-up">
 
 
                             <div class="swiper-wrapper">
@@ -156,8 +160,8 @@
 
             {{-- Our Blogs --}}
             <div class="blog">
-                <div class="content" data-aos="fade-up">
-                    <div class="title">Our Blogs</div>
+                <div class="content">
+                    <div class="title" data-aos="fade-up">Our Blogs</div>
                     <div class="grid-container">
                         <x-blog_item :blogs="$blogs" />
                     </div>

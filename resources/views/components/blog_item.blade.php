@@ -1,5 +1,5 @@
 @foreach($blogs as $blog)
-    <div class="col">
+    <div class="col" data-aos="fade-up">
         <div class="img_container">
             <img src="{{asset('storage/' . $blog->image)}}" alt="Blog Image">
         </div>
@@ -23,7 +23,7 @@
     </div>
     @if($loop->iteration == 4)
 
-        <div class="blog_2_box col">
+        <div class="blog_2_box col" data-aos="fade-up">
             <div class="title_box">Experience Effortless Property Management</div>
             <div class="desc_box">
                 Ready to experience hassle-free property management? Explore our Property Management Service categories and let us

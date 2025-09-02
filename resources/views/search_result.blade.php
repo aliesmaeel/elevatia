@@ -42,13 +42,13 @@
     </div>
     <div class="bg_empty"></div>
     <div class="question" >
-        <div class="content" data-aos="fade-up">
-            <giv class="grid_container">
-                <div class="text">
+        <div class="content">
+            <giv class="grid_container" >
+                <div class="text"  data-aos="fade-up">
                     <div class="title">Frequently Asked <br>Question</div>
                     <div class="desc">Trusted in more than 100 countries and <br>4 million customers.</div>
                 </div>
-                <div class="question_container">
+                <div class="question_container" data-aos="fade-up">
                     <div class="faq">
                         <div class="faq-item active">
                           <button class="faq-question">

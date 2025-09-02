@@ -1,4 +1,5 @@
 @media(max-width:1199px) and (min-width:992px){
+  
    .details_blog_page .details_blog{
     top: -200px;
     padding-top: 17rem;
@@ -133,6 +134,9 @@
    
 }
 @media(max-width:991px){
+    .home_only .grid_offplan{
+        grid-template-columns: repeat(1 , 1fr) !important;
+    }
  
     .offplan_details_page.property_details .content .flex_container.grid_desc .col.big,
     .offplan_details_page.property_details .content .flex_container.grid_desc .col.small {
@@ -235,6 +239,9 @@
     }
 }
 @media(max-width:599px){
+    .home_only .grid_offplan .col{
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
     .our_team_page .few_words .grid_container .col.grid_col .box_col .num {
         font-size: 42px;
     }

@@ -73,7 +73,7 @@
                 <div class="desc">Every day we communicate with each other, solve our clients’ problems and work hard to succeed their business.</div>
 
                 {{-- our expert  --}}
-                <div class="swiper_expert">
+                <div class="swiper_expert" data-aos="fade-up">
                     <!-- Navigation buttons -->
                     <div class="swiper-button-prev">Prev</div>
                     <div class="swiper-button-next">Next</div>
@@ -147,16 +147,16 @@
 
         {{-- Testimonials --}}
         <div class="content content_testimonials">
-            <div class="testimonials_section titles_section" data-aos="fade-up">
-                <div class="title">Testimonials</div>
-                <div class="title2">
+            <div class="testimonials_section titles_section">
+                <div class="title" data-aos="fade-up">Testimonials</div>
+                <div class="title2" data-aos="fade-up">
                     <div class="flex">
                         <div>Testimonials</div> 
                     </div>
                 </div>
-                <div class="desc">Every day we communicate with each other, solve our clients’ problems and work hard to succeed their business.</div>
+                <div class="desc" data-aos="fade-up">Every day we communicate with each other, solve our clients’ problems and work hard to succeed their business.</div>
                  {{-- Testimonials swiper  --}}
-                <div class="swiper_testimonials">
+                <div class="swiper_testimonials" data-aos="fade-up">
                     <!-- Navigation buttons -->
                     <div class="swiper-button-prev">Prev</div>
                     <div class="swiper-button-next">Next</div>

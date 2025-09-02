@@ -22,19 +22,19 @@
     </div>
     {{-- Our Team --}}
     <div class="our_expert">
-        <div class="content" data-aos="fade-up">
-            <div class="title">OUR EXPERT</div>
-            <div class="title2">
+        <div class="content">
+            <div class="title" data-aos="fade-up">OUR EXPERT</div>
+            <div class="title2" data-aos="fade-up">
                 <div class="flex">
                     <div>Friendly</div> 
                     <div class="circle"></div>
                 </div>
                 <div> team</div>
             </div>
-            <div class="desc">Every day we communicate with each other, solve our clients’ problems and work hard to succeed their business.</div>
+            <div class="desc" data-aos="fade-up">Every day we communicate with each other, solve our clients’ problems and work hard to succeed their business.</div>
 
             {{-- our expert  --}}
-            <div class="swiper_expert">
+            <div class="swiper_expert" data-aos="fade-up">
                 <!-- Navigation buttons -->
                 <div class="swiper-button-prev">Prev</div>
                 <div class="swiper-button-next">Next</div>
@@ -109,9 +109,9 @@
 
     {{-- few_words --}}
     <div class="few_words">
-        <div class="content" data-aos="fade-up">
+        <div class="content">
             <div class="grid_container">
-                <div class="col grid_col">
+                <div class="col grid_col" data-aos="fade-up">
                     <div class="box_col">
                         <div class="num">235 <span>+</span></div>
                         <div class="text">Setisfied Clients</div>
@@ -129,7 +129,7 @@
                         <div class="text">Successful Projects</div>
                     </div>
                 </div>
-                <div class="col flex_dir_col">
+                <div class="col flex_dir_col" data-aos="fade-up">
                     <div class="title f_title">
                         <div class="line"></div>
                         <div>a few words</div>

@@ -33,14 +33,14 @@
                     <span>1094</span>results
                 </b>
             </div>
-            <div class="grid-container grid_offplan" data-aos="fade-up">
+            <div class="grid-container grid_offplan">
                 @include('components.offplan_item')
             </div>
          </div>
     </div>
     <div class="bg_empty"></div>
     <div class="sign_up">
-        <div class="content">
+        <div class="content" data-aos="fade-up">
             <div class="flex_col">
                 <div class="title">Sign up for our newsletter to stay up to date on the Dubai property market.</div>
                 <div class="desc">
