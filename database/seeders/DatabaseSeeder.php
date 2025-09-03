@@ -21,6 +21,9 @@ class DatabaseSeeder extends Seeder
             AminitiesSeeder::class,
             AgentSeeder::class,
             HomePageSeeder::class,
+            CitySeeder::class,
+            CommunitySeeder::class,
+            SubCommunitySeeder::class,
         ]);
 
         Property::factory()->count(40)->create();
