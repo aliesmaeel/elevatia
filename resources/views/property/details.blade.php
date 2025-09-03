@@ -263,11 +263,12 @@
 
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <script>
-                fetch('/average-prices/{{$property->type}}')
+                let type='{{$property->type}}';
+                fetch('/average-prices/'+type)
                     .then(res => res.json())
                     .then(data => {
                         const labels = data.map(item => `${item.year}-${String(item.month).padStart(2, '0')}`);
-
+                        console.log(type);
                         const grouped = {};
 
                         data.forEach(item => {

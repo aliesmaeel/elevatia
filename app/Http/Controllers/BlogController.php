@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Seo;
 
 class BlogController
 {
     public function index()
     {
         $blogs=Blog::with('agent')->get();
-
-        return view('blogs.index',compact('blogs'));
+        $seo=Seo::where('page_name','blogs')->first();
+        return view('blogs.index',compact('blogs','seo'));
     }
 
     public function show($slug)

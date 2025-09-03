@@ -9,6 +9,7 @@ use App\Models\Community;
 use App\Models\Email;
 use App\Models\HomePage;
 use App\Models\Property;
+use App\Models\Seo;
 use App\Models\SubCommunity;
 use Illuminate\Http\Request;
 
@@ -26,10 +27,12 @@ class HomePageController extends Controller
 
         $blogs=Blog::with('agent')->limit(7)->get();
         $off_plan=Property::where('status','off_plan')->take(3)->get();
+        $seo=Seo::where('page_name','home')->first();
 
         return view('home',compact('home',
             'premiumProperties',
             'blogs',
+            'seo',
             'off_plan',
             'agents'));
     }
