@@ -18,7 +18,7 @@ class HomePageController extends Controller
     {
         $home=HomePage::first();
         $premiumProperties = Property::with(['agent','amenities'])
-            ->where('is_premium', true)->paginate(6);
+            ->where('is_premium', true)->paginate(12);
         $agents=Agent::all();
         if (!$home) {
           return 'No home page data found.';

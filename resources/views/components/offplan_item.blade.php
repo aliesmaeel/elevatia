@@ -1,4 +1,4 @@
-<div class="col">
+<div class="col" data-aos="fade-up">
     <div class="img_Container">
         <img src="{{asset('/storage/'.$property->image)}}">
     </div>
@@ -19,3 +19,4 @@
         <div class="desc"> Handover  in {{$property->handover_date}}</div>
     </div>
 </div>
+

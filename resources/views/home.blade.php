@@ -84,8 +84,8 @@
 
             {{-- EXPLORE RECENT OFF PLAN PROJECTS --}}
             <div class="offplan_projects">
-                <div class="content" data-aos="fade-up">
-                    <div class="text-content">
+                <div class="content">
+                    <div class="text-content" data-aos="fade-up">
                         <div class="title">
                             EXPLORE RECENT OFF PLAN PROJECTS
                         </div>
@@ -104,8 +104,8 @@
             </div>
 
             <div class="our_expert">
-                <div class="content" data-aos="fade-up">
-                    <div class="text-content">
+                <div class="content">
+                    <div class="text-content" data-aos="fade-up">
                         <div class="title">
                             Our Team
                         </div>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                     {{-- our expert  --}}
-                    <div class="swiper_expert">
+                    <div class="swiper_expert" data-aos="fade-up">
 
 
                             <div class="swiper-wrapper">
@@ -143,8 +143,8 @@
 
             {{-- Our Blogs --}}
             <div class="blog">
-                <div class="content" data-aos="fade-up">
-                    <div class="title">Our Blogs</div>
+                <div class="content">
+                    <div class="title" data-aos="fade-up">Our Blogs</div>
                     <div class="grid-container">
                         @foreach($blogs as $blog)
                         <x-blog_item :blog="$blog" />
