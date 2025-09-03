@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
 use App\Models\Agent;
+use App\Models\Seo;
 
 class AboutUsController
 {
@@ -11,6 +12,7 @@ class AboutUsController
     {
         $about=AboutUs::first();
         $agents=Agent::all();
-        return view('about.index',compact('about','agents'));
+        $seo=Seo::where('page_name','about')->first();
+        return view('about.index',compact('about','agents','seo'));
     }
 }

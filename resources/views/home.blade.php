@@ -94,7 +94,7 @@
                             and investments available through Estatein. Click "View Details" for more information.
                         </div>
                     </div>
-                    <div class="grid-container">
+                    <div class="grid-container grid_offplan">
                         @foreach($off_plan as $property)
                         <x-offplan_item :property="$property"/>
                         @endforeach
