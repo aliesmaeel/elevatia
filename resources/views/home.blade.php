@@ -50,7 +50,7 @@
                         <div class="text-content col-flex" >
                             <div class="title">Our Mission</div>
                             <div class="desc">
-                                {{$home->our_mission}}
+                                {!! $home->our_mission !!}
                             </div>
                         </div>
                     </div>
