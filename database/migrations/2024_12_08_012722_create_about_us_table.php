@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('about_us', function (Blueprint $table) {
             $table->id();
             $table->text('banner')->nullable();
-            $table->string('about_us',200)->nullable();
+            $table->text('about_us')->nullable();
             $table->text('our_vision')->nullable();
             $table->text('our_mission')->nullable();
             $table->boolean('active')->default(true);

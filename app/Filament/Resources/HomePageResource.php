@@ -46,7 +46,7 @@ class HomePageResource extends Resource
                     }),
                 Forms\Components\Textarea::make('about_elevatia')->required(),
                 Forms\Components\Textarea::make('our_vision')->required(),
-                Forms\Components\Textarea::make('our_mission')->required(),
+                Forms\Components\RichEditor::make('our_mission')->required(),
                 Forms\Components\Toggle::make('active')
                     ->unique(ignorable: fn ($record) => $record),
             ]);
