@@ -32,22 +32,22 @@
                     <div class="col">
                         <img src="/images/icon_globe.svg">
                         <div class="sub_title">Address</div>
-                        <div class="sub_desc">27 Division St, New York, NY 10002, USA27 Division St, New York, NY 10002, USA</div>
+                        <div class="sub_desc">Clover Bay, office No.2206, Business Bay</div>
                     </div>
                     <div class="col">
                         <img src="/images/icon_chat.svg">
                         <div class="sub_title">Hit us up</div>
                         <div class="sub_desc">
-                            <a href="#">+1 845 631 78 49</a>
-                            <a href="#">info@sitename.com</a>
+                            <a href="tel:+971562676761">+971 56 267 6761</a>
+                            <a href="mailto:info@elevatiaproperties.com">info@elevatiaproperties.com</a>
                         </div>
                     </div>
                     <div class="col">
                         <img src="/images/icon_clock.svg">
                         <div class="sub_title">Working Schedule:</div>
                         <div class="sub_desc">
-                            <div >Mon - Fri: 9 am - 6 pm</div>
-                            <div>Sat, Sun: Holiday</div>
+                            <div >Sat - Thu : 10 am - 6 pm</div>
+                            <div>Holiday : Fri</div>
                         </div>
                     </div>
                 </div>
