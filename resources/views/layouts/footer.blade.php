@@ -71,19 +71,19 @@
                     <a href="#">
                         <div class="row">
                             <img src="/images/location.svg">
-                            <div class="over-text-hide">3755 St SE Salem, Corner with Sunny Boulevard, 37557, Australia</div>
+                            <div class="over-text-hide">Clover Bay, Business Bay, office no.2206</div>
                         </div>
                     </a>
                     <a href="#">
                         <div class="row">
                             <img src="/images/tel.svg">
-                            <div class="over-text-hide">(305) 555-4446</div>
+                            <div class="over-text-hide">+971 58 189 9762</div>
                         </div>
                     </a>
                     <a href="#">
                         <div class="row">
                             <img src="/images/mail.svg">
-                            <div class="over-text-hide">Youremail@gmail.com</div>
+                            <div class="over-text-hide">Info@elevatiaproperties.com</div>
                         </div>
                     </a>
                     <div class="same_row">
