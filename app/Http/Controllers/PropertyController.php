@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agent;
+use App\Models\OffPlanProject;
 use App\Models\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -21,6 +22,9 @@ class PropertyController
             ->get();
 
         $allImages_property = $property->propertyImages->pluck('image')->toArray();
+        foreach ($allImages_property as $key => $image) {
+            $allImages_property[$key] = asset('storage/' . $image);
+        }
 
         return view('property.details', compact('property','similarListings','allImages_property'));
     }
@@ -54,9 +58,16 @@ class PropertyController
 
     public function offplanDetails($slug)
     {
-        $property = Property::where('slug', $slug)->firstOrFail();
+        $property = OffPlanProject::with('images')->where('slug',$slug)->first();
+
+        $allImages_property = $property->images()->pluck('image_path')->toArray();
+
+        foreach ($allImages_property as $key => $image) {
+            $allImages_property[$key] = asset('storage/' . $image);
+        }
+
         $agents=Agent::all();
-        return view('property.offplan_details', compact('property','agents'));
+        return view('property.offplan_details', compact('property','agents','allImages_property'));
     }
 
 }

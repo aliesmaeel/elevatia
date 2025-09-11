@@ -99,7 +99,6 @@ class PropertyResource extends Resource
                     ->required()
                     ->reactive()
                     ->afterStateUpdated(function (Forms\Set $set, $state): void {
-
                         $set('location.lat', $state);
                     }),
 

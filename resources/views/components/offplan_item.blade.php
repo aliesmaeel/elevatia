@@ -10,7 +10,7 @@
         </div>
         <div class="flex">
             <img src="/images/setting.svg">
-            <div class="location">{{$property->constructor}}</div>
+            <div class="location">{{$property->developer}}</div>
         </div>
         <div class="flex center">
             From AED {{$property->price_starts_from}}
