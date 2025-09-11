@@ -76,17 +76,10 @@
                     {{-- features --}}
                     <div class="features" data-aos="fade-up">
                         <div class="title">Features & amenities</div>
-                        <div class="grid_features">
-                            @foreach($property->amenities as $amenity)
-                                <div class="col">
-                                    <div class="flex">
-                                        <img style="filter: brightness(5)" src="{{asset('/storage/'.$amenity->image)}}">
-                                        <span>{{$amenity->name}}</span>
-                                    </div>
-                                </div>
-                            @endforeach
-
+                        <div style="color: white">
+                            {!! $property->features !!}
                         </div>
+
                     </div>
                     {{-- Location --}}
                     <div class="maps-section" data-aos="fade-up">
@@ -101,16 +94,16 @@
                         <div class="title">Starting Price</div>
                         <div class="price_sta">
                             <span>AED</span>
-                            {{$property->price_starts_from}}
+                            <span> {{$property->price_starts_from}} </span>
                         </div>
                         <div class="flex-col">
                             <div class="flex_row">
                                 <div class="sub_title">Completion :</div>
-                                <div class="sub_desc">{{$property->handover_date}}</div>
+                                <div class="sub_desc">{{$property->completion_date}}</div>
                             </div>
                             <div class="flex_row">
                                 <div class="sub_title">Developer :</div>
-                                <div class="sub_desc">{{$property->constructor}}</div>
+                                <div class="sub_desc">{{$property->developer}}</div>
                             </div>
                         </div>
                         <div class="buttons">
@@ -221,8 +214,8 @@
 @endsection
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        var lat = {{$property->latitude}};
-        var lng = {{$property->longitude}};
+        var lat = {{$property->lat}};
+        var lng = {{$property->lng}};
         console.log(lat, lng);
 
         var mapUrl = "https://www.google.com/maps?q=" + lat + "," + lng + "&hl=en&z=14&output=embed";
@@ -237,7 +230,45 @@
     });
 </script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var allImages_property = @json($allImages_property);
+        var currentIndex_img = 0;
+        var container_grid_img = document.getElementById("images_details");
+        var perPage = 5;
 
+        if (container_grid_img) {
+            function renderImages() {
+                container_grid_img.innerHTML = "";
+                var slice = allImages_property.slice(currentIndex_img, currentIndex_img + perPage);
+                slice.forEach((src, i) => {
+                    var col = document.createElement("div");
+                    col.className = "col";
+                    var img = document.createElement("img");
+                    img.src = src;
+                    col.appendChild(img);
+
+                    if (i === perPage - 1 && currentIndex_img + perPage < allImages_property.length) {
+                        var remaining = allImages_property.length - (currentIndex_img + perPage);
+                        var overlay = document.createElement("div");
+                        overlay.className = "overlay";
+                        overlay.innerText = `+${remaining}`;
+                        overlay.onclick = () => {
+                            currentIndex_img += perPage;
+                            renderImages();
+                        };
+                        col.appendChild(overlay);
+                    }
+
+                    container_grid_img.appendChild(col);
+                });
+            }
+
+            renderImages();
+        }
+    });
+
+</script>
 {{-- footer --}}
 @section('footer')
     @include('layouts.footer')

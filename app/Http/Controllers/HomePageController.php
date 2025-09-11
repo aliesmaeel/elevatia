@@ -8,6 +8,7 @@ use App\Models\City;
 use App\Models\Community;
 use App\Models\Email;
 use App\Models\HomePage;
+use App\Models\OffPlanProject;
 use App\Models\Property;
 use App\Models\Seo;
 use App\Models\SubCommunity;
@@ -26,7 +27,8 @@ class HomePageController extends Controller
         }
 
         $blogs=Blog::with('agent')->limit(7)->get();
-        $off_plan=Property::where('status','off_plan')->take(3)->get();
+        $off_plan=OffPlanProject::get()->take(6);
+
         $seo=Seo::where('page_name','home')->first();
 
         return view('home',compact('home',
