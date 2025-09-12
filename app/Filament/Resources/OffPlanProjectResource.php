@@ -56,9 +56,6 @@ class OffPlanProjectResource extends Resource
                 Forms\Components\TextInput::make('developer')
                     ->required()
                     ->maxLength(100),
-                Forms\Components\TextInput::make('link')
-                    ->required()
-                    ->maxLength(100),
                 Forms\Components\Repeater::make('images')
                     ->relationship()
                     ->schema([
@@ -137,8 +134,6 @@ class OffPlanProjectResource extends Resource
                 Tables\Columns\TextColumn::make('completion_date')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('developer')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('link')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('first_installment')
                     ->searchable(),
