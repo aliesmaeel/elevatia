@@ -59,17 +59,17 @@
                             <div class="col">
                                 <img src="/images/power.svg">
                                 <div  class="sub_title_Pay">First Installment</div>
-                                <div  class="sub_num_Pay">50 %</div>
+                                <div  class="sub_num_Pay">{{$property->first_installment}}</div>
                             </div>
                             <div class="col">
                                 <img src="/images/settings_bold.svg">
                                 <div  class="sub_title_Pay">Under Construction</div>
-                                <div  class="sub_num_Pay">50 %</div>
+                                <div  class="sub_num_Pay">{{$property->under_construction}}</div>
                             </div>
                             <div class="col">
                                 <img src="/images/key_bold.svg">
                                 <div  class="sub_title_Pay">On Handover</div>
-                                <div  class="sub_num_Pay">50 %</div>
+                                <div  class="sub_num_Pay">{{$property->on_handover}}</div>
                             </div>
                         </div>
                     </div>

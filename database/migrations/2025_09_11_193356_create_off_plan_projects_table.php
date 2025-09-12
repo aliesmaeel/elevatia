@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('price_starts_from',100);
             $table->string('completion_date',100);
             $table->string('developer',100);
-            $table->string('link',100);
             $table->string('first_installment',10)->nullable();
             $table->string('under_construction',10)->nullable();
             $table->string('on_handover',10)->nullable();

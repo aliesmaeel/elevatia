@@ -42,7 +42,7 @@ class OffPlanProjectResource extends Resource
                     ->required()
                     ->maxLength(255)
                     ->unique(ignorable: fn (?OffPlanProject $record) => $record),
-                Forms\Components\Textarea::make('description')
+                Forms\Components\RichEditor::make('description')
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('address')
@@ -54,9 +54,6 @@ class OffPlanProjectResource extends Resource
                 Forms\Components\DatePicker::make('completion_date')
                     ->required(),
                 Forms\Components\TextInput::make('developer')
-                    ->required()
-                    ->maxLength(100),
-                Forms\Components\TextInput::make('link')
                     ->required()
                     ->maxLength(100),
                 Forms\Components\Repeater::make('images')
@@ -71,7 +68,7 @@ class OffPlanProjectResource extends Resource
                     ->columnSpanFull()
                     ->collapsible()
                     ->minItems(0)
-                    ->maxItems(10),
+                    ->maxItems(15),
                 Forms\Components\TextInput::make('first_installment')
                     ->maxLength(10)
                     ->default(null),
@@ -137,8 +134,6 @@ class OffPlanProjectResource extends Resource
                 Tables\Columns\TextColumn::make('completion_date')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('developer')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('link')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('first_installment')
                     ->searchable(),
