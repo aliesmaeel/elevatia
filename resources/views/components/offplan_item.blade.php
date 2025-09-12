@@ -1,6 +1,6 @@
 <div class="col" data-aos="fade-up">
     <div class="img_Container">
-        <img src="{{asset('/storage/'.$property->image)}}">
+        <img src="{{asset('/storage/'.$property->images()->first()->image_path)}}">
     </div>
     <div class="flex-col">
         <a class="name_offplan" href="/offplan/{{$property->slug}}">{{$property->title}}</a>
