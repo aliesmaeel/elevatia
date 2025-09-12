@@ -42,7 +42,7 @@ class OffPlanProjectResource extends Resource
                     ->required()
                     ->maxLength(255)
                     ->unique(ignorable: fn (?OffPlanProject $record) => $record),
-                Forms\Components\Textarea::make('description')
+                Forms\Components\RichEditor::make('description')
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('address')
