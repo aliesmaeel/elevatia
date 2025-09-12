@@ -68,7 +68,7 @@ class OffPlanProjectResource extends Resource
                     ->columnSpanFull()
                     ->collapsible()
                     ->minItems(0)
-                    ->maxItems(10),
+                    ->maxItems(15),
                 Forms\Components\TextInput::make('first_installment')
                     ->maxLength(10)
                     ->default(null),
