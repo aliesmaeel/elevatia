@@ -69,6 +69,7 @@ class OffPlanProjectResource extends Resource
                     ->collapsible()
                     ->minItems(0)
                     ->maxItems(15),
+
                 Forms\Components\TextInput::make('first_installment')
                     ->maxLength(10)
                     ->default(null),
