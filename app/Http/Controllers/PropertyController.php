@@ -51,7 +51,7 @@ class PropertyController
 
     public function offplan()
     {
-        $properties = Property::where('status', 'off_plan')->get();
+        $properties = OffPlanProject::all();
 
         return view('property.offplan', compact('properties'));
     }
