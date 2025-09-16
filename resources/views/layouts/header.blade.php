@@ -14,7 +14,8 @@
                 <li class="link"><a href="{{ route('home') }}">Home Page</a></li>
                 <li class="link"><a href="{{ route('blogs.index') }}">Our Blogs</a></li>
                 <li class="link"><a href="{{ route('agents.index') }}">Our Team</a></li>
-                <li class="link"><a href="{{ route('offplan.index') }}">OffPlan Project</a></li>
+                <li class="link"><a href="{{ route('offplan.index') }}">Off_Plan Project</a></li>
+                <li class="link"><a href="{{ route('property.all') }}">All Properties</a></li>
                 <li class="link"><a href="{{ route('about.index') }}">About Us</a></li>
                 <li class="link"><a href="{{ route('contact.index') }}">Contact Us</a></li>
             </ul>

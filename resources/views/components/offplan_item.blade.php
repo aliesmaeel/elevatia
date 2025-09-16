@@ -16,7 +16,9 @@
             From AED {{$property->price_starts_from}}
         </div>
         <div class="line"></div>
-        <div class="desc"> Handover  in {{$property->handover_date}}</div>
+        <div class="desc"> Handover  in
+            {{ 'Q' . \Carbon\Carbon::parse($property->completion_date)->quarter . ' ' . \Carbon\Carbon::parse($property->completion_date)->year }}
+        </div>
     </div>
 </div>
 

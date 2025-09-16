@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="col flex-center">
-                <div class="title">Contact Us.</div>
+                <div class="title">Useful Links</div>
                 <div class="flex-col">
                     <a href="{{ route('home') }}">
                         <div class="row">
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="title">Contact Us.</div>
+                <div class="title">Contact Us</div>
                 <div class="flex-col">
                     <a href="#">
                         <div class="row">

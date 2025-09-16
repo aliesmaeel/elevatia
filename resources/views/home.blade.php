@@ -77,7 +77,7 @@
                         @endforeach
                     </div>
                     <div class="main_pagination">
-                        @include('components.pagination', ['paginator' => $premiumProperties])
+                       <a class="all-properties" href="/all-properties">Show All Properties</a>
                     </div>
                 </div>
             </div>

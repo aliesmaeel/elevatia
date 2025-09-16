@@ -15,7 +15,6 @@ Route::get('/', [HomePageController::class,'index'])->name('home');
 Route::get('/search', [HomePageController::class, 'search'])->name('property.search');
 Route::post('/submit',[HomePageController::class,'submit'])->name('form.submit');
 
-
 Route::get('/blogs',[BlogController::class,'index'])->name('blogs.index');
 Route::get('/blog/{slug}',[BlogController::class,'show'])->name('blogs.details');
 Route::post('/blog/{id}/like', [BlogController::class, 'like']);
@@ -25,6 +24,7 @@ Route::get('/about',[AboutUsController::class,'index'])->name('about.index');
 Route::get('/team',[TeamController::class,'index'])->name('agents.index');
 Route::get('/team/{id}',[TeamController::class,'show'])->name('agents.show');
 
+Route::get('/all-properties', [PropertyController::class, 'allProperties'])->name('property.all');
 Route::get('/property/{slug}', [PropertyController::class, 'propertyDetails'])->name('property.details');
 Route::get('/average-prices/{type}', [PropertyController::class, 'averagePrice']);
 
