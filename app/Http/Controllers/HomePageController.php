@@ -44,6 +44,7 @@ class HomePageController extends Controller
         $query = Property::query();
 
         if ($request->filled('property_type')) {
+
             $types = (array) $request->property_type;
 
             if (!in_array('any', $types)) {
