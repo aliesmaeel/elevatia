@@ -70,4 +70,9 @@ class PropertyController
         return view('property.offplan_details', compact('property','agents','allImages_property'));
     }
 
+    public function allProperties()
+    {
+        $properties = Property::paginate(12);
+        return view('property.index', compact('properties'));
+    }
 }

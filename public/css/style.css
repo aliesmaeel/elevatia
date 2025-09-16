@@ -3921,6 +3921,16 @@ transform: scale(1.1);
     display: none;
 }
 
-
+.all-properties{
+    background-color: rgba(206, 166, 105, 1);
+    color: #fff;
+    border-radius: 8px;
+    width: 237px;
+    height: 52px;
+    line-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 

@@ -20,7 +20,7 @@ class HomePageController extends Controller
     {
         $home=HomePage::first();
         $premiumProperties = Property::with(['agent','amenities'])
-            ->where('is_premium', true)->paginate(12);
+            ->where('is_premium', true)->paginate(6);
         $agents=Agent::all();
         if (!$home) {
           return 'No home page data found.';
@@ -43,7 +43,6 @@ class HomePageController extends Controller
     {
         $query = Property::query();
 
-
         if ($request->filled('property_type')) {
             $types = (array) $request->property_type;
 
@@ -59,6 +58,7 @@ class HomePageController extends Controller
                             $sub->whereIn('name', $types);
                         });
                 });
+
             }
         }
 

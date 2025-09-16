@@ -7,8 +7,14 @@
         <div class="desc expanded">
             {!! \Illuminate\Support\Str::words($property->description,10) !!}
         </div>
-        <div class="flex_desc">
 
+
+        <div class="title_col " style="display: flex;gap: 4px">
+            <img src="/images/location.svg" class="">
+            {{$property->community->name}}
+        </div>
+
+        <div class="flex_desc">
             @foreach($property->amenities as $amenity)
                 <div class="single">
                     <img src="{{asset('storage/'.$amenity->image)}}">
