@@ -99,47 +99,49 @@
                         <x-offplan_item :property="$property"/>
                         @endforeach
                     </div>
-
-                </div>
-            </div>
-
-            <div class="our_expert">
-                <div class="content">
-                    <div class="text-content" data-aos="fade-up">
-                        <div class="title">
-                            Our Team
-                        </div>
-                        <div class="desc">
-                            Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and
-                            investments available through Estatein. Click "View Details" for more information.
-                        </div>
-                    </div>
-                    {{-- our expert  --}}
-                    <div class="swiper_expert" data-aos="fade-up">
-
-
-                            <div class="swiper-wrapper">
-                                <!-- Slide 1 -->
-                                @foreach($agents as $agent)
-                                <div class="swiper-slide">
-                                    <img src="{{asset('/storage/'.$agent->image)}}" alt="Member" class="member-img" />
-                                    <div class="member-info">
-                                        <div class="member-name">{{$agent->name}}</div>
-                                        <div class="member-role">{{$agent->position}}</div>
-                                        <a href="#">
-                                            <img class="arrow" src="/images/arrow-right.svg">
-                                        </a>
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
-
-
-
-
+                    <div class="main_pagination">
+                        <a class="all-properties" href="/offplan">Show Off-plan Projects</a>
                     </div>
                 </div>
             </div>
+
+{{--            <div class="our_expert">--}}
+{{--                <div class="content">--}}
+{{--                    <div class="text-content" data-aos="fade-up">--}}
+{{--                        <div class="title">--}}
+{{--                            Our Team--}}
+{{--                        </div>--}}
+{{--                        <div class="desc">--}}
+{{--                            Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and--}}
+{{--                            investments available through Estatein. Click "View Details" for more information.--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    --}}{{-- our expert  --}}
+{{--                    <div class="swiper_expert" data-aos="fade-up">--}}
+
+
+{{--                            <div class="swiper-wrapper">--}}
+{{--                                <!-- Slide 1 -->--}}
+{{--                                @foreach($agents as $agent)--}}
+{{--                                <div class="swiper-slide">--}}
+{{--                                    <img src="{{asset('/storage/'.$agent->image)}}" alt="Member" class="member-img" />--}}
+{{--                                    <div class="member-info">--}}
+{{--                                        <div class="member-name">{{$agent->name}}</div>--}}
+{{--                                        <div class="member-role">{{$agent->position}}</div>--}}
+{{--                                        <a href="#">--}}
+{{--                                            <img class="arrow" src="/images/arrow-right.svg">--}}
+{{--                                        </a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
+
+
+
+
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
             {{-- Our Blogs --}}
             <div class="blog">

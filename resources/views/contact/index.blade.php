@@ -38,7 +38,7 @@
                         <img src="/images/icon_chat.svg">
                         <div class="sub_title">Hit us up</div>
                         <div class="sub_desc">
-                            <a href="tel:+971562676761">+971 56 267 6761</a>
+                            <a href="tel:+971562676761">+971 52 324 6090</a>
                             <a href="mailto:info@elevatiaproperties.com">info@elevatiaproperties.com</a>
                         </div>
                     </div>

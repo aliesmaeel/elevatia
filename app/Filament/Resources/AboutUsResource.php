@@ -41,7 +41,7 @@ class AboutUsResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\Textarea::make('our_vision')
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('our_mission')
+                Forms\Components\RichEditor::make('our_mission')
                     ->columnSpanFull(),
                 Forms\Components\Toggle::make('active')
                     ->default(true)

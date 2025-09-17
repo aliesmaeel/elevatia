@@ -45,7 +45,7 @@
                         <div class="first">
                             <div class="title2">Our Mission</div>
                             <div class="desc">
-                                {{$about->our_mission}}
+                                {!! $about->our_mission !!}
                             </div>
                         </div>
                         <div class="second">
@@ -79,45 +79,45 @@
             </div>
         </div>
         <div class="bg_empty"></div>
-        <div class="our_expert">
-            <div class="content">
-                <div class="title" data-aos="fade-up">OUR EXPERT</div>
-                <div class="title2" data-aos="fade-up">
-                    <div class="flex">
-                        <div>Friendly</div>
-                        <div class="circle"></div>
-                    </div>
-                    <div> team</div>
-                </div>
-                <div class="desc" data-aos="fade-up">Every day we communicate with each other, solve our clients’ problems and work hard to succeed their business.</div>
+{{--        <div class="our_expert">--}}
+{{--            <div class="content">--}}
+{{--                <div class="title" data-aos="fade-up">OUR EXPERT</div>--}}
+{{--                <div class="title2" data-aos="fade-up">--}}
+{{--                    <div class="flex">--}}
+{{--                        <div>Friendly</div>--}}
+{{--                        <div class="circle"></div>--}}
+{{--                    </div>--}}
+{{--                    <div> team</div>--}}
+{{--                </div>--}}
+{{--                <div class="desc" data-aos="fade-up">Every day we communicate with each other, solve our clients’ problems and work hard to succeed their business.</div>--}}
 
-                {{-- our expert  --}}
-                <div class="swiper_expert" data-aos="fade-up">
-                    <!-- Navigation buttons -->
-                    <div class="swiper-button-prev">Prev</div>
-                    <div class="swiper-button-next">Next</div>
-                    <div class="swiper-wrapper">
-                      <!-- Slide 1 -->
-                        @foreach($agents as $agent)
+{{--                --}}{{-- our expert  --}}
+{{--                <div class="swiper_expert" data-aos="fade-up">--}}
+{{--                    <!-- Navigation buttons -->--}}
+{{--                    <div class="swiper-button-prev">Prev</div>--}}
+{{--                    <div class="swiper-button-next">Next</div>--}}
+{{--                    <div class="swiper-wrapper">--}}
+{{--                      <!-- Slide 1 -->--}}
+{{--                        @foreach($agents as $agent)--}}
 
-                            <div class="swiper-slide">
-                                <img src="{{asset('/storage/'.$agent->image)}}" alt="Member" class="member-img" />
-                                <div class="member-info">
-                                    <div class="member-name">{{$agent->name}}</div>
-                                    <div class="member-role">{{$agent->position}}</div>
-                                    <a href="/teams/{{$agent->id}}">
-                                        <img class="arrow" src="/images/arrow-right.svg">
-                                    </a>
-                                </div>
-                            </div>
-                        @endforeach
+{{--                            <div class="swiper-slide">--}}
+{{--                                <img src="{{asset('/storage/'.$agent->image)}}" alt="Member" class="member-img" />--}}
+{{--                                <div class="member-info">--}}
+{{--                                    <div class="member-name">{{$agent->name}}</div>--}}
+{{--                                    <div class="member-role">{{$agent->position}}</div>--}}
+{{--                                    <a href="/teams/{{$agent->id}}">--}}
+{{--                                        <img class="arrow" src="/images/arrow-right.svg">--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        @endforeach--}}
 
-                      <!-- Duplicate as needed -->
+{{--                      <!-- Duplicate as needed -->--}}
 
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <div class="talking_expert">
             <div class="content" data-aos="fade-up">
                 <div class="title">Talk To An Expert</div>
