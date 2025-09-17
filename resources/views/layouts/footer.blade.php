@@ -77,7 +77,7 @@
                     <a href="#">
                         <div class="row">
                             <img src="/images/tel.svg">
-                            <div class="over-text-hide">+971 58 189 9762</div>
+                            <div class="over-text-hide">+971 52 324 6090</div>
                         </div>
                     </a>
                     <a href="#">
@@ -87,17 +87,15 @@
                         </div>
                     </a>
                     <div class="same_row">
-                        <a href="#">
+                        <a target="_blank" href="https://www.facebook.com/share/17JAVEeZ3N/">
                             <img src="/images/facebook.svg">
                         </a>
-                        <a href="#">
+                        <a target="_blank" href="https://www.linkedin.com/company/elevatia-properties/">
                             <img src="/images/linkedin.svg">
                         </a>
-                        <a href="#">
-                            <img src="/images/twitter.svg">
-                        </a>
-                        <a href="#">
-                            <img src="/images/youtube.svg">
+                        <a target="_blank" href="https://www.instagram.com/elevatiaproperties?igsh=MXgweTRmOTU4MGRleg==">
+                            <img style="background-color: white;border-radius: 50%;border: none"
+                                 src="/images/instagram2.svg">
                         </a>
                     </div>
                 </div>
