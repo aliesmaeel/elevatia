@@ -1,5 +1,4 @@
 
-
     <div class="col">
         <div class="img_container">
             <img src="{{asset('storage/' . $blog->image)}}" alt="Blog Image">
@@ -19,7 +18,8 @@
             </div>
         </div>
         <div class="text">
-          {!!  Str::limit($blog->description, 100, '...') !!}
+            {!! Str::limit(strip_tags($blog->description), 100, '...') !!}
+
         </div>
     </div>
 

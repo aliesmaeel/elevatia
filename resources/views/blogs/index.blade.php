@@ -28,7 +28,6 @@
                 @foreach($blogs as $blog)
                     <x-blog_item :blog="$blog" />
                 @endforeach
-
             </div>
          </div>
     </div>
