@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Seo;
+use Carbon\Carbon;
 
 class BlogController
 {
@@ -11,6 +12,7 @@ class BlogController
     {
         $blogs=Blog::with('agent')->get();
         $seo=Seo::where('page_name','blogs')->first();
+
         return view('blogs.index',compact('blogs','seo'));
     }
 
@@ -18,6 +20,8 @@ class BlogController
     {
         $blog=Blog::with('agent')->where('slug',$slug)->firstOrFail();
         $relatedBlogs=Blog::where('id','!=',$blog->id)->inRandomOrder()->take(3)->get();
+
+
         return view('blogs.show',compact('blog','relatedBlogs'));
     }
 

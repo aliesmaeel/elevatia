@@ -30,8 +30,8 @@
         <img src="{{asset('/storage/'.$blog->image)}}" class="banner">
         <div class="search-realestate">
             <div class="desc_title">
-                <div class="main_title">Search Luxury Homes In Dubai</div>
-                <div class="desc">   Explore Dubai’s Diverse Communities: Where Tradition Meets Innovation in Every Neighborhood.</div>
+                <div class="main_title"></div>
+                <div class="desc"></div>
             </div>
         </div>
     </div>
