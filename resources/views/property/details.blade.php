@@ -11,7 +11,7 @@
         <div class="content" >
            <div class="flex-row">
                 <div class="name">{{$property->title}}</div>
-                <div class="price">${{$property->price}} </div>
+                <div class="price">{{$property->price}} AED </div>
            </div>
            <div class="flex-row">
                 <div class="first">
