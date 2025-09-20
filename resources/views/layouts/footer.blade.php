@@ -74,13 +74,13 @@
                             <div class="over-text-hide">Clover Bay, Business Bay, office no.2206</div>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="tel:+971523246090">
                         <div class="row">
                             <img src="/images/tel.svg">
                             <div class="over-text-hide">+971 52 324 6090</div>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="mailto:Info@elevatiaproperties.com">
                         <div class="row">
                             <img src="/images/mail.svg">
                             <div class="over-text-hide">Info@elevatiaproperties.com</div>

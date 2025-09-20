@@ -107,7 +107,8 @@
                                     <div class="input_box">
                                         <div class="text">Property Price</div>
                                         <div class="input_div">
-                                            <input  id="price" type="number" class="input" value="1640000" >
+
+                                            <input  id="price" type="number" class="input" value="{{ str_replace(',', '', $property->price) }}" >
                                              <span>AED</span>
                                         </div>
                                     </div>
@@ -152,7 +153,8 @@
                                 <div class="input_box">
                                     <div class="text">Property Price</div>
                                     <div class="input_div">
-                                        <input type="number" value="1640000" id="price" class="input" placeholder="Enter property price">
+
+                                        <input type="number" value="{{ str_replace(',', '', $property->price) }}"  id="price" class="input" placeholder="Enter property price">
                                         <span>AED</span>
                                     </div>
                                 </div>
@@ -225,7 +227,7 @@
                             <div class="fit">{{$property->address}}</div>
                         </div>
                         <div class="flex">
-                            <div class="price"><span>${{$property->price}}</span> {{$property->size}}/sq ft</div>
+                            <div class="price"><span>AED {{$property->price}}</span> {{$property->size}}/sq ft</div>
                         </div>
                         <hr>
                         <div class="contact_box">

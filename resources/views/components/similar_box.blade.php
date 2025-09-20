@@ -8,7 +8,7 @@
                 {{ $property->title }}
             </div>
             <div class="desc">
-               {{$property->description}}
+                {!! \Illuminate\Support\Str::words($property->description,10) !!}
             </div>
             <div class="flex_desc">
                 <div class="single">

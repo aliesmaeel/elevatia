@@ -14,15 +14,7 @@
             {{$property->community->name}}
         </div>
 
-        <div class="flex_desc">
-            @foreach($property->amenities as $amenity)
-                <div class="single">
-                    <img src="{{asset('storage/'.$amenity->image)}}">
-                    <div>{{$amenity->name}}</div>
-                </div>
-            @endforeach
 
-        </div>
         <div class="flex_price">
             <div class="price_col">
                 <div class="small">Price</div>
