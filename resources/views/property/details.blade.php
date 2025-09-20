@@ -90,7 +90,7 @@
                             @foreach($property->amenities as $aminity)
                                 <div class="col">
                                     <div class="flex">
-                                        <img style="filter: brightness(5)" src="{{asset('storage/'.$aminity->image)}}">
+                                        <img style="filter: brightness(5);background-color: white" src="{{asset('storage/'.$aminity->image)}}">
                                         <span>{{$aminity->name}}</span>
                                     </div>
                                 </div>
