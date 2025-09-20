@@ -26,7 +26,7 @@
         <div class="flex_price">
             <div class="price_col">
                 <div class="small">Price</div>
-                <div class="numb"> $ {{$property->price}}</div>
+                <div class="numb"> AED {{$property->price}}</div>
             </div>
             <a class="btn" href="{{route('property.details',['slug'=>$property->slug])}}">View Property Details</a>
         </div>
