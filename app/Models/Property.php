@@ -42,7 +42,8 @@ class Property extends Model
         'status',
         'constructor',
         'price_starts_from',
-        'handover_date'
+        'handover_date',
+        'completion_status'
     ];
 
     ///get price attribute to format price with comma

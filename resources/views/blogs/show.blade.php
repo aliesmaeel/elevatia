@@ -51,7 +51,7 @@
                 <div class="col third_section"  data-aos="fade-up">
                     <div class="art_director">
                         <div class="flex">
-                            <img src="/images/person.png" class="director">
+                            <img src="{{asset('/storage/'.$blog->agent->image)}}" width="100" height="100" style="border-radius: 50%" class="director">
                             <div class="flex-col">
                                 <div class="name">{{$blog->agent->name}}</div>
                                 <div class="mini_desc">{{$blog->agent->position}}</div>
@@ -63,10 +63,10 @@
                         <div class="position">
                             <div class="space_flex">
                                 <div>
-                                    <img src="/images/twitter_orange.svg">
+                                    <img width="50" height="50" style="background: transparent" src="/images/instagram-orange.png">
                                     <span>@wadewarren</span>
                                 </div>
-                                <a href="#">
+                                <a target="_blank" href="https://www.instagram.com/elevatiaproperties?utm_source=ig_web_button_share_sheet&igsh=MWdhcXo1ZW1xZjN6cA==">
                                     <img src="/images/arrow_position.svg">
                                 </a>
                             </div>

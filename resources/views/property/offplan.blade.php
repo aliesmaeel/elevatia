@@ -40,8 +40,7 @@
             <div class="flex_col">
                 <div class="title">Sign up for our newsletter to stay up to date on the Dubai property market.</div>
                 <div class="desc">
-                    Lorem ipsum dolor sit amet consectetur. A fringilla turpis duis eget tincidunt facilisis justo eget elit.
-                    Augue montes in eu mollis dictum risus blan eget commodo amet
+                    Subscribe to receive our exclusive Dubai real estate market reports and insightful newsletters directly to your inbox. Get the latest trends, property updates, and expert analysis to help you make smarter decisions.
                 </div>
                 <form class="signup_email_form">
                     <div class="contact_email">

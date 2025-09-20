@@ -35,6 +35,8 @@ class RealestateTypes
             'villa' => 'Villa',
             'whole building' => 'Whole Building',
             'warehouse' => 'Warehouse',
+            'workshop' => 'Workshop',
+            'studio' => 'Studio',
         ];
     }
 
@@ -43,6 +45,13 @@ class RealestateTypes
         return [
             'for_sale' => 'For Sale',
             'for_rent' => 'For Rent',
+        ];
+    }
+
+    public static function getCompletionStatus(): array
+    {
+        return [
+            'ready' => 'Ready',
             'off_plan' => 'Off Plan',
         ];
     }

@@ -153,10 +153,9 @@
                         @if($loop->iteration == 4)
 
                             <div class="blog_2_box col">
-                                <div class="title_box">Experience Effortless Property Management</div>
+                                <div class="title_box">Stay informed with our team's latest trends, market insights, and expert tips</div>
                                 <div class="desc_box">
-                                    Ready to experience hassle-free property management? Explore our Property Management Service categories and let us
-                                    handle the complexities while you enjoy the benefits of property ownership.
+                                    Explore in-depth articles designed to keep you ahead, from real estate news to investment strategies.
                                 </div>
 
                                 <a href="/blogs">

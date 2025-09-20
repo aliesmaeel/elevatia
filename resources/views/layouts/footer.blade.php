@@ -43,11 +43,11 @@
                             <div class="over-text-hide">Our Blogs</div>
                         </div>
                     </a>
-                    <a href="{{ route('agents.index') }}">
-                        <div class="row">
-                            <div class="over-text-hide">Our Team</div>
-                        </div>
-                    </a>
+{{--                    <a href="{{ route('agents.index') }}">--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="over-text-hide">Our Team</div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
                     <a href="{{ route('offplan.index') }}">
                         <div class="row">
                             <div class="over-text-hide">OffPlan Project</div>
@@ -104,8 +104,8 @@
         <div class="terms flex">
             <div>@2023 Elvataia . All Rights Reserved.</div>
             <div class="flex-start">
-                <a href="#">
-                    <div >Terms & Conditions</div>
+                <a href="/privacy-policy" target="_blank" class="flex-start">
+                    <div >Privacy Policy</div>
                 </a>
             </div>
         </div>

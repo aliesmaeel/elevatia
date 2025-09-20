@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BrochureController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DownloadedBrochureController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\TeamController;
@@ -31,8 +33,12 @@ Route::get('/average-prices/{type}', [PropertyController::class, 'averagePrice']
 Route::get('/offplan',[PropertyController::class,'offplan'])->name('offplan.index');
 Route::get('/offplan/{slug}',[PropertyController::class,'offplanDetails'])->name('offplan.details');
 
+Route::post('/downloaded-brochure', [BrochureController::class, 'store'])
+    ->name('downloaded-brochure.store');
 
-
+Route::get('/privacy-policy', function () {
+    return view('privacy_policy');
+})->name('privacy_policy');
 
 Route::get('/property_details', function () {
     return view('property_details');
