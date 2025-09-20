@@ -98,52 +98,52 @@
 
                         </div>
                     </div>
-                    <div class="calculator">
-                        <div class="content">
-                            <div class="title px_2">Mortgage Calculator</div>
-                            <div class="text pl_2 top">Estimate your monthly mortgage payments</div>
-                            <div >
-                                <div class="grid_content">
-                                    <div class="input_box">
-                                        <div class="text">Property Price</div>
-                                        <div class="input_div">
+{{--                    <div class="calculator">--}}
+{{--                        <div class="content">--}}
+{{--                            <div class="title px_2">Mortgage Calculator</div>--}}
+{{--                            <div class="text pl_2 top">Estimate your monthly mortgage payments</div>--}}
+{{--                            <div >--}}
+{{--                                <div class="grid_content">--}}
+{{--                                    <div class="input_box">--}}
+{{--                                        <div class="text">Property Price</div>--}}
+{{--                                        <div class="input_div">--}}
 
-                                            <input  id="price" type="number" class="input" value="{{ str_replace(',', '', $property->price) }}" >
-                                             <span>AED</span>
-                                        </div>
-                                    </div>
-                                    <div class="input_box">
-                                        <div class="text">Deposit</div>
-                                        <div class="input_div">
-                                            <input id="deposit" type="number" class="input" value="328000" >
-                                             <span>AED</span>
-                                        </div>
-                                    </div>
-                                    <div class="input_box">
-                                        <div class="text">Mortgage Period</div>
-                                        <div class="input_div">
-                                            <input id="period"  type="number" class="input" value="25" >
-                                            <span>Years</span>
-                                        </div>
-                                    </div>
-                                    <div class="input_box">
-                                        <div class="text">Interest Rate</div>
-                                        <div class="input_div">
-                                            <input step="1" id="rate" class="input" value="5" >
-                                            <span>Years</span>
-                                        </div>
-                                    </div>
-                                    <div class="input_box submit_col">
-                                        <button onclick="calculateMortgage()" class="input">Get Pre - approved</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="payment_value pl_2">
-                                <div>Monthly Payment</div>
-                                <div id="result">Monthly Payment: AED 7,670</div>
-                            </div>
-                        </div>
-                    </div>
+{{--                                            <input  id="price" type="number" class="input" value="{{ str_replace(',', '', $property->price) }}" >--}}
+{{--                                             <span>AED</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="input_box">--}}
+{{--                                        <div class="text">Deposit</div>--}}
+{{--                                        <div class="input_div">--}}
+{{--                                            <input id="deposit" type="number" class="input" value="328000" >--}}
+{{--                                             <span>AED</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="input_box">--}}
+{{--                                        <div class="text">Mortgage Period</div>--}}
+{{--                                        <div class="input_div">--}}
+{{--                                            <input id="period"  type="number" class="input" value="25" >--}}
+{{--                                            <span>Years</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="input_box">--}}
+{{--                                        <div class="text">Interest Rate</div>--}}
+{{--                                        <div class="input_div">--}}
+{{--                                            <input step="1" id="rate" class="input" value="5" >--}}
+{{--                                            <span>Years</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="input_box submit_col">--}}
+{{--                                        <button onclick="calculateMortgage()" class="input">Get Pre - approved</button>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="payment_value pl_2">--}}
+{{--                                <div>Monthly Payment</div>--}}
+{{--                                <div id="result">Monthly Payment: AED 7,670</div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <div class="calculator">
                         <div class="content">
                             <div class="title px_2">Rental Yield Calculator</div>
