@@ -26,6 +26,7 @@ return new class extends Migration
             $table->text('features')->nullable();
             $table->string('lat',50)->nullable();
             $table->string('lng',50)->nullable();
+            $table->string('brochure')->nullable();
             $table->timestamps();
         });
     }

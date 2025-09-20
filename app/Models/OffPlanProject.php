@@ -21,6 +21,7 @@ class OffPlanProject extends Model
         'features',
         'lat',
         'lng',
+        'brochure',
     ];
 
 

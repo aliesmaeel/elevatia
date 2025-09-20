@@ -34,7 +34,9 @@ class PropertyResource extends Resource
                     ->options(RealestateTypes::getPropertyTypes())
                     ->searchable()
                     ->required(),
-
+                Forms\Components\Select::make('completion_status')
+                    ->options(RealestateTypes::getCompletionStatus())
+                    ->required(),
                 Forms\Components\Textarea::make('title')
                     ->afterStateUpdated(function (Forms\Get $get, Forms\Set $set, ?string $operation, ?string $old, ?string $state, ?Model $record) {
                         if ($operation === 'edit') {

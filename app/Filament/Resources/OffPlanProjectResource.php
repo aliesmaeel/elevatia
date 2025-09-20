@@ -99,6 +99,12 @@ class OffPlanProjectResource extends Resource
                         $set('location.lng', $state);
                     }),
 
+                Forms\Components\FileUpload::make('brochure')
+                    ->label('Brochure')
+                    ->columnSpanFull()
+                    ->openable()
+                    ->downloadable(),
+
                 \Dotswan\MapPicker\Fields\Map::make('location')
                     ->afterStateHydrated(function ($state, $record, Forms\Set $set): void {
                         $set('location', ['lat' => $record?->lat, 'lng' => $record?->lng]);
@@ -117,6 +123,7 @@ class OffPlanProjectResource extends Resource
                         $set('lat',  $state['lat']);
                         $set('lng', $state['lng']);
                     }),
+
             ]);
     }
 

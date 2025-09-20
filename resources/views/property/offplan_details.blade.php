@@ -4,11 +4,104 @@
 @section('header')
     @include('layouts.header')
 @endsection
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.min.css"/>
 
 <style>
     .property_details .content .flex_container .col:first-of-type{
         grid-row: span 1 !important;
     }
+
+    /* Popup overlay */
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+
+    /* Hidden by default */
+    .hidden2 {
+        display: none;
+    }
+
+    /* Popup box */
+    .popup-content {
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        width: 400px;
+        max-width: 90%;
+        box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+        position: relative;
+        animation: popupFade 0.3s ease;
+    }
+
+    /* Close button */
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        cursor: pointer;
+        color: #333;
+    }
+
+    /* Form styles */
+    form .form-group {
+        margin-bottom: 15px;
+    }
+
+    form label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    form input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        outline: none;
+    }
+
+    .phone-input {
+        display: flex;
+        gap: 10px;
+    }
+
+    .phone-input input {
+        flex: 1;
+    }
+
+    .submit-btn {
+        width: 100%;
+        background: #f77f00;
+        color: white;
+        border: none;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+        background: #e56b00;
+    }
+
+    /* Animation */
+    @keyframes popupFade {
+        from {opacity: 0; transform: scale(0.95);}
+        to {opacity: 1; transform: scale(1);}
+    }
+
 </style>
 {{-- main page --}}
 @section('content')
@@ -107,111 +200,106 @@
                             </div>
                         </div>
                         <div class="buttons">
-                            <a class="btn" href="#">
+                            <a class="btn" target="_blank" href="https://wa.me/+971562676761">
                                 Discover more
                             </a>
-                            <a class="btn" href="#">
+                            <a class="btn" href="javascript:void(0)" onclick="openBrochurePopup()">
                                 Download brochure
                             </a>
                         </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-            <div class="question" >
-                <div class="content" data-aos="fade-up">
-                    <giv class="grid_container">
-                        <div class="text">
-                            <div class="title">Frequently Asked <br>Question</div>
-                            <div class="desc">Trusted in more than 100 countries and <br>4 million customers.</div>
-                        </div>
-                        <div class="question_container">
-                            <div class="faq">
-                                <div class="faq-item active">
-                                  <button class="faq-question">
-                                    How do I update my billing information?
-                                    <img src="/images/arrow_white.svg" class="faq-icon white">
-                                    <img src="/images/arrow_orange.svg" class="faq-icon orange">
-                                  </button>
-                                  <div class="faq-answer">
-                                    <p>
-                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                      Proin nec ante vitae purus tempus egestas. Curabitur euismod
-                                      purus sed elit faucibus. Vivamus in ante sed libero feugiat fermentum.
-                                    </p>
-                                  </div>
-                                </div>
-
-                                <div class="faq-item">
-                                    <button class="faq-question">
-                                        How do I update my billing information?
-                                        <img src="/images/arrow_white.svg" class="faq-icon white">
-                                        <img src="/images/arrow_orange.svg" class="faq-icon orange">
-                                    </button>
-                                    <div class="faq-answer">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Proin nec ante vitae purus tempus egestas. Curabitur euismod
-                                            purus sed elit faucibus. Vivamus in ante sed libero feugiat fermentum.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="faq-item">
-                                    <button class="faq-question">
-                                        How do I update my billing information?
-                                        <img src="/images/arrow_white.svg" class="faq-icon white">
-                                        <img src="/images/arrow_orange.svg" class="faq-icon orange">
-                                    </button>
-                                    <div class="faq-answer">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Proin nec ante vitae purus tempus egestas. Curabitur euismod
-                                            purus sed elit faucibus. Vivamus in ante sed libero feugiat fermentum.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="faq-item">
-                                    <button class="faq-question">
-                                        How do I update my billing information?
-                                        <img src="/images/arrow_white.svg" class="faq-icon white">
-                                        <img src="/images/arrow_orange.svg" class="faq-icon orange">
-                                    </button>
-                                    <div class="faq-answer">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Proin nec ante vitae purus tempus egestas. Curabitur euismod
-                                            purus sed elit faucibus. Vivamus in ante sed libero feugiat fermentum.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="faq-item">
-                                    <button class="faq-question">
-                                        How do I update my billing information?
-                                        <img src="/images/arrow_white.svg" class="faq-icon white">
-                                        <img src="/images/arrow_orange.svg" class="faq-icon orange">
-                                    </button>
-                                    <div class="faq-answer">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Proin nec ante vitae purus tempus egestas. Curabitur euismod
-                                            purus sed elit faucibus. Vivamus in ante sed libero feugiat fermentum.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div id="brochurePopup" class="popup-overlay hidden2">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closeBrochurePopup()">&times;</span>
+            <h2>Download Brochure</h2>
+            <form id="brochureForm" method="POST" action="{{ route('downloaded-brochure.store') }}">
+                @csrf
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
 
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+                </div>
+
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
         </div>
     </div>
 @endsection
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js"></script>
+
+<script>
+    function openBrochurePopup() {
+        document.getElementById("brochurePopup").classList.remove("hidden2");
+    }
+
+    function closeBrochurePopup() {
+        document.getElementById("brochurePopup").classList.add("hidden2");
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const phoneInput = document.querySelector("#phone");
+
+        const iti = window.intlTelInput(phoneInput, {
+            initialCountry: "auto",
+            geoIpLookup: function(success, failure) {
+                fetch("https://ipapi.co/json")
+                    .then(res => res.json())
+                    .then(data => success(data.country_code))
+                    .catch(() => success("US"));
+            },
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js", // for validation/formatting
+        });
+
+        // On form submit, get full international number
+        const form = document.querySelector("#brochureForm");
+        if (form) {
+            form.addEventListener("submit", function(e) {
+                e.preventDefault();
+
+                const fullNumber = iti.getNumber(); // E.164 format: +971123456789
+                const formData = new FormData(form);
+                formData.set("phone", fullNumber); // replace phone input value with full number
+
+                fetch(form.action, {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value
+                    }
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data === true) {
+                            window.location.href = "{{ asset('/storage/'.$property->brochure) }}";
+                            closeBrochurePopup();
+                        }
+                    })
+                    .catch(err => console.error(err));
+            });
+        }
+    });
+
+
+
+
+</script>
+
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         var lat = {{$property->lat}};
