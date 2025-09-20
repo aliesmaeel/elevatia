@@ -1664,7 +1664,7 @@ color:#CEA669
 }
 .property_details .content .flex_container .col:first-of-type{
   grid-column: span 2;
-  grid-row: span 2;
+
 }
 .property_details .content .flex_container{
   grid-template-columns: repeat(4, 1fr);
