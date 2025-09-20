@@ -3911,7 +3911,7 @@ transform: scale(1.1);
 }
 
 .select2-container--default .select2-results>.select2-results__options{
-    overflow: hidden !important;
+    overflow: auto !important;
 }
 
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable{

@@ -16,7 +16,7 @@
             <div class="desc_title">
                 <div class="main_title">Find Your Dream Property</div>
                 <div class="desc">
-                    Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and
+                    Welcome to Elevatia, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and
                      a chance to redefine your life. With categories to suit every dreamer, your journey
                 </div>
             </div>
