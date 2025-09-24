@@ -94,14 +94,16 @@
                     <div class="title">Bedrooms</div>
                     <div class="group-options bedroom-group">
                         @php
-                            $bedrooms = ['any', 1, 2, 3, 4, 5];
+                            $bedrooms = ['any',0, 1, 2, 3, 4, 5];
                         @endphp
 
                         @foreach($bedrooms as $bedroom)
-                            <div class="option {{ $loop->first ? 'active' : '' }}">
-                                <div class="custom-radio" data-value="{{ $bedroom === 'any' ? 'any' : $bedroom . ' Bedroom' }}">
-                                    {{ $bedroom === 'any' ? 'Any' : $bedroom . ' Bedroom' }}
+                            <div class="option {{ $loop->iteration ? 'active' : '' }}">
+                                <div class="custom-radio"
+                                     data-value="{{ $bedroom === 'any' ? 'any' : ($bedroom == 0 ? 'Studio' : $bedroom . ' Bedroom') }}">
+                                    {{ $bedroom === 'any' ? 'Any' : ($bedroom == 0 ? 'Studio' : $bedroom . ' Bedroom') }}
                                 </div>
+
                                 <input type="radio"
                                        value="{{ $bedroom === 'any' ? 'any' : $bedroom }}"
                                        name="bedrooms"

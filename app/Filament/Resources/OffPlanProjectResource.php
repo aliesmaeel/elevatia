@@ -103,7 +103,8 @@ class OffPlanProjectResource extends Resource
                     ->label('Brochure')
                     ->columnSpanFull()
                     ->openable()
-                    ->downloadable(),
+                    ->downloadable()
+                    ->nullable(),
 
                 \Dotswan\MapPicker\Fields\Map::make('location')
                     ->afterStateHydrated(function ($state, $record, Forms\Set $set): void {
