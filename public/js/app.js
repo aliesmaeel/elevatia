@@ -112,11 +112,15 @@ $(document).ready(function () {
     $buttons.on("click", function () {
         $buttons.removeClass("active");
         $(this).addClass("active");
-        var category = $(this).text().trim();
+
+        // convert button text into snake_case
+        var category = $(this).text().trim().toLowerCase().replace(/\s+/g, "_");
+
         $propertyCards.each(function () {
             var $card = $(this);
-            var type = $card.data("type");
-            if (category === "All" || type === category) {
+            var type = ($card.data("type") || "").toString().toLowerCase();
+
+            if (category === "all" || type === category) {
                 $card.stop(true, true).css("display", "block");
                 $card.removeClass("animated-out");
             } else {

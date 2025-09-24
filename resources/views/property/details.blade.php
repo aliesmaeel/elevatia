@@ -51,9 +51,9 @@
                         <div class="flex_col">
                             <div>
                                 <img src="/images/bedroom_white.svg">
-                                <span>{{$property->bedrooms}}</span>
+                                <span>{{$property->bedrooms == 0 ? '' : $property->bedrooms }}</span>
                             </div>
-                            <div>Bedrooms</div>
+                            <div>{{$property->bedrooms == 0 ? 'Studio' : 'Bedrooms' }}</div>
                         </div>
                         <div class="flex_col">
                             <div>
